@@ -20,64 +20,64 @@ CEFET-MG Campus V <br>
 
 <details>
   <summary>
-  <b style='font-size: 15px'>
-    📑 Sumário
-  </b>
+    <b style='font-size: 15px'>
+      📑 Sumário
+    </b>
   </summary>
   <ol>
     <li><a href="#-introdução">🔍 Introdução</a></li>
     <li>
-      <a href="#-fundamentação-teórica">💡 Fundamentação Teórica</a>
-      <ul>
-        <li><a href='#tf-term-frequency'>TF (Term Frequency)</a></li>
-        <li><a href='#idf-inverse-document-frequency'>IDF (Inverse Document Frequency)</a></li>
-        <li><a href='#tf-idf-term-frequency-inverse-document-frequency'>TF-IDF (Term Frequency-Inverse Document Frequency)</a></li>
-        <li><a href='#relevância-dos-documentos'>Relevância dos Documentos</a></li>
-        <li><a href='#ranqueamento-dos-documentos'>Ranqueamento dos Documentos</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#-objetivos">🎯 Objetivos</a>
       <ul>
-        <li><a href='#objetivo-geral'>Objetivo Geral</a></li>
-        <li><a href='#objetivos-específicos'>Objetivos Específicos</a></li>
+        <li><a href="#objetivo-geral">Objetivo Geral</a></li>
+        <li><a href="#objetivos-específicos">Objetivos Específicos</a></li>
       </ul>
     </li>
     <li>
       <a href="#-modelagem-de-aplicação">🔬 Modelagem de Aplicação</a>
       <ul>
-        <li><a href='#leitura-dos-documentos'>Leitura dos Documentos</a></li>
-        <li><a href='#normalização-dos-textos'>Normalização dos Textos</a></li>
-        <li><a href='#cálculo-do-tf-idf'>Cálculo do TF-IDF</a></li>
-        <li><a href='#ranqueamento-dos-documentos'>Ranqueamento dos Documentos</a></li>
-        <li><a href='#estrutura-de-dados-utilizada'>Estrutura de Dados Utilizada</a></li>   
+        <li><a href="#leitura-dos-dados">Leitura dos Dados</a></li>
+        <li>
+          <a href="#inserção-de-valores">Inserção de Valores</a>
+          <ul>
+            <li><a href="#inserção-em-árvores-binárias-de-busca">Inserção em Árvores Binárias de Busca</a></li>
+            <li><a href="#inserção-em-árvores-avl">Inserção em Árvores AVL</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#remoção-de-valores">Remoção de Valores</a>
+          <ul>
+            <li><a href="#remoção-em-árvores-binárias-de-busca">Remoção em Árvores Binárias de Busca</a></li>
+            <li><a href="#remoção-em-árvores-avl">Remoção em Árvores AVL</a></li>
+          </ul>
+        </li>
+        <li><a href="#caminhamentos">Caminhamentos</a></li>
+        <li><a href="#desafio-adicional-análise-de-rotações">Desafio Adicional: Análise de Rotações</a></li>
       </ul>
     </li>
     <li>
       <a href="#%EF%B8%8F-metodologia">🗳️ Metodologia</a>
       <ul>
-        <li><a href='#-arquivos'>Arquivos</a></li>
-        <li><a href='#-bibliotecas'>Bibliotecas</a></li>
-        <li><a href='#definições-e-estruturas-usadas'>Definições e Estruturas Usadas</a></li>
-        <li><a href='#-funções-implementadas'>Funções Implementadas</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#-testes-e-resultados">📊 Testes e Resultados</a>
-      <ul>
-        <li><a href='#configuração-dos-testes'>Configuração dos Testes</a></li>
-        <li><a href='#execução'>Execução</a></li>
-        <li><a href='#testes-de-precisão'>Testes de Precisão</a></li>
-        <li><a href='#testes-de-desempenho'>Testes de Desempenho</a></li>
-        <li><a href="#resultados-e-análise">Resultados e Análises</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#-análise-hipotética-uso-de-árvoresgrafos-para-ranqueamento-de-documentos">🌳 Análise Hipotética: Uso de Árvores/Grafos para Ranqueamento de Documentos</a>
-      <ul>
-        <li><a href='#estruturas-de-árvores-para-ranqueamento'>Estruturas de Árvores para Ranqueamento</a></li>
-        <li><a href='#uso-de-grafos-para-capturar-relações-entre-termos-e-documentos'>Uso de Grafos para Capturar Relações entre Termos e Documentos</a></li>
-        <li><a href='#comparação-com-o-tf-idf'>Comparação com o TF-IDF</a></li>
+        <li><a href="#-arquivos">Arquivos</a></li>
+        <li><a href="#-bibliotecas">Bibliotecas</a></li>
+        <li>
+          <a href="#definições-e-estruturas-usadas">Definições e Estruturas Usadas</a>
+          <ul>
+            <li><a href="#arquivo-nodehpp">Arquivo Node.hpp</a></li>
+            <li><a href="#arquivo-problema1hpp">Arquivo problema1.hpp</a></li>
+            <li><a href="#arquivo-binarytreehpp">Arquivo BinaryTree.hpp</a></li>
+            <li><a href="#arquivo-avltreehpp">Arquivo AVLTree.hpp</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#-funções-implementadas">Funções Implementadas</a>
+          <ul>
+            <li><a href="#arquivo-maincpp">Arquivo main.cpp</a></li>
+            <li><a href="#arquivo-problema1cpp">Arquivo problema1.cpp</a></li>
+            <li><a href="#arquivo-binarytreecpp">Arquivo BinaryTree.cpp</a></li>
+            <li><a href="#arquivo-avltreecpp">Arquivo AVLTree.cpp</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#-conclusão">🏁 Conclusão</a></li>
@@ -90,9 +90,10 @@ CEFET-MG Campus V <br>
     </li>
     <li><a href="#-ambiente-de-compilação-e-execução">🧪 Ambiente de Compilação e Execução</a></li>
     <li><a href="#-contato">📨 Contato</a></li>
-    <li><a href="#referencias">📚 Referências</a></li>
+    <li><a href="#-referências">📚 Referências</a></li>
   </ol>
 </details>
+
 
 <details> 
   <summary>
@@ -147,6 +148,21 @@ O objetivo deste trabalho é implementar e analisar o comportamento de Árvores 
 
 O desenvolvimento deste projeto foi estruturado com base no **Problema 1** da lista de exercícios, que propõe a implementação de Árvores Binárias de Busca e Árvores AVL. As funcionalidades incluem a inserção, remoção e busca de valores, bem como a resolução de um desafio adicional para identificar subconjuntos de valores que maximizam o número de rotações em Árvores AVL. Nesta seção, detalhamos o funcionamento de cada parte da aplicação, explorando as características das árvores, as operações implementadas e suas diferenças.
 
+### Leitura dos Dados
+A aplicação inicia com a leitura dos valores iniciais das árvores, que são armazenados em vetores. Esses valores são utilizados para criar as árvores binárias e AVL, permitindo a execução das operações e a análise do desafio adicional. A leitura dos valores é feita por meio de um menu interativo, que permite ao usuário inserir manualmente os valores ou utilizar conjuntos predefinidos. Os conjuntos predefinidos são os colocados pelo professor no [trabalho][trabalho-url]. Sendo eles:
+
+- **Árvore 1**: {`88, 22, 45, 33, 22, 90, 27, 59, 13`}
+- **Árvore 2**: {`65, 47, 21, 11, 72, 23, 05, 34, 28`}
+- **Árvore 3**: {`65, 34, 89, 23, 60, 54, 81, 95, 39`}
+- **Árvore 4**: {`15, 10, 20, 05, 12, 18, 25, 98, 44`}
+
+Para as remoções também pode ser escolhido um conjunto que o usuário desejar ou um conjunto predefinido, também colocado pelo professor no [trabalho][trabalho-url]. Sendo eles:
+
+- **Árvore 1**: {`33, 90, 33, 45`}
+- **Árvore 2**: {`11, 72, 65, 23`}
+- **Árvore 3**: {`34, 89, 81, 95`}
+- **Árvore 4**: {`20, 05, 18, 44`}
+
 ### Inserção de Valores
 
 #### Inserção em Árvores Binárias de Busca
@@ -168,8 +184,6 @@ Por exemplo, ao inserir os valores `10, 5, 15` nesta ordem, a árvore resultante
     5     15
 ```
 </div>
-
-
 
 <div align="justify">
 
@@ -351,44 +365,9 @@ Esse processo permite analisar o impacto das remoções no balanceamento da árv
 
   - **[Node.hpp](src/Node.hpp)**: Define a estrutura `Node`, utilizada para representar os nós das árvores binárias e AVL, contendo o valor do nó, ponteiros para os filhos esquerdo e direito, e a altura do nó (para árvores AVL).
 
-  - **makefile**: Arquivo para automação da compilação do projeto, definindo regras para gerar os arquivos binários a partir do código-fonte.
+  - **[makefile](makefile)**: Arquivo para automação da compilação do projeto, definindo regras para gerar os arquivos binários a partir do código-fonte.
 
   A estrutura do projeto está organizada da seguinte forma:
-
-```
-
-## 🗳️ Metodologia
-
-<div align="justify">
-
-  As abordagens propostas para otimizar o algoritmo de ranqueamento foram implementadas em C++, utilizando a IDE Visual Studio Code para o desenvolvimento do código-fonte. O projeto foi organizado em um diretório principal, contendo subdiretórios para armazenar os arquivos de código-fonte e os datasets utilizados. A solução proposta com a aplicação da técnica TF-IDF para o ranqueamento foi dividida em classes, cada uma responsável por uma etapa do processo. A primeira, [Ranking](src/ranking.hpp), recebe as frases a serem buscadas, armazena as stopwords e lê os documentos para criar objetos da classe [Document](src/document.hpp), que armazenam os termos normalizados e suas frequências. Após isso, existe a etapa de cálculo da relevância dos termos, através de seus fatores TF/IDF em cada documento. E, por fim, a ordenação dos documentos em ordem decrescente de relevância.
-
-  ### 📁 Arquivos 
-
-  Para a implementação do algoritmo, o projeto foi organizado em um diretório principal, contendo subdiretórios para armazenar os arquivos de código-fonte e os datasets utilizados. A seguir, são apresentados os arquivos e diretórios utilizados no projeto:
-
-  - [datasets/](datasets): diretório contendo os datasets utilizados.
-    - [doc1.txt](datasets/doc1.txt): Primeiro documento a ser consultado, o livro "A Mão e A Luva", de Machado de Assis.
-    - [doc2.txt](datasets/doc2.txt): Segundo documento a ser consultado, A Bíblia Sagrada.
-    - [doc3.txt](datasets/doc3.txt): Terceiro documento a ser consultado, o livro "Dom Casmurro", de Machado de Assis.
-    - [doc4.txt](datasets/doc4.txt): Quarto documento a ser consultado, o livro "Quincas Borba", de Machado de Assis.
-    - [doc5.txt](datasets/doc5.txt): Quinto documento a ser consultado, o livro "A Semana", de Machado de Assis.
-    - [doc6.txt](datasets/doc6.txt): Sexto documento a ser consultado, o relato histórico "Relação do formidavel, e lastimoso terremoto succedido no Reino de Valença".
-    - [stopwords.txt](datasets/stopwords.txt): arquivo contendo as stopwords utilizadas da língua portuguesa. Isto é, as palavras que não possuem relevância para o ranqueamento dos documentos. Exemplo de algumas stopwords: a, ao,aos, à, às, um, uma, uns, umas, o, os, da, das, de, do, dos, e, ou, que, se, por, para, com, sem, sob, sobre, entre, etc.
-
-  - [src/](src): diretório contendo os arquivos de código-fonte do projeto.
-    - [document.cpp](src/document.cpp): Arquivo de código-fonte que contém a implementação dos métodos da classe Document, responsável por ler e representar os documentos, além de normalizar os termos que os compõem.
-    - [document.hpp](src/document.hpp): Arquivo de cabeçalho que contém a definição da classe Document, responsável por representar um documento a ser ranqueado.
-    - [main.cpp](src/main.cpp): arquivo contendo a função principal do programa, responsável por fazer chamadas de funções que realizam  o ranqueamento dos documentos.
-    - [ranking.cpp](src/ranking.cpp): Arquivo de código-fonte que contém a implementação dos métodos da classe Ranking, responsável por ler as frases a serem buscadas, armazenar as stopwords e calcular o fator TF/IDF de cada documento para cada termo e ranqueá-los em ordem decrescente.
-    - [ranking.hpp](src/ranking.hpp): Arquivo de cabeçalho que contém a definição da classe Ranking, responsável por ranquear os documentos.
-
-  - [.gitignore](.gitignore): arquivo contendo a lista de arquivos e diretórios a serem ignorados pelo Git.
-  - [make.sh](make.sh): arquivo de script para compilar o código-fonte do projeto.
-  - [makefile](makefile): arquivo contendo as regras para compilar o código-fonte do projeto.
-  - [README.md](README.md): arquivo contendo a documentação do projeto.
-
-  De uma forma compacta e organizada, os arquivos e diretórios estão dispostos da seguinte forma:
 
   ```.
   ├── build
@@ -783,9 +762,9 @@ Em resumo, o trabalho alcançou os objetivos propostos, destacando as diferença
 
   1. Clone o repositório no diretório desejado:
   console
-  git clone https://github.com/dudatsouza/prática
-  cd tf-idf
-  
+  git clone https://github.com/dudatsouza/pratica-arvores.git
+  cd pratica-arvores
+
   2. Compile o programa com o __make__, o que gera a pasta build, que contém arquivos de objeto e um arquivo executável:
   console
   make
@@ -820,7 +799,7 @@ Em resumo, o trabalho alcançou os objetivos propostos, destacando as diferença
 
 <div align="justify">
 
-  O trabalho foi desenvolvido e testado em várias configurações de hardware. Podemos destacar algumas configurações de Sistema Operacional e Compilador, pois as demais configurações não influenciam diretamente no desempenho do programa.
+  O trabalho foi desenvolvido e testado em um ambiente específico, com as seguintes configurações:
 
 </div>
 
@@ -846,8 +825,6 @@ Em resumo, o trabalho alcançou os objetivos propostos, destacando as diferença
 > do ambiente de compilação e execução do programa.
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
-## 📧 Contato
-
 
 ## 📨 Contato
 
@@ -866,22 +843,10 @@ Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dú
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
 
-<a name="referencias">📚 Referências</a>
+## 🔖 Referências
+1. CEFET-MG. **Aula 1 - Árvores Binárias**. Disponível em: [hhttps://ava.cefetmg.br/pluginfile.php/165783/mod_resource/content/8/Aula1.pdf](https://ava.cefetmg.br/pluginfile.php/165783/mod_resource/content/8/Aula1.pdf). Acesso em: 27 nov. 2024.
 
-[^1]: Spärck Jones, K. (1972). A statistical interpretation of term specificity and its application in retrieval. Journal of Documentation, 28(1), 11-21. (https://www.staff.city.ac.uk/~sbrp622/idfpapers/ksj_orig.pdf)
-
-[^2]: Philip L.H. Yu, Wai Ming Wan, and Paul H. Lee. Decision Tree Modeling for Ranking Data. (https://www.researchgate.net/publication/252998138_Decision_Tree_Modeling_for_Ranking_Data)
-
-[^3]: Ming Zhong, Mengchi Liu. Ranking the answer trees of graph search by both structure and content. (https://dl.acm.org/doi/abs/10.1145/2379307.2379314)
-
-[^4]: Claudio Lucchese, Franco Maria Nardini, salvatore Orlando, Raffaele Perego, Nicola Tonellotto, Rossano Venturini. QuickScorer: a Fast Algorithm to Rank Documents with
-Additive Ensembles of Regression Trees. (https://iris.unive.it/bitstream/10278/3661259/7/paper.pdf)
-
-[^5]: Rada Mihalcea. Graph-based Ranking Algorithms for Sentence Extraction, Applied to Text Summarization. (https://dl.acm.org/doi/pdf/10.3115/1219044.1219064)
-
-
-
-
+2. CEFET-MG. **Aula 2 - Árvores AVL**. Disponível em: [https://ava.cefetmg.br/pluginfile.php/261698/mod_resource/content/4/Aula2.pdf](https://ava.cefetmg.br/pluginfile.php/261698/mod_resource/content/4/Aula2.pdf). Acesso em: 27 nov. 2024.
 
 
 [vscode-badge]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
