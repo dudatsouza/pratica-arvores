@@ -169,7 +169,7 @@ std::vector<int> gerarArvoreDesbalanceada(int m) {
     std::vector<int> resultado;
 
     // Determinar os limites para desbalanceamento em m/3 níveis
-    int limiteDesbalanceado = m / 2.2;
+    int limiteDesbalanceado = m / 2.5;
 
     // Adicionar os valores da subárvore mais profunda (lado esquerdo)
     for (int i = limiteDesbalanceado; i >= 1; --i) {
@@ -205,7 +205,7 @@ void analiseDeCrescimento() {
 
     std::vector<std::pair<int, double>> analise;
 
-    for (int m = 3; m <= 100; m++) {
+    for (int m = 3; m <= 1000; m++) {
         std::vector<int> insercoesTortas = gerarArvoreTorta(m);
         std::vector<int> insercoesEquilibradas = gerarArvoreDesbalanceada(m);
         
