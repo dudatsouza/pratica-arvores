@@ -869,19 +869,6 @@ Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dú
 [windows-badge]: https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white
 [gcc-badge]: https://img.shields.io/badge/GCC-5C6EB8?style=for-the-badge&logo=gnu&logoColor=white
 
-
-[linkedin-autor1]: https://www.linkedin.com/in/guilherme-alvarenga-de-azevedo-959474201/
-[telegram-autor1]: https://t.me/alvarengazv
-[gmail-autor1]: mailto:gui.alvarengas234@gmail.com
-
-[linkedin-autor2]: https://www.linkedin.com/in/dudatsouza/
-[telegram-autor2]: https://t.me/dudat_18
-[gmail-autor2]: mailto:dudateixeirasouza@gmail.com
-
-[linkedin-autor3]: https://www.linkedin.com/
-[telegram-autor3]: https://t.me/
-[gmail-autor3]: mailto:memanuel643@gmail.com
-
 [linkedin-badge]: https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white
 [telegram-badge]: https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white
 [gmail-badge]: https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white

@@ -4,7 +4,10 @@
 void menuInterativo() {
     Node* root = nullptr;
     int escolha;
+    int aux = 0, balancear1 = 0;
+    bool balancear = false, printar = false;
     std::vector<int> treeValuesBinary;
+
 
     while (true) {
         std::cout << "\nMenu:\n";
@@ -30,9 +33,9 @@ void menuInterativo() {
                     std::cout << "Inserindo " << val << "...\n";
                     root = inserirNo(root, val);
                     int altura = calcularAltura(root);
-                    std::cout << "Altura atual: " << altura << "\n";
-                    std::cout << "Árvore atual:\n";
+                    std::cout << "Árvore Modificada:\n";
                     prettyPrintTree(root);
+                    std::cout << "Altura atual: " << altura << "\n\n";
                 }
             }
 
@@ -48,20 +51,35 @@ void menuInterativo() {
                     std::cout << "Removendo " << val << "...\n";
                     root = removerNo(root, val);
                     int altura = calcularAltura(root);
-                    std::cout << "Altura atual: " << altura << "\n";
-                    std::cout << "Árvore atual:\n";
+                    std::cout << "Árvore Modificada:\n";
                     prettyPrintTree(root);
+                    std::cout << "Altura atual: " << altura << "\n\n";
                 }       
             }   
 
             break;
         case 3:
-            std::cout << "Nível máximo atual: " << calcularAltura(root) << "\n";
-            std::cout << "Árvore atual:\n";
+            std::cout << "Árvore:\n";
             prettyPrintTree(root);
+            std::cout << "Nível máximo atual: " << calcularAltura(root) << "\n";
             break;
         case 4:
-            sugerirRotacoes(root);
+            std::cout << "Você deseja sugerir rotações para a árvore atual e balanceá-la?\n";
+            std::cout << "1. Sim\n";
+            std::cout << "2. Não\n";
+            std::cin >> balancear1;
+
+            if (balancear1 == 1) {
+                balancear = true;
+            } else {
+                balancear = false;
+            }
+            aux = 0;
+            printar = true;
+            sugerirRotacoes(root, aux, balancear, printar);
+            if (aux == 0) {
+                std::cout << "Nenhuma rotação sugerida, árvore está balanceada.\n";
+            }
             std::cout << "Árvore atual:\n";
             prettyPrintTree(root);
             break;
@@ -71,6 +89,9 @@ void menuInterativo() {
             prettyPrintTree(root);
             break;
         case 6:
+            std::cout << "Para uma melhor análise de crescimento, vamos fazer a analise com vários tamanho de árvores, de 10 até 1000.\n";
+            std::cout << "Precione Enter para iniciar a análise de crescimento, e aguarde pode levar alguns segundos...\n";
+            std::cin.ignore();
             analiseDeCrescimento();
             break;
         case 7:

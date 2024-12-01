@@ -2,7 +2,11 @@
 #include "problema2.hpp"
 
 // Construtor do nó
-Node::Node(int value) : data(value), left(nullptr), right(nullptr) {}
+Node::Node(int valor) {
+    data = valor;
+    left = nullptr;
+    right = nullptr;
+}
 
 // Função para calcular a altura de uma subárvore
 int calcularAltura(Node* root) {
@@ -77,7 +81,6 @@ Node* removerNo(Node* root, int valor) {
         return nullptr;
     }
 
-    std::cout << "Removendo " << valor << "...\n";
     if (valor < root->data) {
         root->left = removerNo(root->left, valor);
     } else if (valor > root->data) {
@@ -99,12 +102,11 @@ Node* removerNo(Node* root, int valor) {
 
     int altura = calcularAltura(root);
 
-    std::cout << "Altura atual: " << altura << "\n";
     return root;
 }
 
 // Função para sugerir rotações
-void sugerirRotacoes(Node* root) {
+void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar) {
     if (root == nullptr) {
         return;
     }
@@ -112,30 +114,67 @@ void sugerirRotacoes(Node* root) {
     int alturaEsquerda = calcularAltura(root->left);
     int alturaDireita = calcularAltura(root->right);
 
-    if (alturaEsquerda > alturaDireita + 1) {
-        std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". Sugestão: Rotação à direita.\n";
-    } else if (alturaDireita > alturaEsquerda + 1) {
-        std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". Sugestão: Rotação à esquerda.\n";
+    // Verifica se está desbalanceada para a esquerda
+    if ((alturaEsquerda - alturaDireita) == 2) {
+        if (calcularAltura(root->left->left) >= calcularAltura(root->left->right)) {
+            if (printar) {
+                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação à direita.\n\n";
+            }
+            if (balancear) {
+                root = rotacaoDireita(root);
+            }
+        } else {
+            if (printar) {
+                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação esquerda-direita.\n\n";
+            }
+            if (balancear) {
+                root->left = rotacaoEsquerda(root->left);
+                root = rotacaoDireita(root);
+            }
+        }
+        aux++;
     }
 
-    sugerirRotacoes(root->left);
-    sugerirRotacoes(root->right);
+    // Verifica se está desbalanceada para a direita
+    else if ((alturaDireita - alturaEsquerda) == 2) {
+        if (calcularAltura(root->right->right) >= calcularAltura(root->right->left)) {
+            if (printar) {
+                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação à esquerda.\n\n";
+            }
+            if (balancear) {
+                root = rotacaoEsquerda(root);
+            }
+        } else {
+            if (printar) {
+                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação direita-esquerda.\n\n";
+            }
+            if (balancear) {
+                root->right = rotacaoDireita(root->right);
+                root = rotacaoEsquerda(root);
+            }
+        }
+        aux++;
+    }
+
+    // Continua verificando os filhos
+    sugerirRotacoes(root->left, aux, balancear, printar);
+    sugerirRotacoes(root->right, aux, balancear, printar);
 }
 
 // Rotação à direita
-Node* rotacaoDireita(Node* root) {
-    Node* novaRaiz = root->left;
-    root->left = novaRaiz->right;
-    novaRaiz->right = root;
-    return novaRaiz;
+Node* rotacaoDireita(Node* nó) {
+    Node* aux = nó->left;
+    nó->left = aux->right;
+    aux->right = nó;
+    return aux;
 }
 
 // Rotação à esquerda
-Node* rotacaoEsquerda(Node* root) {
-    Node* novaRaiz = root->right;
-    root->right = novaRaiz->left;
-    novaRaiz->left = root;
-    return novaRaiz;
+Node* rotacaoEsquerda(Node* nó) {
+    Node* aux = nó->right;
+    nó->right = aux->left;
+    aux->left = nó;
+    return aux;
 }
 
 // Encontrar o caminho mais longo
@@ -160,92 +199,107 @@ void mostrarCaminhoMaisLongo(Node* root) {
 
     std::cout << "Caminho mais longo: ";
     for (int valor : caminhoMaisLongo) {
-        std::cout << valor << " ";
+        std::cout << valor;
+        if (valor != caminhoMaisLongo.back()) {
+            std::cout << " -> ";
+        }
     }
     std::cout << "\n";
 }
 
-std::vector<int> gerarArvoreDesbalanceada(int m) {
-    std::vector<int> resultado;
+int calcularMenorAltura(Node* root) {
+    if (root == nullptr) {
+        return 0;
+    }
+    
+    return std::min(calcularMenorAltura(root->left), calcularMenorAltura(root->right)) + 1;
+} 
 
-    // Determinar os limites para desbalanceamento em m/3 níveis
-    int limiteDesbalanceado = m / 2.5;
+Node* gerarArvoreQseEquilibrada(int m, int n) {
+    Node* balanceada = nullptr;
 
-    // Adicionar os valores da subárvore mais profunda (lado esquerdo)
-    for (int i = limiteDesbalanceado; i >= 1; --i) {
-        resultado.push_back(i);
+    for (int i = 1; i <= m; i++) {
+        int alturaMax = calcularAltura(balanceada);
+        int alturaMin = calcularMenorAltura(balanceada);
+        if (alturaMax - alturaMin > n) { 
+            int aux = 1;
+            while (aux != 0) {
+                aux = 0;
+                sugerirRotacoes(balanceada, aux, true, false);
+            }
+        } 
+        balanceada = inserirNo(balanceada, i);
     }
 
-    // Adicionar os valores restantes da parte "central"
-    for (int i = limiteDesbalanceado + 1; i <= 2 * limiteDesbalanceado; ++i) {
-        resultado.push_back(i);
-    }
-
-    // Adicionar os valores restantes da subárvore mais rasa (lado direito)
-    for (int i = 2 * limiteDesbalanceado + 1; i <= m; ++i) {
-        resultado.push_back(i);
-    }
-
-    return resultado;
+    return balanceada;
 }
 
-std::vector<int> gerarArvoreTorta(int m) {
+Node* gerarArvoreTorta(int m) {
     // gerar vetor de tamanho m, arvore torta, onde os valores são inseridos em ordem crescente
 
-    std::vector<int> vetor;
+    Node* root = nullptr;
     for (int i = 1; i <= m; i++) {
-        vetor.push_back(i);
+        root = inserirNo(root, i);
     }
 
-    return vetor;
+    return root;
 }
 
 void analiseDeCrescimento() {
-    std::cout << "Para uma melhor análise de crescimento, vamos fazer a analise com vários tamanho de árvores, de 3 até 100.\n";
-
     std::vector<std::pair<int, double>> analise;
 
-    for (int m = 3; m <= 1000; m++) {
-        std::vector<int> insercoesTortas = gerarArvoreTorta(m);
-        std::vector<int> insercoesEquilibradas = gerarArvoreDesbalanceada(m);
+    for (int m = 2; m <= 1000; m++) {
+        Node* arvoreTorta= gerarArvoreTorta(m);
+        int n = m/1.665;
+        Node* arvoreQseEquilibrada = gerarArvoreQseEquilibrada(m, n);
         
-        double depreciacao = analisando(insercoesTortas, insercoesEquilibradas);
+        double depreciacao = analisando(arvoreTorta, arvoreQseEquilibrada);
 
         analise.push_back(std::make_pair(m, depreciacao));
     }
 
-    int media = 0;
-
     std::cout << "\nAnálise de crescimento finalizada.\n";
     std::cout << "Depreciação de altura para diferentes tamanhos de árvores:\n";
     for (auto& p : analise) {
-        media += p.second;
-        std::cout << "Tamanho da árvore: " << p.first << ", Depreciação: " << p.second << "%\n";
+        std::cout << "Tamanho: " << p.first << " - Depreciação: " << p.second << "%\n";
     }
 
-    std::cout << "\nMédia de depreciação: " << (double)media / analise.size() << "%\n";
+    double max = 0, min = 100;
+    for (auto& p : analise) {
+        if (p.second > max) {
+            max = p.second;
+        }
+        if (p.second < min) {
+            min = p.second;
+        }
+    }
+
+    std::cout << "Maior depreciação: " << max << "%  - Menor depreciação: " << min << "%\n";
+    salvarArquivo ("datasets/analise.csv", analise);
+
+    // executar arquivo python para plotar o gráfico
+    system("python3 src/plot.py");
 }
 
+void salvarArquivo(std::string nomeArquivo, std::vector<std::pair<int, double>> analise) {
+    std::ofstream arquivo(nomeArquivo);
+    if (arquivo.is_open()) {
+        arquivo << "Tamanho da árvore,Depreciação\n";
+        for (auto& p : analise) {
+            arquivo << p.first << "," << p.second << "\n";
+        }
+        arquivo.close();
+        std::cout << "Análise salva no arquivo " << nomeArquivo << ".\n";
+    } else {
+        std::cout << "Erro ao salvar o arquivo " << nomeArquivo << ".\n";
+    }
+}
 
 // Função para análise de crescimento
-double analisando(std::vector<int> insercoesTortas, std::vector<int> insercoesEquilibradas) {
-    Node* arvoreTorta = nullptr;
-    Node* arvoreEquilibrada = nullptr;
-
-    std::cout << "\nInserindo na árvore torta:\n";
-    for (int valor : insercoesTortas) {
-        arvoreTorta = inserirNo(arvoreTorta, valor);
-        std::cout << "Após inserir " << valor << ": Altura = " << calcularAltura(arvoreTorta) << "\n";
-    }
-
-    std::cout << "\nInserindo na árvore equilibrada:\n";
-    for (int valor : insercoesEquilibradas) {
-        arvoreEquilibrada = inserirNo(arvoreEquilibrada, valor);
-        std::cout << "Após inserir " << valor << ": Altura = " << calcularAltura(arvoreEquilibrada) << "\n";
-    }
+double analisando(Node* arvoreTorta, Node* arvoreQseEquilibrada) {
 
     int alturaTorta = calcularAltura(arvoreTorta);
-    int alturaEquilibrada = calcularAltura(arvoreEquilibrada);
+    int alturaEquilibrada = calcularAltura(arvoreQseEquilibrada);
 
     std::cout << "\nComparação de alturas:\n";
     std::cout << "Árvore torta: Altura final = " << alturaTorta << "\n";
@@ -261,7 +315,6 @@ double analisando(std::vector<int> insercoesTortas, std::vector<int> insercoesEq
 // Função para imprimir a árvore no formato solicitado
 void prettyPrintTree(Node* root) {
     printTreeHelper(root, "", false);
-    std::cout << std::endl;
 }
 
 // Função auxiliar recursiva para imprimir a árvore
