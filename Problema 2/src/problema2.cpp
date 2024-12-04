@@ -105,7 +105,6 @@ Node* removerNo(Node* root, int valor) {
     return root;
 }
 
-// Função para sugerir rotações
 void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar) {
     if (root == nullptr) {
         return;
@@ -113,55 +112,99 @@ void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar) {
 
     int alturaEsquerda = calcularAltura(root->left);
     int alturaDireita = calcularAltura(root->right);
+    int diferencaAltura = alturaEsquerda - alturaDireita;
 
-    // Verifica se está desbalanceada para a esquerda
-    if ((alturaEsquerda - alturaDireita) == 2) {
-        if (calcularAltura(root->left->left) >= calcularAltura(root->left->right)) {
-            if (printar) {
-                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação à direita.\n\n";
-            }
-            if (balancear) {
-                root = rotacaoDireita(root);
-            }
-        } else {
-            if (printar) {
-                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação esquerda-direita.\n\n";
-            }
-            if (balancear) {
-                root->left = rotacaoEsquerda(root->left);
-                root = rotacaoDireita(root);
-            }
+    // Tratar diferença maior que 2 (árvore desbalanceada severamente)
+    if (diferencaAltura > 2) {
+        if (printar) {
+            std::cout << "Arvore analisada: \n";
+            prettyPrintTree(root);
+            std::cout << "Subárvore severamente desbalanceada detectada no nó " << root->data 
+                      << ". Diferença de altura: " << diferencaAltura 
+                      << ". Sugestão: Rotação(s) para balancear.\n\n";
         }
-        aux++;
+        
+        while (diferencaAltura > 1) {
+            // Verifica qual caso aplicar (rotação à direita ou esquerda-direita)
+            if (calcularAltura(root->left->left) >= calcularAltura(root->left->right)) {
+                if (balancear) {
+                    if (printar) {
+                        std::cout << "Rotação à direita sugerida no nó " << root->data << ".\n";
+                    }
+                    root = rotacaoDireita(root);
+                    if (printar) {
+                        std::cout << "Árvore após rotação à direita: \n";
+                        prettyPrintTree(root);
+                    }
+                }
+            } else {
+                if (balancear) {
+                    if (printar) {
+                        std::cout << "Rotação esquerda-direita sugerida no nó " << root->data << ".\n";
+                    }
+                    root->left = rotacaoEsquerda(root->left);
+                    root = rotacaoDireita(root);
+                    if (printar) {
+                        std::cout << "Árvore após rotação esquerda-direita: \n";
+                        prettyPrintTree(root);
+                    }
+                }
+            }
+            alturaEsquerda = calcularAltura(root->left);
+            alturaDireita = calcularAltura(root->right);
+            diferencaAltura = alturaEsquerda - alturaDireita;
+            aux++;
+        }
     }
 
-    // Verifica se está desbalanceada para a direita
-    else if ((alturaDireita - alturaEsquerda) == 2) {
-        if (calcularAltura(root->right->right) >= calcularAltura(root->right->left)) {
-            if (printar) {
-                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação à esquerda.\n\n";
-            }
-            if (balancear) {
-                root = rotacaoEsquerda(root);
-            }
-        } else {
-            if (printar) {
-                std::cout << "Subárvore desbalanceada detectada no nó " << root->data << ". \nSugestão: Rotação direita-esquerda.\n\n";
-            }
-            if (balancear) {
-                root->right = rotacaoDireita(root->right);
-                root = rotacaoEsquerda(root);
-            }
+    // Tratar diferença menor que -2 (árvore desbalanceada severamente)
+    else if (diferencaAltura < -2) {
+        if (printar) {
+            prettyPrintTree(root);
+            std::cout << "Subárvore severamente desbalanceada detectada no nó " << root->data 
+                      << ". Diferença de altura: " << diferencaAltura 
+                      << ". Sugestão: Rotação(s) para balancear.\n\n";
         }
-        aux++;
+
+        while (diferencaAltura < -1) {
+            // Verifica qual caso aplicar (rotação à esquerda ou direita-esquerda)
+            if (calcularAltura(root->right->right) >= calcularAltura(root->right->left)) {
+                if (balancear) {
+                    if (printar) {
+                        std::cout << "Rotação à esquerda sugerida no nó " << root->data << ".\n";
+                    }
+                    root = rotacaoEsquerda(root);
+                    if (printar) {
+                        std::cout << "Árvore após rotação à esquerda: \n";
+                        prettyPrintTree(root);
+                    }
+                }
+            } else {
+                if (balancear) {
+                    if (printar) {
+                        std::cout << "Rotação direita-esquerda sugerida no nó " << root->data << ".\n";
+                    }
+                    root->right = rotacaoDireita(root->right);
+                    root = rotacaoEsquerda(root);
+                    if (printar) {
+                        std::cout << "Árvore após rotação direita-esquerda: \n";
+                        prettyPrintTree(root);
+                    }
+                }
+            }
+            alturaEsquerda = calcularAltura(root->left);
+            alturaDireita = calcularAltura(root->right);
+            diferencaAltura = alturaEsquerda - alturaDireita;
+            aux++;
+        }
     }
 
-    // Continua verificando os filhos
+    // Continua verificando os filhos recursivamente
     sugerirRotacoes(root->left, aux, balancear, printar);
     sugerirRotacoes(root->right, aux, balancear, printar);
 }
 
-// Rotação à direita
+// Funções de rotação
 Node* rotacaoDireita(Node* nó) {
     Node* aux = nó->left;
     nó->left = aux->right;
@@ -169,7 +212,6 @@ Node* rotacaoDireita(Node* nó) {
     return aux;
 }
 
-// Rotação à esquerda
 Node* rotacaoEsquerda(Node* nó) {
     Node* aux = nó->right;
     nó->right = aux->left;
@@ -221,13 +263,15 @@ Node* gerarArvoreQseEquilibrada(int m, int n) {
     for (int i = 1; i <= m; i++) {
         int alturaMax = calcularAltura(balanceada);
         int alturaMin = calcularMenorAltura(balanceada);
-        if (alturaMax - alturaMin > n) { 
-            int aux = 1;
-            while (aux != 0) {
-                aux = 0;
-                sugerirRotacoes(balanceada, aux, true, false);
-            }
-        } 
+        if (i < m/2 ) {
+            if (alturaMax - alturaMin > n) { 
+                int aux = 1;
+                while (aux != 0) {
+                    aux = 0;
+                    sugerirRotacoes(balanceada, aux, true, false);
+                }
+            } 
+        }
         balanceada = inserirNo(balanceada, i);
     }
 
@@ -244,13 +288,13 @@ Node* gerarArvoreTorta(int m) {
 
     return root;
 }
-
+ 
 void analiseDeCrescimento() {
     std::vector<std::pair<int, double>> analise;
 
-    for (int m = 2; m <= 1000; m++) {
+    for (int m = 3; m <= 1000; m++) {
         Node* arvoreTorta= gerarArvoreTorta(m);
-        int n = m/1.665;
+        int n = m/3;
         Node* arvoreQseEquilibrada = gerarArvoreQseEquilibrada(m, n);
         
         double depreciacao = analisando(arvoreTorta, arvoreQseEquilibrada);

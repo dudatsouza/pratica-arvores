@@ -367,6 +367,8 @@ Esse processo permite analisar o impacto das remoções no balanceamento da árv
 
   - **[makefile](makefile)**: Arquivo para automação da compilação do projeto, definindo regras para gerar os arquivos binários a partir do código-fonte.
 
+  - **[make.sh](make.sh)**: Script de compilação que executa o `makefile` e gera o executável `app`.
+
   A estrutura do projeto está organizada da seguinte forma:
 
   ```.

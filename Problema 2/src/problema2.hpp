@@ -28,7 +28,6 @@ Node* removerNo(Node* root, int valor);
 void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar);
 Node* rotacaoDireita(Node* root);
 Node* rotacaoEsquerda(Node* root);
-void encontrarCaminhoMaisLongo(Node* root, std::vector<int>& caminhoAtual, std::vector<int>& caminhoMaisLongo);
 void mostrarCaminhoMaisLongo(Node* root);
 void analiseDeCrescimento();
 double analisando(Node* arvoreTorta, Node* arvoreQseEquilibrada);

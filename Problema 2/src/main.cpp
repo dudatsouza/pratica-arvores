@@ -1,4 +1,3 @@
-
 #include "problema2.hpp"
 
 void menuInterativo() {
@@ -42,7 +41,7 @@ void menuInterativo() {
             break;
         case 2:
             treeValuesBinary = multiplasEntradas();
-
+            
             if (treeValuesBinary.size() == 0) {
                 std::cout << "Nenhum valor removido.\n";
                 break;
@@ -80,6 +79,14 @@ void menuInterativo() {
             if (aux == 0) {
                 std::cout << "Nenhuma rotação sugerida, árvore está balanceada.\n";
             }
+
+            if(balancear) {
+                while(aux != 0) {
+                    aux = 0;
+                    sugerirRotacoes(root, aux, balancear, printar);
+                }
+            }
+            
             std::cout << "Árvore atual:\n";
             prettyPrintTree(root);
             break;
@@ -87,9 +94,10 @@ void menuInterativo() {
             mostrarCaminhoMaisLongo(root);
             std::cout << "Árvore atual:\n";
             prettyPrintTree(root);
+            std::cout << "Nível máximo atual: " << calcularAltura(root) << "\n";
             break;
         case 6:
-            std::cout << "Para uma melhor análise de crescimento, vamos fazer a analise com vários tamanho de árvores, de 10 até 1000.\n";
+            std::cout << "Para uma melhor análise de crescimento, vamos fazer a analise com vários tamanho de árvores, de 3 até 1000.\n";
             std::cout << "Precione Enter para iniciar a análise de crescimento, e aguarde pode levar alguns segundos...\n";
             std::cin.ignore();
             analiseDeCrescimento();

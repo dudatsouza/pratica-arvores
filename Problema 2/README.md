@@ -193,8 +193,6 @@ A função responsável por calcular a altura máxima é [`encontrarAlturaMaxima
 3. **Resultado Final**:
    - Após visitar todos os nós, a função retorna a altura máxima da árvore, que é exibida ao usuário.
 
-#### Exemplo de Execução
-
 Considere a seguinte árvore binária:
 
 ```
@@ -205,7 +203,6 @@ Considere a seguinte árvore binária:
     3   7 
 ```
 
-
 1. A função começa na raiz (`10`) e recorre aos filhos esquerdo (`5`) e direito (`15`).
 2. No ramo esquerdo, a subárvore com raiz em `5` é avaliada, onde as alturas de `3` e `7` são `1`.
 3. A altura do nó `5` é calculada como `max(1, 1) + 1 = 2`.
@@ -215,59 +212,30 @@ Considere a seguinte árvore binária:
 O cálculo da altura máxima é essencial para:
 - Avaliar o balanceamento de árvores AVL, onde a diferença de altura entre as subárvores deve ser no máximo `1`.
 - Analisar a eficiência de buscas e inserções, já que o desempenho dessas operações depende diretamente da altura da árvore.
-
 ### Sugestão de Rotações
 
-A função [`sugerirRotacoes`](src/problema2.cpp) analisa o balanceamento da árvore e sugere rotações caso algum nó esteja desbalanceado. Mensagens claras indicam ao usuário onde e qual rotação deve ser aplicada.
+A função [`sugerirRotacoes`](src/problema2.cpp) é responsável por analisar o balanceamento da árvore binária e, se necessário, sugerir ou aplicar rotações para corrigir possíveis desbalanceamentos. A implementação considera dois cenários principais de desbalanceamento: para a esquerda e para a direita, indicando ao usuário qual rotação é mais adequada para cada caso.
 
-A sugestão de rotações é baseada no cálculo do **fator de balanceamento** para cada nó da árvore. O fator de balanceamento é a diferença entre as alturas da subárvore esquerda e da subárvore direita. Este valor determina se a árvore está equilibrada ou se uma rotação é necessária.
+A função utiliza as alturas das subárvores para determinar se um nó está desbalanceado:
+1. **Desbalanceamento para a Esquerda**: O nó possui um desnível à esquerda, identificado quando a diferença entre a altura da subárvore esquerda e a direita é igual a 2:
+   - Se o desbalanceamento for causado pela subárvore esquerda do nó esquerdo, a rotação sugerida é **uma rotação simples à direita**.
+   - Caso contrário, se o desbalanceamento for causado pela subárvore direita do nó esquerdo, a sugestão será uma **rotação dupla esquerda-direita**.
+   
+2. **Desbalanceamento para a Direita**: O nó possui um desnível à direita, identificado quando a diferença entre a altura da subárvore direita e a esquerda é igual a 2:
+   - Se o desbalanceamento for causado pela subárvore direita do nó direito, a rotação sugerida é **uma rotação simples à esquerda**.
+   - Caso contrário, se o desbalanceamento for causado pela subárvore esquerda do nó direito, a sugestão será uma **rotação dupla direita-esquerda**.
 
-- **Fator de Balanceamento**:
-  - Valores aceitáveis: `-1`, `0`, `1`.
-  - Valores fora deste intervalo indicam desbalanceamento:
-    - **Fator < -1**: A subárvore direita é mais profunda.
-    - **Fator > 1**: A subárvore esquerda é mais profunda.
+A função `sugerirRotacoes` é projetada para ter os seguintes parâmetros:
+- `root`: Raiz da árvore ou subárvore a ser analisada.
+- `aux`: Contador de rotações realizadas ou sugeridas.
+- `balancear`: Um `bool` que define se a função deve apenas sugerir rotações ou também aplicá-las diretamente.
+- `printar`: Um `bool` que indica se as mensagens explicando as rotações devem ser exibidas ao usuário.
 
-- **Identificação de Rotações**:
-  - Com base no fator de balanceamento do nó pai e dos nós filhos, as rotações sugeridas podem ser:
-    - **Rotação Simples à Esquerda**:
-      - Ocorre quando a subárvore direita está desbalanceada e o fator de balanceamento do nó filho direito é maior ou igual a `0`.
-    - **Rotação Simples à Direita**:
-      - Ocorre quando a subárvore esquerda está desbalanceada e o fator de balanceamento do nó filho esquerdo é menor ou igual a `0`.
-    - **Rotação Dupla à Esquerda**:
-      - Ocorre quando a subárvore direita está desbalanceada e o fator de balanceamento do nó filho direito é negativo.
-    - **Rotação Dupla à Direita**:
-      - Ocorre quando a subárvore esquerda está desbalanceada e o fator de balanceamento do nó filho esquerdo é positivo.
+A função faz uso das seguintes operações auxiliares para realizar os ajustes:
+- **`rotacaoDireita`**: Realiza uma rotação simples à direita em um nó desbalanceado, deslocando sua subárvore esquerda para a posição do nó.
+- **`rotacaoEsquerda`**: Realiza uma rotação simples à esquerda, deslocando sua subárvore direita para a posição do nó.
 
-
-A função `sugerirRotacoes` percorre a árvore, recalculando a altura de cada nó e verificando os fatores de balanceamento. Caso um nó esteja desbalanceado, a função identifica o tipo de rotação necessária e exibe uma mensagem no console, indicando:
-- O nó desbalanceado.
-- O tipo de rotação sugerida (simples ou dupla).
-- A subárvore onde a rotação deve ser aplicada.
-
-#### Exemplo de Execução
-
-Considere a seguinte sequência de inserções: `30`, `20`, `10`.
-
-1. Após inserir o valor `10`:
-   - O fator de balanceamento do nó `30` será `2` (desbalanceado).
-   - A subárvore esquerda do nó `30` (raiz) estará mais profunda.
-   - O fator de balanceamento do nó `20` (filho esquerdo) será `1`.
-
-**Sugestão**: **Rotação Simples à Direita no nó `30`**.
-
-A árvore resultante será balanceada:
-
-```
-        20
-       /  \
-      10   30
-```
-
-A funcionalidade de sugestão de rotações é crucial para manter a árvore balanceada, garantindo:
-- Operações eficientes de busca, inserção e remoção.
-- Melhor visualização e entendimento do balanceamento das árvores AVL.
-- Uma ferramenta pedagógica para demonstrar como as rotações influenciam na estrutura da árvore.
+Essa abordagem promove o balanceamento eficiente da árvore, seja por meio de sugestões ao usuário ou pela aplicação automática das rotações, facilitando a visualização e manipulação da estrutura.
 
 
 ### Caminho Mais Longo
@@ -287,8 +255,6 @@ A aplicação permite que o usuário visualize o **caminho mais longo** da raiz 
 4. **Resultado**:
    - Após visitar todos os nós, o caminho mais longo é retornado e exibido ao usuário como uma sequência de valores.
 
-#### Exemplo de Execução
-
 Considere a seguinte árvore binária:
 
 ```
@@ -304,95 +270,82 @@ Considere a seguinte árvore binária:
 3. Comparando com o ramo direito (`10 -> 15`), o caminho mais longo é determinado como `10 -> 5 -> 3`.
 
 Este recurso é útil para identificar possíveis desbalanceamentos na árvore e compreender sua profundidade estrutural.
-
 ### Análise de Crescimento
 
-A **análise de crescimento**, implementada na função [`analiseDeCrescimento`](src/problema2.cpp), avalia o impacto do balanceamento na altura das árvores e, por consequência, na eficiência das operações realizadas. Essa análise utiliza funções específicas para gerar duas configurações de árvores: **tortas** (completamente desbalanceadas) e **parcialmente balanceadas**, permitindo uma comparação clara entre os dois cenários.
+A função [`analiseDeCrescimento`](src/problema2.cpp) foi implementada para comparar o desempenho de árvores tortas (totalmente desbalanceadas) com árvores quase equilibradas, avaliando como o balanceamento impacta a altura da árvore e o custo de operações como busca, inserção e remoção.
 
-#### Funcionamento
+#### Árvores Tortas
 
-1. **Geração de Árvores**:
-   - **Árvore Torta**:
-     - A função [`gerarArvoreTorta`](src/problema2.cpp) cria uma árvore completamente desbalanceada, onde os valores são inseridos em ordem crescente. Esse processo faz com que cada novo nó seja adicionado ao lado direito da árvore, resultando em uma estrutura semelhante a uma lista encadeada.
-     - **Implementação**:
-       - Um vetor de valores inteiros é preenchido sequencialmente de 1 até \( m \), onde \( m \) representa o tamanho da árvore. Cada valor será posteriormente inserido na árvore, sempre no lado direito, devido à ordem crescente dos dados.
-       - Exemplo para \( m = 5 \):
-         ```
-         Vetor gerado: [1, 2, 3, 4, 5]
-         Árvore resultante:
-         1
-          \
-           2
-            \
-             3
-              \
-               4
-                \
-                 5
-         ```
+As árvores tortas são geradas pela função [`gerarArvoreTorta`](src/problema2.cpp). Essa árvore é criada inserindo os elementos em ordem crescente, o que resulta em uma árvore completamente desbalanceada, onde todos os nós são inseridos como filhos à direita de seus pais.
 
-   - **Árvore Parcialmente Balanceada**:
-     - A função [`gerarArvoreDesbalanceada`](src/problema2.cpp) simula uma árvore mais equilibrada, mas não completamente balanceada. Os valores são distribuídos em três blocos:
-       - **Subárvore mais profunda (lado esquerdo)**: contém os menores valores, inseridos de forma decrescente para formar uma estrutura densa.
-       - **Nível central (base do balanceamento)**: os valores intermediários são adicionados em ordem crescente, garantindo uma estrutura centralizada.
-       - **Subárvore mais rasa (lado direito)**: contém os maiores valores, também inseridos em ordem crescente.
-     - **Implementação**:
-       - O tamanho da subárvore mais profunda é calculado dividindo \( m \) por um fator de ajuste (neste caso, \( 2.5 \)). Isso distribui os valores entre os três blocos mencionados.
-       - Para cada bloco, um laço preenche o vetor com os valores correspondentes. O resultado é um vetor que, ao ser inserido na árvore, cria uma configuração próxima ao equilíbrio.
-       - Exemplo para \( m = 15 \):
-         Vetor gerado: [6, 5, 4, 3, 2, 1, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-         Árvore resultante:
+- **Exemplo**: Para `m = 5`, a árvore gerada seria:
 
-         ```
-                      7
-                 /        \
-                /          \
-               3            11
-            /    \        /    \
-           1      5      9     13
-          /  \   / \    / \    / \
-         2   4  6   8  10  12 14 15
-        ```
+```
+        1
+         \
+          2
+           \
+            3
+             \
+              4
+               \
+                5
+```
 
-2. **Construção e Inserção**:
-   - Ambos os vetores gerados são utilizados para construir as árvores. Os valores são inseridos sequencialmente por meio da função [`inserirNo`](src/problema2.cpp), que insere cada elemento na árvore respeitando as regras de uma árvore binária de busca.
 
-3. **Cálculo das Alturas**:
-   - Após a construção, a altura de cada árvore é calculada pela função [`calcularAltura`](src/problema2.cpp), que realiza um caminhamento recursivo até o nó mais profundo, retornando a altura máxima.
+Este tipo de árvore maximiza a altura, pois cada novo nó é inserido como filho direito, criando uma estrutura linear.
 
-4. **Depreciação de Desempenho**:
-   - A função [`analisando`](src/problema2.cpp) calcula a diferença percentual entre as alturas das duas árvores, permitindo observar como o balanceamento influencia a eficiência:
-     \[
-     \text{Depreciação} = \frac{\text{Altura Torta} - \text{Altura Equilibrada}}{\text{Altura Torta}} \times 100
-     \]
+#### Árvores Quase Equilibradas
 
-5. **Iteração para Diferentes Tamanhos**:
-   - A função [`analiseDeCrescimento`](src/problema2.cpp) realiza o processo para tamanhos de árvore variando de \( m = 5 \) até \( m = 1000 \), registrando a depreciação para cada tamanho e exibindo os resultados.
+As árvores quase equilibradas são geradas pela função [`gerarArvoreQseEquilibrada`](src/problema2.cpp). Nesse caso, os elementos são inseridos de forma crescente, mas antes de cada inserção, é verificada a diferença entre a altura máxima e mínima da árvore. Caso essa diferença ultrapasse um limite pré-definido (calculado com base em `m`), a função [`sugerirRotacoes`](src/problema2.cpp) aplica as rotações necessárias, equilibrando a árvore.
 
----
+- **Exemplo**: Para `m = 7` e `n = 3` (onde `n` é o limite máximo de desequilíbrio permitido), a árvore pode ser gerada de forma equilibrada:
 
-#### Por que as Árvores são Geradas Dessa Forma?
+```
+        4
+       / \
+      2   6
+     / \ / \
+    1  3 5  7
+```
 
-- **Árvore Torta**:
-  - Representa o **pior caso** para uma árvore binária de busca, destacando o impacto negativo de inserções sequenciais em ordem crescente.
-  - A altura da árvore cresce linearmente com o número de elementos (\( O(n) \)).
 
-- **Árvore Parcialmente Balanceada**:
-  - Busca simular uma distribuição mais próxima de uma árvore equilibrada, sem utilizar algoritmos específicos de balanceamento, como em uma árvore AVL.
-  - A configuração resultante tem uma altura significativamente menor do que a da árvore torta, mas ainda maior do que a de uma árvore balanceada ideal.
+Essa árvore apresenta um equilíbrio controlado, onde o desequilíbrio é corrigido automaticamente antes que a altura da árvore aumente consideravelmente.
 
----
+#### Alterações no Processo de Geração da Árvore Quase Equilibrada
 
-#### Importância da Análise
+A função `gerarArvoreQseEquilibrada` foi ajustada para verificar o desequilíbrio **apenas até `m/2`**. Isso significa que o balanceamento da árvore ocorre durante a primeira metade da inserção dos nós. Durante esse processo, se a diferença entre a altura máxima e mínima da árvore exceder o limite `n`, a função aplica as rotações necessárias. Após `m/2`, o balanceamento não é mais verificado, permitindo que a árvore seja balanceada de forma gradual.
 
-A análise de crescimento destaca os benefícios de estruturas balanceadas:
-- Árvores tortas apresentam um desempenho significativamente inferior, com tempo de busca, inserção e remoção diretamente proporcional ao número de elementos.
-- Árvores parcialmente balanceadas demonstram uma melhoria significativa na eficiência, com alturas mais próximas ao ideal, reduzindo o tempo de execução das operações.
+Essa abordagem tem como objetivo:
+1. **Evitar rotações excessivas** no início, quando a árvore ainda está em sua forma mais "torta".
+2. **Controlar o nível de balanceamento** de forma mais eficiente ao longo do processo de inserção, limitando o número de rotações realizadas, mas ainda garantindo que a árvore não se torne excessivamente desbalanceada.
 
-A implementação das funções para geração das árvores e cálculo da depreciação reforça a importância do balanceamento, mesmo em casos onde a otimização completa (como AVL) não é aplicável.
+O parâmetro `n` é calculado a partir do número de nós `m`:
 
-<p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+$$ n = \frac{m}{3} $$
 
+Aqui, `m` é o número de nós da árvore. O valor de `n` foi ajustado para ser mais simples e reflete uma abordagem mais tolerante ao desequilíbrio. Essa constante ajusta o nível de balanceamento, permitindo uma árvore que não seja completamente balanceada (como uma árvore AVL), mas que ainda simule um comportamento razoavelmente equilibrado, com uma tolerância ao desbalanceamento.
+
+- **Exemplo**: Para `m = 10`, o valor de `n` será `3`.
+- Para `m = 100`, o valor de `n` será `33`.
+
+#### Comparação de Desempenho
+
+A função `analiseDeCrescimento` compara as alturas das árvores tortas e quase equilibradas e calcula a **depreciação** da altura devido ao balanceamento, utilizando a fórmula:
+
+$$ \text{Depreciação} = \left( \frac{\text{Altura Torta} - \text{Altura Equilibrada}}{\text{Altura Torta}} \right) \times 100 $$
+
+Ou seja, a depreciação mede quanto a altura de uma árvore torta é reduzida quando ela é balanceada (com as rotações aplicadas). A análise é feita para diferentes valores de `m`, que variam de 3 a 10.000, e os resultados são armazenados em um vetor de pares para análise posterior.
+
+#### Exportação dos Resultados e Geração de Gráficos
+
+Os resultados da comparação são exibidos no console e também exportados para um arquivo CSV em [`datasets/analise.csv`](datasets/analise.csv) através da função [`salvarArquivo`](src/problema2.cpp).
+
+Além disso, um script Python ([`plot.py`](src/plot.py)) é executado para gerar gráficos a partir desses dados, ilustrando claramente a diferença de altura entre as árvores tortas e quase equilibradas. Isso permite visualizar o impacto do balanceamento na estrutura da árvore, e consequentemente, no desempenho de operações como busca e inserção.
+
+A análise de crescimento demonstra de forma clara como o balanceamento das árvores influencia diretamente na altura das estruturas. As árvores tortas, ao crescerem, acabam se tornando ineficientes devido à sua altura excessiva, o que aumenta o custo de operações. Já as árvores quase equilibradas, mesmo com um leve desequilíbrio controlado, mantêm um desempenho mais eficiente.
+
+O gráfico gerado pelo script Python ajuda a visualizar o impacto das rotações e do balanceamento no desempenho das árvores, proporcionando uma comparação eficiente entre os dois tipos de árvores para diferentes tamanhos de entrada.
 
 </div>
 
@@ -402,51 +355,60 @@ A implementação das funções para geração das árvores e cálculo da deprec
 
 <div align="justify">
 
-  O projeto foi implementado em **C++**, utilizando a IDE **Visual Studio Code** para o desenvolvimento do código-fonte e a organização modular dos arquivos. A estrutura foi dividida em diferentes classes e arquivos de cabeçalho, responsáveis pela implementação de árvores binárias e árvores AVL, bem como pela interação com o usuário por meio de um menu dinâmico. Essa abordagem permitiu a separação de responsabilidades, maior clareza do código e flexibilidade para futuras expansões.
+O projeto foi desenvolvido em **C++** utilizando a IDE **Visual Studio Code** para o desenvolvimento do código-fonte e organização modular dos arquivos. Ele faz uso de um menu interativo para facilitar a interação do usuário com as árvores binárias de busca. Além disso, foi utilizado o **Python** para gerar visualizações gráficas baseadas nos dados obtidos durante a análise de crescimento.
 
-  ### 📁 Arquivos 
+### 📁 Arquivos
 
+O projeto está estruturado no diretório principal, contendo subdiretórios para armazenar os arquivos de código-fonte, os datasets e os gráficos gerados. A seguir, estão descritos os arquivos principais e suas responsabilidades:
 
+- **[main.cpp](src/main.cpp)**: Arquivo principal que implementa o menu interativo, permitindo ao usuário realizar operações de inserção, remoção, análise de crescimento e sugestão de rotações em árvores binárias.
+- **[problema2.hpp](src/problema2.hpp)** e **[problema2.cpp](src/problema2.cpp)**: Contêm as definições e implementações das funções auxiliares para manipulação de árvores binárias, incluindo análise de crescimento, sugestão de rotações e exibição do caminho mais longo.
+- **[plot.py](src/plot.py)**: Script Python responsável por gerar gráficos baseados nos dados de crescimento armazenados no arquivo [`datasets/analise.csv`](datasets/analise.csv).
+- **[makefile](makefile)**: Arquivo de automação que define as regras para compilar o projeto.
+- **[make.sh](make.sh)**: Script de compilação que executa o `makefile` e gera o executável `app`.
 
-  
+### 📂 Estrutura do Projeto
 
-  A estrutura do projeto está organizada da seguinte forma:
+A estrutura do projeto foi organizada de forma a separar os arquivos por funcionalidades, mantendo o código modular e fácil de expandir. A seguir, está a hierarquia dos arquivos e diretórios:
 
   ```.
-  ├── build
-  │ ├── objects/src
-  │ │ ├── main.o
-  │ │ └── problema1.o
-  | └── app
+  .
+  ├── datasets
+  │   ├── analise.csv          
+  │   └── graphs             
+  │       └── analiseDeCrescimento.png
   ├── src
-  │ ├── main.cpp
-  │ ├── problema1.cpp
-  │ └── problema1.hpp
-  ├── make.sh
-  ├── makefile
-  └── README.md
+  │   ├── main.cpp             
+  │   ├── problema2.cpp       
+  │   ├── problema2.hpp       
+  │   └── plot.py    
+  ├── make.sh        
+  ├── makefile                 
+  └── README.md              
   ```
-
-</div>
-
-<p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
 
 ### 📚 Bibliotecas
 
-<div align="justify">
+O projeto utiliza bibliotecas da **STL (Standard Template Library)** do C++, que fornecem funcionalidades como vetores, strings, algoritmos e manipulação de arquivos. Além disso, no script Python, foram usadas bibliotecas para visualização gráfica e ajuste de curvas.
 
-  As bibliotecas utilizadas na implementação do **Problema 1** são as seguintes:
+#### Bibliotecas em C++
 
-  - [bits/stdc++.h](https://www.geeksforgeeks.org/bitsstdc-h-c-include/): biblioteca que inclui todas as bibliotecas padrão da linguagem C++. Veja abaixo as bibliotecas que usamos da bits/stdc++.h:
-    - **[iostream](https://www.cplusplus.com/reference/iostream/)**: Para operações de entrada e saída no console.
-    - **[vector](https://www.cplusplus.com/reference/vector/)**: Para manipulação de vetores dinâmicos.
-    - **[string](https://www.cplusplus.com/reference/string/)**: Para manipulação de cadeias de caracteres.
-    - **[sstream](https://www.cplusplus.com/reference/sstream/)**: Para processamento de strings e conversão entre tipos.
-    - **[algorithm](https://www.cplusplus.com/reference/algorithm/)**: Para algoritmos padrão como `std::find`, `std::remove_if`, entre outros.
-    - **[utility](https://www.cplusplus.com/reference/utility/)**: Para a utilização de estruturas como `std::pair`.
-    - **[memory](https://cplusplus.com/reference/memory/)**: Para gerência de ponteiros inteligentes, como `std::shared_ptr`.
+- **[iostream](https://www.cplusplus.com/reference/iostream/)**: Para operações de entrada e saída.
+- **[vector](https://www.cplusplus.com/reference/vector/)**: Para manipulação de vetores dinâmicos.
+- **[string](https://www.cplusplus.com/reference/string/)**: Para manipulação de strings.
+- **[fstream](https://www.cplusplus.com/reference/fstream/)**: Para manipulação de arquivos.
+- **[cmath](https://www.cplusplus.com/reference/cmath/)**: Para cálculos matemáticos, como logaritmos.
+- **[algorithm](https://www.cplusplus.com/reference/algorithm/)**: Para algoritmos padrão.
 
-  Essas bibliotecas foram escolhidas para simplificar e modularizar o desenvolvimento do projeto, aproveitando os recursos oferecidos pela biblioteca padrão do C++.
+#### Bibliotecas em Python
+
+- **[pandas](https://pandas.pydata.org/)**: Para manipulação de dados no arquivo CSV.
+- **[matplotlib](https://matplotlib.org/)**: Para geração de gráficos.
+- **[numpy](https://numpy.org/)**: Para cálculos matemáticos e ajuste de curvas.
+- **[scipy](https://scipy.org/)**: Para ajuste de regressão logarítmica.
+
+Essa estrutura modular e o uso de bibliotecas otimizam o desenvolvimento, tornam o código mais legível e permitem a fácil integração de novos recursos.
+
 
 </div>
 
@@ -456,41 +418,342 @@ A implementação das funções para geração das árvores e cálculo da deprec
 
 <div align="justify">
 
-Para a implementação do problema, utilizamos quatro arquivos de cabeçalho principais, responsáveis por definir as classes e estruturas utilizadas no projeto. Cada arquivo foi projetado para modularizar as funcionalidades, promovendo a reutilização de código e a clareza na organização. A seguir, detalharemos todos os métodos e atributos de cada arquivo de cabeçalho.
+Para a implementação do problema, utilizamos o arquivo de cabeçalho `problema2.hpp`, que organiza as principais funções e estruturas necessárias para manipulação e análise das árvores. Este arquivo fornece suporte à modularidade do código, promovendo a reutilização e a separação lógica de responsabilidades. Abaixo, são detalhadas as definições e estruturas presentes no arquivo de cabeçalho.
 
 #### Arquivo [problema2.hpp](src/problema2.hpp)
 
+O arquivo `problema2.hpp` define funções auxiliares, estruturas de dados e algoritmos que são essenciais para as operações no contexto das árvores binárias. Não há classes, mas funções e estruturas que tratam diretamente da manipulação de árvores por meio de nós básicos.
 
+- **[`struct Node`](src/problema2.hpp)**: Estrutura que define um nó de uma árvore binária:
+  - **`int data;`**: Representa o valor armazenado no nó.
+  - **`Node* left;`**: Ponteiro para o filho esquerdo do nó.
+  - **`Node* right;`**: Ponteiro para o filho direito do nó.
+
+- **Funções Públicas**:
+  - **[`Node* inserirNo(Node* root, int valor)`](src/problema2.hpp)**:
+    - Insere um valor na árvore binária.
+    - Garante que a árvore permanece uma estrutura de busca válida.
+  - **[`Node* removerNo(Node* root, int valor)`](src/problema2.hpp)**:
+    - Remove um valor específico da árvore binária.
+    - Lida com os três casos de remoção em árvores binárias:
+      1. Nó folha.
+      2. Nó com um filho.
+      3. Nó com dois filhos (substituição pelo nó mínimo da subárvore direita).
+  - **[`int calcularAltura(Node* root)`](src/problema2.hpp)**:
+    - Calcula a altura da árvore.
+    - Retorna a maior profundidade entre o nó raiz e seus descendentes.
+  - **[`int calcularMenorAltura(Node* root)`](src/problema2.hpp)**:
+    - Calcula a menor altura da árvore.
+    - Útil para análises de balanceamento.
+  - **[`void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar)`](src/problema2.hpp)**:
+    - Analisa o balanceamento da árvore e sugere rotações para corrigir desbalanceamentos.
+    - Pode aplicar rotações (se habilitado) e fornece feedback visual ao usuário.
+  - **[`Node* rotacaoDireita(Node* nó)`](src/problema2.hpp)**:
+    - Realiza uma rotação simples à direita para corrigir desbalanceamento.
+  - **[`Node* rotacaoEsquerda(Node* nó)`](src/problema2.hpp)**:
+    - Realiza uma rotação simples à esquerda para corrigir desbalanceamento.
+  - **[`void mostrarCaminhoMaisLongo(Node* root)`](src/problema2.hpp)**:
+    - Identifica e exibe o caminho mais longo de um nó raiz até uma folha.
+  - **[`void prettyPrintTree(Node* root)`](src/problema2.hpp)**:
+    - Exibe a árvore de forma hierárquica com conectores visuais, facilitando a visualização do usuário.
+  - **[`std::vector<int> multiplasEntradas()`](src/problema2.hpp)**:
+    - Lê múltiplos valores de entrada do usuário, separados por vírgulas, e retorna um vetor de inteiros.
+  - **[`Node* gerarArvoreTorta(int m)`](src/problema2.hpp)**:
+    - Gera uma árvore "torta", inserindo valores em ordem crescente.
+    - Útil para análise de cenários desbalanceados.
+  - **[`Node* gerarArvoreQseEquilibrada(int m, int n)`](src/problema2.hpp)**:
+    - Gera uma árvore quase equilibrada, utilizando rotações para ajustar o balanceamento após inserções.
+    - `m`: Número total de nós na árvore.
+    - `n`: Diferença máxima permitida entre altura máxima e mínima.
+  - **[`void analiseDeCrescimento()`](src/problema2.hpp)**:
+    - Realiza uma análise de crescimento comparando árvores desbalanceadas e equilibradas.
+    - Salva os resultados em um arquivo CSV e plota gráficos.
 
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
-
 
 
 ### 📝 Funções Implementadas
 
 <div align="justify">
 
+As funções implementadas no projeto são responsáveis por realizar a manipulação das árvores binárias, incluindo inserção, remoção, cálculos de altura, sugestões de rotações e análises comparativas. A seguir, são apresentadas as funções implementadas no projeto, organizadas por arquivo fonte.
 
 </div>
 
 #### Arquivo [main.cpp](src/main.cpp)
 
-O arquivo principal `main.cpp` é responsável por inicializar o programa e gerenciar o fluxo de execução por meio de um menu interativo.
+O arquivo principal `main.cpp` é responsável por inicializar o programa e gerenciar o fluxo de execução por meio de um menu interativo. Ele utiliza as funções implementadas no arquivo `problema2.hpp` para realizar operações nas árvores.
 
-
+- **Método [`main()`](src/main.cpp)**:
+  1. Exibe um menu para o usuário com opções relacionadas às operações nas árvores.
+  2. Permite ao usuário inserir, remover valores, verificar balanceamento e realizar análises de crescimento.
+  3. Utiliza as funções do arquivo `problema2.hpp` para manipular as árvores de forma eficiente.
+  4. Finaliza o programa quando o usuário opta por sair.
 
 #### Arquivo [problema2.cpp](src/problema2.cpp)
 
+O arquivo `problema2.cpp` contém as implementações das funções declaradas em `problema2.hpp`. Ele é responsável por gerenciar as operações e análises relacionadas às árvores binárias.
 
+- **Método [`Node::Node(int valor)`](src/problema2.cpp)**:
+  - Construtor da estrutura `Node`, que inicializa um nó com um valor específico.
+
+- **Método [`Node* inserirNo(Node* root, int valor)`](src/problema2.cpp)**:
+  - Insere um valor na árvore binária de busca, garantindo que ela permaneça ordenada.
+  - Retorna o nó raiz atualizado após a inserção.
+
+- **Método [`Node* removerNo(Node* root, int valor)`](src/problema2.cpp)**:
+  - Remove um valor específico da árvore binária.
+  - Lida com os três casos clássicos de remoção:
+    1. Nó folha.
+    2. Nó com um filho.
+    3. Nó com dois filhos (substituição pelo menor valor na subárvore direita).
+
+- **Método [`Node* encontrarMinimo(Node* root)`](src/problema2.cpp)**:
+  - Encontra o nó com o menor valor na árvore, percorrendo a subárvore esquerda.
+
+- **Método [`int calcularAltura(Node* root)`](src/problema2.cpp)**:
+  - Calcula a altura máxima de uma árvore binária, retornando a profundidade do nó mais distante da raiz.
+
+- **Método [`int calcularMenorAltura(Node* root)`](src/problema2.cpp)**:
+  - Calcula a menor altura de uma árvore binária, retornando a profundidade do caminho mais curto da raiz até uma folha.
+
+- **Método [`void sugerirRotacoes(Node*& root, int& aux, bool balancear, bool printar)`](src/problema2.cpp)**:
+  - Analisa o balanceamento da árvore e sugere rotações (simples ou duplas) para corrigir desbalanceamentos.
+  - Pode aplicar as rotações automaticamente e imprime informações sobre o processo.
+
+- **Método [`Node* rotacaoDireita(Node* nó)`](src/problema2.cpp)**:
+  - Realiza uma rotação simples à direita, ajustando a árvore para corrigir desbalanceamentos.
+
+- **Método [`Node* rotacaoEsquerda(Node* nó)`](src/problema2.cpp)**:
+  - Realiza uma rotação simples à esquerda, ajustando a árvore para corrigir desbalanceamentos.
+
+- **Método [`void encontrarCaminhoMaisLongo(Node* root, std::vector<int>& caminhoAtual, std::vector<int>& caminhoMaisLongo)`](src/problema2.cpp)**:
+  - Identifica o caminho mais longo da raiz até uma folha, armazenando os valores dos nós visitados.
+
+- **Método [`void mostrarCaminhoMaisLongo(Node* root)`](src/problema2.cpp)**:
+  - Determina e exibe o caminho mais longo de um nó raiz até uma folha.
+
+- **Método [`void prettyPrintTree(Node* root)`](src/problema2.cpp)**:
+  - Imprime a árvore de forma hierárquica, facilitando a visualização do usuário.
+
+- **Método [`void printTreeHelper(Node* node, const std::string& prefix, bool isLeft)`](src/problema2.cpp)**:
+  - Método auxiliar para impressão da árvore de forma hierárquica.
+
+- **Método [`std::vector<int> multiplasEntradas()`](src/problema2.cpp)**:
+  - Permite ao usuário inserir múltiplos valores separados por vírgulas e retorna um vetor de inteiros.
+
+- **Método [`Node* gerarArvoreTorta(int m)`](src/problema2.cpp)**:
+  - Gera uma árvore desbalanceada ao inserir valores em ordem crescente.
+
+- **Método [`Node* gerarArvoreQseEquilibrada(int m, int n)`](src/problema2.cpp)**:
+  - Gera uma árvore quase equilibrada ao ajustar o balanceamento após inserções.
+  - Utiliza as funções de rotação para limitar a diferença entre a altura máxima e mínima.
+
+- **Método [`void analiseDeCrescimento()`](src/problema2.cpp)**:
+  - Realiza uma análise comparativa entre árvores desbalanceadas e quase equilibradas, calculando e exibindo a diferença de desempenho.
+  - Salva os resultados em um arquivo CSV e chama um script Python para plotar gráficos.
+
+- **Método [`void salvarArquivo(std::string nomeArquivo, std::vector<std::pair<int, double>> analise)`](src/problema2.cpp)**:
+  - Salva os resultados da análise de crescimento em um arquivo CSV.
+
+- **Método [`double analisando(Node* arvoreTorta, Node* arvoreQseEquilibrada)`](src/problema2.cpp)**:
+  - Calcula a depreciação de altura entre uma árvore desbalanceada e uma quase equilibrada.
+
+#### Arquivo [plot.py](src/plot.py)
+
+O arquivo `plot.py` é responsável por gerar gráficos a partir dos dados salvos em arquivos CSV. Ele utiliza a biblioteca **Matplotlib** para visualizar os resultados da análise de crescimento.
+
+- **Leitura de Dados**:
+  - Lê o arquivo `datasets/analise.csv`, que contém as informações sobre tamanhos de árvores e suas respectivas depreciações de altura.
+
+- **Geração de Gráficos**:
+  - Plota um gráfico de linha exibindo o impacto do tamanho da árvore na depreciação de altura.
+  - O gráfico apresenta eixos devidamente rotulados, título e legenda, proporcionando clareza visual.
+
+- **Exportação de Gráficos**:
+  - Salva o gráfico gerado em formato `.png` no diretório `output`.
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
+## 📊 Testes e Resultados
+
+<div align="justify">
+
+Para avaliar a eficiência do algoritmo implementado, foram realizados diversos testes envolvendo operações de inserção, remoção, exibição do caminho mais longo, sugestão de rotações e análise de crescimento. A seguir, são apresentados os resultados dos testes e os gráficos gerados a partir das execuções do programa.
+
+Os testes foram executados em uma árvore binária com um conjunto de dados específico. A seguir estão os testes realizados:
+
+### Testes  
+
+#### Inserção de Dados
+A inserção de dados foi realizada para avaliar a eficiência do algoritmo na construção da árvore binária.
+
+- Dados inseridos: {`88, 22, 45, 33, 22, 90, 27, 59, 13`}.
+
+A árvore foi construída com esses valores e os resultados das inserções foram registrados ao longo do processo. 
+
+As imagens a seguir mostram como a árvore evolui conforme os dados são inseridos:
+- **[`insercoes1.png`](images/insercoes1.png)**: A árvore inicial após a inserção dos primeiros valores.
+- **[`insercoes2.png`](images/insercoes2.png)**: A árvore após a inserção de mais valores, já mostrando um desbalanceamento visível.
+- **[`insercoes3.png`](images/insercoes3.png)**: A árvore finalizada com todos os valores inseridos, apresentando um desbalanceamento mais acentuado.
+
+
+![insercoes1](images/insercoes1.png)
+![insercoes2](images/insercoes2.png)
+![insercoes3](images/insercoes3.png)
+
+#### Remoção de Dados
+A remoção de dados foi realizada para avaliar a eficiência do algoritmo na exclusão de valores da árvore. 
+- Dados removidos: {`33, 90, 33, 45`}.
+
+Durante o teste de remoção, os dados foram removidos da árvore, com a árvore sendo reequilibrada automaticamente após cada remoção.
+
+As imagens a seguir mostram como a árvore se ajusta após cada remoção:
+- **[`remocoes1.png`](images/remocoes1.png)**: A árvore após a remoção do primeiro conjunto de valores, ainda desbalanceada.
+- **[`remocoes2.png`](images/remocoes2.png)**: A árvore após a remoção final, já com uma estrutura mais organizada.
+
+![remocoes1](images/remocoes1.png)
+![remocoes2](images/remocoes2.png)
+
+#### Exibição do Nível Máximo
+A função de **nível máximo** foi executada, mostrando o nível máximo da árvore atual. O nível máximo é a maior distância entre a raiz e o nó mais distante.
+
+A imagem a seguir ilustra o nível máximo da árvore:
+- **[`nivelMaximo.png`](images/nivelMaximo.png)**: Exibe a árvore com o cálculo do nível máximo, que ajuda a avaliar o balanceamento da estrutura.
+
+![nivelMaximo](images/nivelMaximo.png)
+
+#### Sugestão de Rotações
+Durante o teste, a opção de balanceamento foi ativada para sugerir e aplicar rotações conforme necessário. O balanceamento ocorre automaticamente quando a diferença entre as subárvores da árvore binária ultrapassa um limite.
+
+As imagens a seguir mostram as sugestões de rotações e os ajustes realizados na árvore:
+- **[`rotacoes1.png`](images/rotacoes1.png)**: Exibe a árvore antes das rotações, onde o desbalanceamento é evidente.
+- **[`rotacoes2.png`](images/rotacoes2.png)**: Mostra a árvore após a aplicação das rotações, com a estrutura mais balanceada.
+
+![rotacoes1](images/rotacoes1.png)
+![rotacoes2](images/rotacoes2.png)
+
+#### Exibição do Caminho Máximo
+A função de **caminho máximo** foi executada, mostrando o maior caminho da árvore atual. O caminho máximo é a distância da raiz até o nó mais distante, refletindo a altura total da árvore.
+
+A imagem a seguir ilustra o caminho mais longo da árvore:
+- **[`maiorCaminho.png`](images/maiorCaminho.png)**: Exibe o maior caminho, que é útil para calcular a altura da árvore e entender o impacto do balanceamento nas operações de busca.
+
+![maiorCaminho](images/maiorCaminho.png)
+
+6. **Análise de Crescimento**:
+    - O teste da **Análise de Crescimento** foi realizado para comparar o desempenho de árvores balanceadas e desbalanceadas. Durante a execução, a função avaliou como a altura das árvores cresceu à medida que a árvore se desbalanceava.
+    - As imagens a seguir ilustram a evolução das árvores e o impacto do balanceamento:
+    - **[`analiseDeCrescimento1.png`](images/analiseDeCrescimento1.png)**: Mostra a comparação da altura das árvores conforme o número de nós aumenta. As árvores mais desbalanceadas têm uma altura maior.
+    - **[`analiseDeCrescimento2.png`](images/analiseDeCrescimento2.png)**: Exibe a primeira parte da análise com a árvore desbalanceada, mostrando o crescimento desproporcional da altura.
+    - **[`analiseDeCrescimento3.png`](images/analiseDeCrescimento3.png)**: Exibe a árvore mais balanceada, com uma altura significativamente menor.
+    - **[`analiseDeCrescimento4.png`](images/analiseDeCrescimento4.png)**: Mostra a diferença na altura entre a árvore desbalanceada e a quase equilibrada.
+    - **[`analiseDeCrescimento5.png`](images/analiseDeCrescimento5.png)**: O gráfico final mostrando a depreciação da altura das árvores, com o impacto visual do balanceamento.
+  
+    ![analiseDeCrescimento1](images/analiseDeCrescimento1.png)
+    ![analiseDeCrescimento2](images/analiseDeCrescimento2.png)
+    ![analiseDeCrescimento3](images/analiseDeCrescimento3.png)
+    ![analiseDeCrescimento4](images/analiseDeCrescimento4.png)
+    ![analiseDeCrescimento5](images/analiseDeCrescimento5.png)
+
+## 📊 Análise de Resultados
+
+<div align="justify">
+
+### Análise de Crescimento
+
+A **Análise de Crescimento** foi realizada para comparar o desempenho de árvores desbalanceadas e quase equilibradas, com ênfase em como o balanceamento impacta na altura da árvore e, consequentemente, no desempenho das operações. A função de análise de crescimento foi executada em dois testes distintos, com os seguintes conjuntos de dados:
+
+- **Teste 1**: Dados inseridos de `3` a `1000`.
+- **Teste 2**: Dados inseridos de `3` a `10000`.
+
+As imagens geradas durante esses testes mostram o comportamento do crescimento das árvores ao longo do processo de inserção e balanceamento.
+
+#### Testes Realizados:
+
+- **Teste 1 - Dados de 3 a 1000**:
+  - No primeiro teste, foram inseridos dados variando de `3` a `1000`, e o gráfico gerado, chamado **[`analiseDeCrescimento1000.png`](images/analiseDeCrescimento1000.png)**, mostra como a altura da árvore aumentou conforme os dados foram sendo inseridos. Observamos um comportamento logarítmico, onde o crescimento da altura da árvore se estabiliza à medida que o número de nós cresce, o que indica que o balanceamento das árvores quase equilibradas ajudou a manter a altura sob controle. O gráfico mostra a diferença de altura entre a árvore desbalanceada (torta) e a quase equilibrada, onde a primeira apresenta um aumento exponencial da altura enquanto a segunda se mantém mais controlada.
+
+  ![analiseDeCrescimento1000](images/analiseDeCrescimento1000.png)
+
+- **Teste 2 - Dados de 3 a 10000**:
+  - No segundo teste, os dados variaram de `3` a `10000`. O gráfico **[`analiseDeCrescimento10000.png`](images/analiseDeCrescimento10000.png)** revela um comportamento semelhante, com a altura das árvores aumentando de forma controlada, mesmo para conjuntos de dados maiores. A medida que o número de nós cresce, a diferença de altura entre as árvores desbalanceadas e as quase equilibradas permanece significativa, embora os valores de depreciação não ultrapassem 34%, como observado em ambos os testes. Esse comportamento reforça a eficácia do balanceamento na manutenção de uma estrutura eficiente, mesmo em grandes volumes de dados.
+
+  ![analiseDeCrescimento10000](images/analiseDeCrescimento10000.png)
+
+### Comportamento Logarítmico
+
+A análise dos gráficos mostra que, embora as árvores desbalanceadas cresçam em altura de forma exponencial, o comportamento das árvores **quase equilibradas** segue uma tendência logarítmica. Isso significa que, à medida que o número de nós aumenta, o impacto do balanceamento ainda é significativo, mas não tão forte quanto em árvores balanceadas automaticamente (como AVL). O comportamento logarítmico ocorre porque, mesmo sem balanceamento automático, a árvore mantém um nível de equilíbrio razoável durante a primeira metade das inserções.
+
+O **comportamento logarítmico** reflete a eficácia do balanceamento parcial em manter a árvore eficiente, mesmo em entradas grandes, o que é uma das principais vantagens de se ter uma árvore "quase balanceada", mesmo sem usar um balanceamento automático completo.
+
+#### Explicação do Comportamento Logarítmico
+
+1. **Árvores Quase Equilibradas (Sem Balanceamento Automático)**:
+   - A árvore não é balanceada automaticamente, mas **aplica rotações** durante a primeira metade das inserções (`m/2`). Isso faz com que ela não cresça de maneira descontrolada. A altura da árvore cresce de forma **mais controlada** em comparação com uma árvore desbalanceada, mas ainda não atinge a eficiência de uma árvore balanceada, como uma AVL.
+   - O parâmetro `n = m/3` define a **tolerância ao desbalanceamento**. Quando a diferença entre a altura máxima e mínima da árvore excede esse valor, a árvore aplica rotações, tentando manter o balanceamento dentro de um nível razoável. Portanto, ao contrário de uma árvore completamente desbalanceada, a árvore **quase equilibrada** mantém uma altura mais controlada, mas não chega a ser logaritmica como uma árvore AVL.
+   
+2. **Comportamento em Árvore Torta (Desbalanceada)**:
+   - Em uma **árvore torta**, onde as inserções ocorrem de forma ordenada (como uma lista), a árvore cresce **linearmente**. A cada inserção, o novo nó é adicionado como um filho do nó anterior, criando um caminho longo, como se fosse uma lista encadeada. Isso significa que a altura da árvore aumenta de forma **linear**, ou seja, a altura será igual ao número de nós `N` (ou seja, altura `N`).
+   - Isso resulta em uma estrutura muito ineficiente para operações de busca, pois você precisa percorrer toda a altura da árvore para encontrar um nó, o que aumenta o custo de operações como busca e inserção para **O(N)**.
+
+3. **Árvores Quase Equilibradas e Redução de Altura**:
+   - Quando os dados são inseridos na árvore quase equilibrada, ela tenta manter o balanceamento de forma gradual. Ou seja, durante as primeiras inserções, ela faz ajustes para evitar desbalanceamento excessivo, mas após o meio das inserções, ela **não tenta mais balancear automaticamente**, permitindo que a árvore cresça de maneira mais flexível, mas ainda sim com uma altura menor do que a de uma árvore torta.
+   - Mesmo que a árvore não seja completamente balanceada, o impacto das inserções controladas mantém a altura da árvore significativamente **menor** do que a de uma árvore desbalanceada.
+
+4. **Por que o Crescimento é Logarítmico?**:
+   - A chave para entender o comportamento logarítmico está no conceito de **divisão parcial** e **controle de balanceamento**. Durante a primeira metade das inserções, a árvore tenta balancear as subárvores, garantindo que a altura não aumente de forma tão rápida. 
+   - O processo de inserção é controlado pela tolerância `n`, que impede que a árvore se desbalanceie excessivamente. Esse tipo de abordagem permite que a árvore cresça de maneira mais controlada e eficiente, sem o custo computacional de um balanceamento automático completo (como ocorre nas árvores AVL).
+   
+5. **Impacto do Comportamento Logarítmico**:
+   - Esse comportamento tem um impacto direto na eficiência das operações. Como a altura da árvore é controlada durante as inserções, operações como **inserção**, **remoção** e **busca** em uma árvore quase equilibrada têm complexidade **O(log N)**, embora não tão eficiente quanto uma árvore AVL, ainda apresenta uma melhoria significativa em comparação com uma árvore desbalanceada.
+   - Em contraste, operações em uma árvore desbalanceada, como uma árvore torta, têm complexidade **O(N)**, o que torna essas operações muito mais lentas à medida que o número de elementos aumenta.
+
+
+### Depreciação de Altura entre Árvores
+
+A **depreciação de altura** entre uma árvore torta (desbalanceada) e uma árvore quase equilibrada foi analisada para avaliar o impacto do balanceamento nas operações de busca e inserção. A depreciação foi calculada como a diferença relativa entre as alturas das duas árvores, expressa como:
+
+$$
+\text{Depreciação} = \left( \frac{\text{Altura da Árvore Torta} - \text{Altura da Árvore Equilibrada}}{\text{Altura da Árvore Torta}} \right) \times 100
+$$
+
+#### Comportamento da Depreciação
+
+A árvore torta, ao ser construída com dados em ordem crescente ou decrescente, resulta em um crescimento exponencial da altura. Em contraste, a árvore quase equilibrada, construída com inserções mais distribuídas e balanceamento parcial até a metade das inserções, mantém uma altura significativamente menor. No entanto, o valor da depreciação pode variar dependendo de como as árvores são geradas.
+
+1. **Valores Típicos de Depreciação**:
+   - Durante os testes realizados, tanto com o máximo de `1000` quanto com `10000` nós, a maioria dos valores de depreciação ficou entre **32% e 34%**. Isso ocorre porque, embora a árvore quase equilibrada não seja perfeitamente balanceada, ela ainda possui uma estrutura mais eficiente do que a árvore torta, que cresce descontroladamente. O balanceamento parcial permite que a árvore quase equilibrada mantenha sua altura razoavelmente baixa, resultando em uma depreciação moderada.
+
+2. **Variação da Depreciação com a Configuração da Árvore**:
+   - A depreciação observada pode variar bastante dependendo da distribuição dos dados e da estratégia de balanceamento aplicada:
+     - Em alguns testes manuais, quando a árvore quase equilibrada ficou mais desbalanceada (por exemplo, com inserções sequenciais ou menos controladas), a depreciação chegou a **98%**, refletindo a altura excessiva da árvore torta em comparação com a quase equilibrada.
+     - Em outros casos, quando a árvore quase equilibrada foi construída de forma mais próxima de um balanceamento ideal, a depreciação caiu para **13%**, mostrando o impacto de uma inserção bem distribuída e mais próxima de uma árvore balanceada.
+
+3. **Influência do Balanceamento Parcial**:
+   - A estratégia de balanceamento, que aplica rotação apenas até a metade das inserções (com uma tolerância ao desbalanceamento de `n = m/3`), tem um papel fundamental na depreciação observada. Quando a árvore está bem próxima de estar balanceada, o valor da depreciação tende a aumentar significativamente, pois a diferença de altura entre a árvore torta e a quase equilibrada torna-se mais evidente.
+   - Essa abordagem permite que a árvore quase equilibrada simule o comportamento de uma árvore balanceada, mas ainda com a possibilidade de apresentar uma variação de altura conforme os dados são inseridos.
+
+Os testes confirmaram que as árvores quase equilibradas têm um desempenho significativamente melhor do que as árvores tortas, com uma depreciação de altura variando entre 32% e 34% na maioria dos casos. Contudo, o valor de depreciação é altamente sensível à forma como os dados são inseridos na árvore. Quando a árvore quase equilibrada é mais próxima de um balanceamento ideal, a depreciação tende a ser menor, enquanto árvores mais desbalanceadas podem gerar depreciações muito altas. Essa análise destaca a importância de estratégias adequadas de inserção e balanceamento para otimizar o desempenho da árvore binária e reduzir os custos das operações.
+
+</div>
+
+<p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
 
 ## 🏁 Conclusão
 
 <div align="justify">
 
+Este trabalho explorou a implementação e análise de algoritmos voltados para o cálculo do nível máximo em árvores binárias, destacando sua importância no entendimento da eficiência e do balanceamento dessas estruturas de dados. Ao longo do estudo, foram desenvolvidas funcionalidades para inserção, remoção, cálculo de altura, visualização do caminho mais longo e análise de crescimento de árvores desbalanceadas e quase equilibradas. Além disso, foram abordadas estratégias para sugerir rotações, proporcionando uma visão prática sobre o impacto do balanceamento nas operações.
+
+Os resultados demonstraram que árvores quase equilibradas, mesmo sem um balanceamento automático completo, apresentam melhorias significativas na eficiência em relação a árvores tortas. O comportamento logarítmico observado nas árvores quase equilibradas reflete o sucesso da estratégia de balanceamento parcial, que conseguiu limitar o crescimento descontrolado da altura. Por outro lado, as árvores desbalanceadas, ao crescerem linearmente, evidenciaram o impacto negativo do desbalanceamento em operações básicas como busca e inserção.
+
+A análise de crescimento destacou a eficácia do balanceamento parcial em reduzir a altura das árvores e melhorar o desempenho das operações, mesmo em cenários com grandes volumes de dados. O valor médio de depreciação de altura, em torno de 34%, ilustra a diferença significativa entre árvores desbalanceadas e quase equilibradas.
+
+Por fim, este trabalho reforça a relevância do estudo de algoritmos de balanceamento em árvores binárias, tanto em contextos acadêmicos quanto práticos. A implementação modular e a visualização interativa desenvolvidas neste projeto proporcionam uma base sólida para a compreensão de conceitos fundamentais em estruturas de dados e para a aplicação em cenários reais que demandam eficiência e desempenho.
 
 </div>
 
