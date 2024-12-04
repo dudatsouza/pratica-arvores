@@ -37,46 +37,77 @@ CEFET-MG Campus V <br>
     <li>
       <a href="#-modelagem-de-aplicação">🔬 Modelagem de Aplicação</a>
       <ul>
+        <li><a href="#menu-interativo">Menu Interativo</a></li>
+        <li><a href="#inserção-de-valores">Inserção de Valores</a></li>
+        <li><a href="#remoção-de-valores">Remoção de Valores</a></li>
         <li><a href="#leitura-dos-dados">Leitura dos Dados</a></li>
+        <li><a href="#visualização-da-altura-e-estrutura">Visualização da Altura e Estrutura</a></li>
+        <li><a href="#altura-máxima-da-árvore">Altura Máxima da Árvore</a></li>
+        <li><a href="#sugestão-de-rotações">Sugestão de Rotações</a></li>
+        <li><a href="#caminho-mais-longo">Caminho Mais Longo</a></li>
         <li>
-          <a href="#inserção-de-valores">Inserção de Valores</a>
+          <a href="#análise-de-crescimento">Análise de Crescimento</a>
           <ul>
-            <li><a href="#inserção-em-árvores-binárias-de-busca">Inserção em Árvores Binárias de Busca</a></li>
-            <li><a href="#inserção-em-árvores-avl">Inserção em Árvores AVL</a></li>
+            <li><a href="#árvores-tortas">Árvores Tortas</a></li>
+            <li><a href="#árvores-quase-equilibradas">Árvores Quase Equilibradas</a></li>
+            <li><a href="#alterações-no-processo-de-geração-da-árvore-quase-equilibrada">Alterações no Processo de Geração da Árvore Quase Equilibrada</a></li>
+            <li><a href="#comparação-de-desempenho">Comparação de Desempenho</a></li>
+            <li><a href="#exportação-dos-resultados-e-geração-de-gráficos">Exportação dos Resultados e Geração de Gráficos</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#remoção-de-valores">Remoção de Valores</a>
-          <ul>
-            <li><a href="#remoção-em-árvores-binárias-de-busca">Remoção em Árvores Binárias de Busca</a></li>
-            <li><a href="#remoção-em-árvores-avl">Remoção em Árvores AVL</a></li>
-          </ul>
-        </li>
-        <li><a href="#caminhamentos">Caminhamentos</a></li>
-        <li><a href="#desafio-adicional-análise-de-rotações">Desafio Adicional: Análise de Rotações</a></li>
       </ul>
     </li>
     <li>
       <a href="#%EF%B8%8F-metodologia">🗳️ Metodologia</a>
       <ul>
         <li><a href="#-arquivos">Arquivos</a></li>
+        <li><a href="#-estrutura-do-projeto">Estrutura do Projeto</a></li>
         <li><a href="#-bibliotecas">Bibliotecas</a></li>
         <li>
           <a href="#definições-e-estruturas-usadas">Definições e Estruturas Usadas</a>
           <ul>
-            <li><a href="#arquivo-nodehpp">Arquivo Node.hpp</a></li>
-            <li><a href="#arquivo-problema1hpp">Arquivo problema1.hpp</a></li>
-            <li><a href="#arquivo-binarytreehpp">Arquivo BinaryTree.hpp</a></li>
-            <li><a href="#arquivo-avltreehpp">Arquivo AVLTree.hpp</a></li>
+            <li><a href="#arquivo-problema2hpp">Arquivo problema2.hpp</a></li>
           </ul>
         </li>
         <li>
           <a href="#-funções-implementadas">Funções Implementadas</a>
           <ul>
             <li><a href="#arquivo-maincpp">Arquivo main.cpp</a></li>
-            <li><a href="#arquivo-problema1cpp">Arquivo problema1.cpp</a></li>
-            <li><a href="#arquivo-binarytreecpp">Arquivo BinaryTree.cpp</a></li>
-            <li><a href="#arquivo-avltreecpp">Arquivo AVLTree.cpp</a></li>
+            <li><a href="#arquivo-problema2cpp">Arquivo problema2.cpp</a></li>
+            <li><a href="#arquivo-plotpy">Arquivo plot.py</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#-testes-e-resultados">📊 Testes e Resultados</a>
+      <ul>
+        <li>
+          <a href="#testes">Testes</a>
+          <ul>
+            <li><a href="#inserção-de-dados">Inserção de Dados</a></li>
+            <li><a href="#remoção-de-dados">Remoção de Dados</a></li>
+            <li><a href="#exibição-do-nível-máximo">Exibição do Nível Máximo</a></li>
+            <li><a href="#sugestão-de-rotações">Sugestão de Rotações</a></li>
+            <li><a href="#exibição-do-caminho-máximo">Exibição do Caminho Máximo</a></li>
+          </ul>          
+        </li>
+        <li>
+          <a href="#-análise-de-resultados">Análise de Resultados</a>
+          <ul>
+            <li>
+              <a href="#análise-de-crescimento">Análise de Crescimento</a>
+              <ul>
+                <li><a href="#testes-realizados">Testes Realizados</a></li>
+                <li><a href="#comportamento-logarítmico">Comportamento Logarítmico</a></li>
+                <li>
+                  <a href="#depreciação-de-altura-entre-árvores">Depreciação de Altura entre Árvores</a>
+                  <ul>
+                    <li><a href="#comportamento-da-depreciação">Comportamento da Depreciação</a></li>
+                  </ul>                  
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
@@ -298,19 +329,6 @@ Este tipo de árvore maximiza a altura, pois cada novo nó é inserido como filh
 #### Árvores Quase Equilibradas
 
 As árvores quase equilibradas são geradas pela função [`gerarArvoreQseEquilibrada`](src/problema2.cpp). Nesse caso, os elementos são inseridos de forma crescente, mas antes de cada inserção, é verificada a diferença entre a altura máxima e mínima da árvore. Caso essa diferença ultrapasse um limite pré-definido (calculado com base em `m`), a função [`sugerirRotacoes`](src/problema2.cpp) aplica as rotações necessárias, equilibrando a árvore.
-
-- **Exemplo**: Para `m = 7` e `n = 3` (onde `n` é o limite máximo de desequilíbrio permitido), a árvore pode ser gerada de forma equilibrada:
-
-```
-        4
-       / \
-      2   6
-     / \ / \
-    1  3 5  7
-```
-
-
-Essa árvore apresenta um equilíbrio controlado, onde o desequilíbrio é corrigido automaticamente antes que a altura da árvore aumente consideravelmente.
 
 #### Alterações no Processo de Geração da Árvore Quase Equilibrada
 
@@ -660,7 +678,7 @@ A imagem a seguir ilustra o caminho mais longo da árvore:
 
 ## 📊 Análise de Resultados
 
-<div align="justify">
+A análise dos resultados terá como foco a parte de **Análise de Crescimento**, que compara o desempenho de árvores desbalanceadas e quase equilibradas. A análise foi realizada para conjuntos de dados de tamanhos variados, permitindo avaliar o impacto do balanceamento na altura das árvores e, consequentemente, no desempenho das operações.
 
 ### Análise de Crescimento
 
@@ -683,13 +701,13 @@ As imagens geradas durante esses testes mostram o comportamento do crescimento d
 
   ![analiseDeCrescimento10000](images/analiseDeCrescimento10000.png)
 
-### Comportamento Logarítmico
+#### Comportamento Logarítmico
 
 A análise dos gráficos mostra que, embora as árvores desbalanceadas cresçam em altura de forma exponencial, o comportamento das árvores **quase equilibradas** segue uma tendência logarítmica. Isso significa que, à medida que o número de nós aumenta, o impacto do balanceamento ainda é significativo, mas não tão forte quanto em árvores balanceadas automaticamente (como AVL). O comportamento logarítmico ocorre porque, mesmo sem balanceamento automático, a árvore mantém um nível de equilíbrio razoável durante a primeira metade das inserções.
 
 O **comportamento logarítmico** reflete a eficácia do balanceamento parcial em manter a árvore eficiente, mesmo em entradas grandes, o que é uma das principais vantagens de se ter uma árvore "quase balanceada", mesmo sem usar um balanceamento automático completo.
 
-#### Explicação do Comportamento Logarítmico
+O comportamento logarítmico é dado pelos seguintes fatores:
 
 1. **Árvores Quase Equilibradas (Sem Balanceamento Automático)**:
    - A árvore não é balanceada automaticamente, mas **aplica rotações** durante a primeira metade das inserções (`m/2`). Isso faz com que ela não cresça de maneira descontrolada. A altura da árvore cresce de forma **mais controlada** em comparação com uma árvore desbalanceada, mas ainda não atinge a eficiência de uma árvore balanceada, como uma AVL.
@@ -712,7 +730,7 @@ O **comportamento logarítmico** reflete a eficácia do balanceamento parcial em
    - Em contraste, operações em uma árvore desbalanceada, como uma árvore torta, têm complexidade **O(N)**, o que torna essas operações muito mais lentas à medida que o número de elementos aumenta.
 
 
-### Depreciação de Altura entre Árvores
+#### Depreciação de Altura entre Árvores
 
 A **depreciação de altura** entre uma árvore torta (desbalanceada) e uma árvore quase equilibrada foi analisada para avaliar o impacto do balanceamento nas operações de busca e inserção. A depreciação foi calculada como a diferença relativa entre as alturas das duas árvores, expressa como:
 
@@ -720,7 +738,7 @@ $$
 \text{Depreciação} = \left( \frac{\text{Altura da Árvore Torta} - \text{Altura da Árvore Equilibrada}}{\text{Altura da Árvore Torta}} \right) \times 100
 $$
 
-#### Comportamento da Depreciação
+##### Comportamento da Depreciação
 
 A árvore torta, ao ser construída com dados em ordem crescente ou decrescente, resulta em um crescimento exponencial da altura. Em contraste, a árvore quase equilibrada, construída com inserções mais distribuídas e balanceamento parcial até a metade das inserções, mantém uma altura significativamente menor. No entanto, o valor da depreciação pode variar dependendo de como as árvores são geradas.
 
@@ -793,7 +811,6 @@ Por fim, este trabalho reforça a relevância do estudo de algoritmos de balance
   console
   sudo apt install make
   
-
 </div>
 
 ### Instalando
