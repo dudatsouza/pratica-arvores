@@ -119,7 +119,7 @@ CEFET-MG Campus V <br>
           <a href="#-análise-de-desempenho">Análise de Desempenho</a>
           <ul>
             <li>
-              <a href="#analise-de-desempenho-das-arvores">nálise de Desempenho das Árvores</a>
+              <a href="#análise-de-desempenho-das-árvores">Análise de Desempenho das Árvores</a>
               <ul>
                 <li><a href="#resultados-observados">Resultados Observados</a></li>
               </ul>
