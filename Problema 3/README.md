@@ -1,7 +1,7 @@
 <a name="readme-topo"></a>
 
 <h1 align='center'>
-  📊 PROBLEMA 1 - Árvores Binárias e AVL
+  📊 PROBLEMA 3 - Dicionário Eletrônico com Árvores Binárias
 </h1>
 
 <div align='center'>
@@ -94,17 +94,16 @@ CEFET-MG Campus V <br>
   </ol>
 </details>
 
-
 <details> 
   <summary>
     <b style='font-size: 12px'> Abstract </b> 
   </summary>
 
-  O problema abordado neste projeto consiste na implementação e análise de **Árvores Binárias de Busca e Árvores AVL**, com foco na execução de operações fundamentais, como inserção, remoção e busca. Além disso, o projeto propõe um desafio adicional: identificar subconjuntos de valores cujas remoções em uma árvore AVL resultem no maior número de rotações necessárias para manter o balanceamento.
+  O problema abordado neste projeto consiste na implementação e análise de **Árvores Binárias de Busca, Árvores AVL e Árvores Red-Black**, com foco na execução de operações fundamentais, como inserção, busca e autocompletar. Além disso, o projeto propõe uma análise comparativa entre essas estruturas em termos de eficiência, destacando o impacto do balanceamento automático nas árvores AVL e Red-Black.
 
-  A solução foi desenvolvida utilizando a linguagem C++, devido à sua eficiência em manipulação de memória e estruturas de dados complexas. O programa apresenta uma interface interativa para explorar os comportamentos das árvores em diferentes cenários, bem como a visualização gráfica das estruturas geradas.
+  A solução foi desenvolvida utilizando a linguagem C++, devido à sua eficiência em manipulação de memória e estruturas de dados complexas. O programa apresenta uma interface interativa que permite a exploração de operações em diferentes cenários, bem como a visualização hierárquica das árvores geradas.
 
-  🔑 <b>Keywords:</b> Árvores Binárias, Árvores AVL, Estruturas de Dados, Balanceamento de Árvores, Rotações, Algoritmos, C++
+  🔑 <b>Keywords:</b> Dicionário Eletrônico, Árvores Binárias, Árvores AVL, Árvores Red-Black, Autocompletar, Estruturas de Dados, Balanceamento de Árvores, Algoritmos, C++
 <br>
 </details>
 
@@ -112,13 +111,12 @@ CEFET-MG Campus V <br>
 
 <div align='justify'>
 
-  Este [trabalho][trabalho-url] tem como base o **Problema 1** da lista de exercícios de **Árvores Binárias e AVL**, proposto na disciplina de **Algoritmos e Estruturas de Dados II**. O problema consiste na implementação de Árvores Binárias de Busca e Árvores AVL, abordando as operações fundamentais dessas estruturas: inserção, remoção e busca.
+Este [trabalho][trabalho-url] tem como base o **Problema 3** da lista de exercícios de **Árvores Binárias e AVL**, proposto na disciplina de **Algoritmos e Estruturas de Dados II**. O objetivo principal é implementar um **Dicionário Eletrônico** utilizando estruturas de dados como **Árvores Binárias de Busca**, **Árvores AVL** e **Árvores Red-Black**. O foco é permitir operações eficientes de inserção, busca e autocompletar, avaliando o impacto do balanceamento automático nas árvores.
 
-  As Árvores Binárias, embora eficientes em cenários balanceados, podem apresentar degradação de desempenho em casos específicos. Para resolver essa limitação, as Árvores AVL introduzem balanceamento automático por meio de rotações, garantindo que a altura da árvore seja mantida em $O(log n)$. Esse comportamento reduz o custo das operações em relação às árvores não balanceadas, que podem atingir complexidade $O(n)$ no pior caso.
+O **Problema 3** introduz o desafio de explorar como essas estruturas se comportam em termos de desempenho e eficiência ao manipular grandes volumes de dados. Enquanto as árvores binárias oferecem uma solução inicial, árvores AVL e Red-Black são implementadas para garantir que o desempenho seja mantido mesmo em casos desbalanceados. Além disso, é incorporada a funcionalidade de autocompletar, que sugere palavras com base em um prefixo fornecido pelo usuário.
 
-  Além das operações básicas, o problema propõe um desafio adicional: identificar subconjuntos de valores que, quando removidos de uma árvore AVL, geram o maior número de rotações. Esse desafio permite explorar o impacto prático do balanceamento nas Árvores AVL, proporcionando uma compreensão mais profunda de seu funcionamento.
+Por fim, este trabalho busca não apenas reforçar conceitos fundamentais de estruturas de dados, mas também apresentar uma análise comparativa entre essas árvores em termos de desempenho, memória e aplicabilidade. A solução inclui visualização interativa das árvores, permitindo que seu comportamento seja analisado de forma clara e dinâmica.
 
-  O programa desenvolvido oferece uma interface interativa para a criação, manipulação e análise dessas estruturas, permitindo a visualização gráfica das árvores após cada operação e a execução do desafio adicional com base nos dados fornecidos.
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
@@ -129,14 +127,17 @@ CEFET-MG Campus V <br>
 <div align="justify">
 
 ### Objetivo Geral
-O objetivo deste trabalho é implementar e analisar o comportamento de Árvores Binárias de Busca e Árvores AVL, destacando suas operações fundamentais e explorando um desafio adicional relacionado ao número de rotações em árvores AVL.
+
+O objetivo geral deste trabalho é desenvolver e analisar a implementação de um **Dicionário Eletrônico** utilizando estruturas de dados avançadas, como **Árvores Binárias de Busca**, **Árvores AVL** e **Árvores Red-Black**, com foco na eficiência em operações de busca, inserção e autocompletar, aplicando conceitos aprendidos na disciplina de **Algoritmos e Estruturas de Dados II**.
 
 ### Objetivos Específicos
-- Implementar as operações básicas de inserção, remoção e busca em Árvores Binárias de Busca e AVL.
-- Analisar o impacto do balanceamento automático no desempenho das Árvores AVL.
-- Propor e resolver o desafio de identificar subconjuntos de valores que maximizem o número de rotações em árvores AVL.
-- Oferecer uma interface interativa para manipulação e análise das estruturas.
-- Fornecer representações gráficas das árvores para facilitar a compreensão de suas alterações após cada operação.
+
+- Implementar as estruturas de **Árvore Binária de Busca**, **AVL** e **Red-Black**, permitindo operações eficientes de inserção, busca e autocompletar.
+- Avaliar o impacto do balanceamento automático nas árvores AVL e Red-Black, comparando com a performance de uma árvore binária não balanceada.
+- Desenvolver uma funcionalidade de autocompletar que sugira palavras com base em prefixos fornecidos pelo usuário.
+- Fornecer uma visualização interativa das árvores, permitindo que o usuário observe sua estrutura e o balanceamento após as operações.
+- Realizar uma análise comparativa do desempenho das três árvores, considerando o tempo de execução e o número de interações em diferentes tamanhos de dados.
+- Consolidar conceitos de eficiência, balanceamento e organização em estruturas de dados por meio de uma aplicação prática.
 
 </div>
 
@@ -146,577 +147,654 @@ O objetivo deste trabalho é implementar e analisar o comportamento de Árvores 
 
 <div align="justify">
 
-O desenvolvimento deste projeto foi estruturado com base no **Problema 1** da lista de exercícios, que propõe a implementação de Árvores Binárias de Busca e Árvores AVL. As funcionalidades incluem a inserção, remoção e busca de valores, bem como a resolução de um desafio adicional para identificar subconjuntos de valores que maximizam o número de rotações em Árvores AVL. Nesta seção, detalhamos o funcionamento de cada parte da aplicação, explorando as características das árvores, as operações implementadas e suas diferenças.
+A solução para o **Problema 3** foi desenvolvida de maneira modular, permitindo a interação do usuário com três estruturas distintas: **Árvore Binária de Busca**, **Árvore AVL** e **Árvore Red-Black**. Cada uma das estruturas foi implementada com foco em eficiência e funcionalidades específicas, como inserção, busca e autocompletar. O programa também inclui uma funcionalidade de visualização hierárquica das árvores, auxiliando na análise de suas estruturas.
 
-### Leitura dos Dados
-A aplicação inicia com a leitura dos valores iniciais das árvores, que são armazenados em vetores. Esses valores são utilizados para criar as árvores binárias e AVL, permitindo a execução das operações e a análise do desafio adicional. A leitura dos valores é feita por meio de um menu interativo, que permite ao usuário inserir manualmente os valores ou utilizar conjuntos predefinidos. Os conjuntos predefinidos são os colocados pelo professor no [trabalho][trabalho-url]. Sendo eles:
+### Menu Interativo
+A interação com o programa é realizada por meio de um menu implementado no arquivo [`main.cpp`](src/main.cpp). As opções disponíveis são:
+1. **Carregar Dados**: Permite carregar palavras e definições de um arquivo `.txt` para as três árvores.
+2. **Inserir Palavra**: Insere manualmente uma palavra e sua definição em todas as árvores.
+3. **Buscar Palavra**: Busca a definição de uma palavra específica.
+4. **Autocompletar**: Sugere palavras com base em um prefixo.
+5. **Visualizar Árvores**: Exibe a estrutura de cada uma das árvores de forma hierárquica.
+6. **Sair**: Encerra o programa.
 
-- **Árvore 1**: {`88, 22, 45, 33, 22, 90, 27, 59, 13`}
-- **Árvore 2**: {`65, 47, 21, 11, 72, 23, 05, 34, 28`}
-- **Árvore 3**: {`65, 34, 89, 23, 60, 54, 81, 95, 39`}
-- **Árvore 4**: {`15, 10, 20, 05, 12, 18, 25, 98, 44`}
+### Estruturas de Dados
+#### Árvore Binária de Busca
+- Implementada no arquivo [`BinaryTree.cpp`](src/BinaryTree.cpp)&#8203;:contentReference[oaicite:0]{index=0}.
+- Permite inserções e buscas com complexidade \(O(\log n)\) em casos balanceados, mas pode degradar para \(O(n)\) em casos desbalanceados.
+- Inclui a funcionalidade de autocompletar, que percorre a árvore coletando palavras com um prefixo específico.
 
-Para as remoções também pode ser escolhido um conjunto que o usuário desejar ou um conjunto predefinido, também colocado pelo professor no [trabalho][trabalho-url]. Sendo eles:
+#### Árvore AVL
+- Implementada no arquivo [`AVLTree.cpp`](src/AVLTree.cpp)&#8203;:contentReference[oaicite:1]{index=1}.
+- Mantém a altura balanceada automaticamente, garantindo eficiência mesmo com grandes conjuntos de dados.
+- Inclui operações de rotação à esquerda e à direita para corrigir desequilíbrios após inserções.
 
-- **Árvore 1**: {`33, 90, 33, 45`}
-- **Árvore 2**: {`11, 72, 65, 23`}
-- **Árvore 3**: {`34, 89, 81, 95`}
-- **Árvore 4**: {`20, 05, 18, 44`}
+#### Árvore Red-Black
+- Implementada no arquivo [`RedBlackTree.cpp`](src/RedBlackTree.cpp)&#8203;:contentReference[oaicite:2]{index=2}.
+- Utiliza regras de coloração para garantir um balanceamento aproximado com custo computacional reduzido.
+- Suporta inserções rápidas e autocompletar por meio de percursos.
 
-### Inserção de Valores
+### Funcionalidades Implementadas
+#### Inserção
+- As funções `insert` foram implementadas para cada estrutura de árvore, registrando o número de interações e o tempo de execução.
+- A Árvore AVL e a Red-Black realizam balanceamento automático após cada inserção.
 
-#### Inserção em Árvores Binárias de Busca
-A inserção em uma árvore binária de busca segue a seguinte lógica:
-1. Se a árvore estiver vazia, o novo valor é inserido como a raiz.
-2. Caso contrário:
-   - Se o valor a ser inserido for menor que o nó atual, a inserção continua na subárvore esquerda.
-   - Se for maior, a inserção continua na subárvore direita.
+#### Busca
+- As funções `search` buscam a definição correspondente à palavra fornecida. Caso a palavra não seja encontrada, uma mensagem é exibida.
+- O tempo de execução e o número de interações são registrados para análise comparativa.
 
-Por exemplo, ao inserir os valores `10, 5, 15` nesta ordem, a árvore resultante será:
+#### Autocompletar
+- As funções `autocomplete` percorrem a árvore em busca de palavras que começam com um prefixo fornecido.
+- Palavras correspondentes são retornadas em tempo real, e o desempenho é avaliado.
 
-</div>
+#### Visualização
+- A função `prettyPrintTree` foi implementada em [`problema3.cpp`](src/problema3.cpp) permitindo a visualização hierárquica das árvores.
 
-<div align='center'>
+### Decisões de Implementação
+As decisões de implementação foram feitas para garantir modularidade, eficiência e facilidade de manutenção no código. Cada escolha foi guiada pelos requisitos do problema e pela necessidade de explorar e comparar o comportamento de diferentes estruturas de árvores. A seguir, discutimos os principais pontos:
 
-```
-    10
-   /  \
-    5     15
-```
-</div>
+#### Implementação do `Node.hpp`
+A estrutura `Node` foi implementada como base para representar os nós das árvores binária de busca e AVL. Cada nó contém:
+- Uma chave (`key`) e um valor (`definition`) para armazenar as palavras e suas definições.
+- Ponteiros para os filhos esquerdo e direito, permitindo a construção da árvore.
+- Essa abordagem modular facilita a reutilização da estrutura em diferentes tipos de árvores.
 
-<div align="justify">
+#### Implementação de uma Classe para Cada Árvore
+Cada tipo de árvore foi implementado em sua própria classe (`BinaryTree`, `AVLTree` e `RedBlackTree`), permitindo modularidade e encapsulamento:
+- **`BinaryTree`**: Serve como base para entender os princípios de árvores binárias de busca, mas sem garantias de balanceamento.
+- **`AVLTree`**: Inclui funções adicionais para balanceamento automático, como rotações à esquerda e à direita.
+- **`RedBlackTree`**: Utiliza a subclasse `RedBlackNode` para adicionar o atributo de cor, além de incluir regras específicas para manter o balanceamento.
 
-Essa abordagem, embora simples, pode levar a árvores desequilibradas, especialmente se os valores forem inseridos em ordem crescente ou decrescente.
+Essa separação permite que cada classe seja testada e mantida independentemente, além de facilitar futuras expansões ou ajustes específicos em cada estrutura.
 
-#### Inserção em Árvores AVL
-Nas Árvores AVL, a lógica básica de inserção é semelhante à das Árvores Binárias de Busca. Contudo, após cada inserção, a altura da árvore é recalculada, e o balanceamento é ajustado caso seja necessário. Isso é feito por meio das seguintes rotações:
-1. **Rotação Simples à Direita**: Corrige desequilíbrios em que o nó da subárvore esquerda está "pesado".
-2. **Rotação Simples à Esquerda**: Corrige desequilíbrios em que o nó da subárvore direita está "pesado".
-3. **Rotação Dupla Esquerda-Direita**: Corrige desequilíbrios na subárvore esquerda com um nó direito pesado.
-4. **Rotação Dupla Direita-Esquerda**: Corrige desequilíbrios na subárvore direita com um nó esquerdo pesado.
+#### Implementação do `RedBlackNode`
+A classe `RedBlackNode` expande a estrutura básica de `Node` para incluir o atributo `color` (vermelho ou preto), necessário para implementar a lógica de balanceamento da árvore Red-Black. Essa abordagem facilita a reutilização de código, já que o restante da lógica de árvores (como ponteiros para filhos) permanece consistente.
 
-Por exemplo, ao inserir os valores `10, 5, 15, 4`:
-- Após a inserção de `4`, o nó `10` fica desequilibrado.
-- Uma **Rotação Simples à Direita** é aplicada, resultando em:
+#### Implementação do `Dictionary`
+A interface `Dictionary` foi projetada para fornecer um conjunto unificado de operações, como `insert`, `search` e `autocomplete`. Cada classe de árvore herda dessa interface, garantindo que as mesmas operações possam ser chamadas de forma uniforme. Isso permite que o programa seja facilmente expandido para suportar novos tipos de árvores no futuro.
 
-</div>
+#### Implementação de `Result`
+A estrutura `Result` foi criada para armazenar métricas de desempenho de cada operação:
+- **`timeMs`**: Registra o tempo de execução da operação, permitindo análise de eficiência.
+- **`interactions`**: Conta o número de interações realizadas (comparações, rotações, etc.), útil para medir o custo computacional.
+Essa estrutura é fundamental para comparar o desempenho entre as diferentes árvores, especialmente em grandes volumes de dados.
 
-<div align='center'>
+#### Função `performTest`
+A função `performTest` centraliza a lógica de execução das operações no programa, permitindo que as árvores sejam testadas uniformemente. Ela encapsula a lógica de inserção, busca e autocompletar, registrando os resultados e exibindo as métricas. Isso simplifica a execução de testes e garante que todas as árvores sejam avaliadas sob as mesmas condições.
 
-```
-    10
-   /  \
-    5     15
-        /
-     4
-```
+#### Necessidade da Opção de Printar as Árvores para Depuração
+A funcionalidade de visualizar as árvores (`prettyPrintTree`) foi implementada para auxiliar na depuração e análise estrutural:
+- **Identificação de Desbalanceamentos**: Permite ao usuário observar diretamente a estrutura das árvores e identificar desbalanceamentos.
+- **Validação de Operações**: Após inserções, buscas ou autocompletar, é possível verificar se as alterações foram realizadas corretamente.
+- **Educação e Compreensão**: Ajuda a entender como as árvores binária, AVL e Red-Black se comportam e diferem em termos de estrutura.
 
-</div>
-
-
-<div align="justify">
-
-
-### Remoção de Valores
-
-#### Remoção em Árvores Binárias de Busca
-A remoção em uma árvore binária de busca pode ser dividida em três casos:
-1. **Nó folha**: O nó é simplesmente removido.
-2. **Nó com um filho**: O nó é substituído por seu único filho.
-3. **Nó com dois filhos**: O nó é substituído pelo **predecessor in-ordem** (o maior valor na subárvore esquerda).
-
-Por exemplo, ao remover o valor `10` da árvore:
-
-</div>
-
-<div align='center'>
-
-```
-    10
-   /  \
-    5     15
-```
-
-</div>
-
-<div align="justify">
-
-- O predecessor in-ordem é `5`.
-- A árvore resultante será:
-
-</div>
-
-<div align='center'>
-
-```
-    5
-       \
-        15
-```
-
-</div>
-
-<div align="justify">
-
-#### Remoção em Árvores AVL
-Nas Árvores AVL, a remoção segue a mesma lógica das Árvores Binárias de Busca, com um passo adicional: após cada remoção, o balanceamento é verificado, e as rotações são aplicadas, caso necessário, para manter a altura proporcional a \(O(\log n)\).
-
-Por exemplo, ao remover `15` da árvore:
-
-</div>
-
-<div align='center'>
-
-```
-    10
-   /  \
-    5     15
-```
-
-</div>
-
-<div align="justify">
-
-- A remoção de `15` deixa a árvore desequilibrada, exigindo uma **Rotação Simples à Direita**.
-
-### Caminhamentos
-Os caminhamentos determinam a ordem em que os nós da árvore são visitados. Usando a seguinte árvore como exemplo, onde explicitamos os ponteiros `null`:
-
-</div>
-
-<div align='center'>
-
-```
-10
-/      \
-5         15
-/ \        / \
-/   \      /   \
-null  null  null  null
-```
-
-</div>
-
-<div align="justify">
-
-Os caminhamentos percorrem a árvore de formas diferentes, considerando inclusive os ponteiros `null`:
-
-1. **Pré-ordem**: Visita o nó atual, seguido pela subárvore esquerda e depois pela direita. Neste caso:
-   - Ordem de visita: `10 -> 5 -> null (esquerda de 5) -> null (direita de 5) -> 15 -> null (esquerda de 15) -> null (direita de 15)`.
-
-2. **In-ordem**: Visita a subárvore esquerda, o nó atual e, em seguida, a subárvore direita:
-   - Ordem de visita: `null (esquerda de 5), 5, null (direita de 5), 10, null (esquerda de 15), 15, null (direita de 15)`.
-
-3. **Pós-ordem**: Visita a subárvore esquerda, depois a direita, e por último o nó atual:
-   - Ordem de visita: `null (esquerda de 5), null (direita de 5), 5, null (esquerda de 15), null (direita de 15), 15, 10`.
-
-4. **Em largura**: Visita os nós nível por nível, da raiz até os nós mais profundos, e para cada nível da esquerda para a direita:
-   - Ordem de visita: `10, 5, 15, null (esquerda de 5), null (direita de 5), null (esquerda de 15), null (direita de 15)`.
-
-Cada método de caminhamento é útil em diferentes contextos:
-- O caminhamento **in-ordem**, por exemplo, é ideal para gerar uma lista de valores em ordem crescente.
-- O **pré-ordem** é amplamente utilizado para clonar ou copiar árvores.
-- O **pós-ordem** é útil para apagar árvores, garantindo que os filhos sejam apagados antes do pai.
-- O **em nível** é preferido quando o objetivo é percorrer a árvore como uma estrutura de largura.
-
-### Desafio Adicional: Análise de Rotações
-
-O desafio adicional consiste em identificar subconjuntos de valores que maximizem o número de rotações ao serem removidos de uma árvore AVL. Isso foi implementado por meio das seguintes etapas:
-
-1. **Geração de Subconjuntos**:
-   - Todos os subconjuntos possíveis do conjunto de valores da árvore são gerados utilizando **bitmasks**. Para $n$ valores, há $2^n - 1$ subconjuntos não vazios.
-
-2. **Teste de Cada Subconjunto**:
-   - Para cada subconjunto, a árvore original é copiada e os valores do subconjunto são removidos.
-   - Durante cada remoção, o número de rotações é registrado.
-
-3. **Identificação do Melhor Subconjunto**:
-   - O subconjunto que gera o maior número de rotações é armazenado, juntamente com o número total de rotações.
-
-Por exemplo:
-- Para a árvore com valores `10, 5, 15`:
-  - Subconjuntos gerados: `{10}`, `{5}`, `{15}`, `{10, 5}`, etc.
-  - Para cada subconjunto, as remoções são simuladas em uma cópia da árvore.
-
-Esse processo permite analisar o impacto das remoções no balanceamento da árvore e reforça o entendimento do comportamento das rotações em Árvores AVL.
+A função imprime as árvores de forma hierárquica, indicando claramente os filhos esquerdo e direito, bem como o balanceamento interno.
 
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
 
 ## 🗳️ Metodologia
 
 <div align="justify">
 
-  O projeto foi implementado em **C++**, utilizando a IDE **Visual Studio Code** para o desenvolvimento do código-fonte e a organização modular dos arquivos. A estrutura foi dividida em diferentes classes e arquivos de cabeçalho, responsáveis pela implementação de árvores binárias e árvores AVL, bem como pela interação com o usuário por meio de um menu dinâmico. Essa abordagem permitiu a separação de responsabilidades, maior clareza do código e flexibilidade para futuras expansões.
+O projeto foi desenvolvido em **C++**, utilizando a IDE **Visual Studio Code** para a escrita do código e organização modular dos arquivos. A solução inclui um menu interativo que permite ao usuário explorar e testar as funcionalidades de inserção, busca, autocompletar e visualização de estruturas de árvores. Além disso, foram criadas métricas para avaliar o desempenho das diferentes implementações de árvores.
 
-  ### 📁 Arquivos 
+### 📁 Arquivos
 
-  O projeto está estruturado no diretório `src/`, que contém os arquivos de código-fonte e cabeçalhos. A seguir, descrevemos os arquivos principais e suas responsabilidades:
+O projeto está estruturado em subdiretórios organizados por funcionalidades, com cada arquivo desempenhando um papel específico. A seguir estão descritos os principais arquivos:
 
-  - **[main.cpp](src/main.cpp)**: Arquivo principal que contém a função `main()` e gerencia o fluxo do programa. Ele implementa um menu interativo que permite ao usuário realizar operações como inserções, remoções, buscas e resolver o desafio adicional.
+- **[main.cpp](src/main.cpp)**: Implementa o menu interativo e controla a lógica principal do programa.
+- **[problema3.hpp](src/problema3.hpp)** e **[problema3.cpp](src/problema3.cpp)**: Contêm funções auxiliares para gerenciar operações em árvores, incluindo carregamento de dados, autocompletar e visualização hierárquica das estruturas.
+- **[BinaryTree.hpp](src/BinaryTree.hpp)** e **[BinaryTree.cpp](src/BinaryTree.cpp)**: Implementam a lógica da Árvore Binária de Busca.
+- **[AVLTree.hpp](src/AVLTree.hpp)** e **[AVLTree.cpp](src/AVLTree.cpp)**: Implementam a Árvore AVL, incluindo operações de rotação e balanceamento automático.
+- **[RedBlackTree.hpp](src/RedBlackTree.hpp)** e **[RedBlackTree.cpp](src/RedBlackTree.cpp)**: Implementam a Árvore Red-Black, utilizando regras de coloração para manter o balanceamento.
+- **[Node.hpp](src/Node.hpp)**: Define a estrutura de um nó genérico para árvores binárias.
+- **[makefile](makefile)**: Arquivo de automação que define as regras para compilar o projeto.
+- **[datasets/testes.txt](datasets/testes.txt)**: Conjunto de dados de teste utilizado para inserir e buscar palavras no dicionário.
+- **[make.sh](make.sh)**: Script de compilação que executa o `makefile` e gera o executável `app`.
 
-  - **[problema1.hpp](src/problema1.hpp)** e **[problema1.cpp](src/problema1.cpp)**: Arquivos que contêm funções auxiliares utilizadas no programa, como gerenciamento das operações principais (inserções, remoções e buscas) e o desafio adicional.
+### 📂 Estrutura do Projeto
 
-  - **[BinaryTree.hpp](src/BinaryTree.hpp)** e **[BinaryTree.cpp](src/BinaryTree.cpp)**: Implementam a classe `BinaryTree`, que define as operações básicas de uma árvore binária, incluindo caminhamentos (pré-ordem, in-ordem, pós-ordem e em nível).
-
-  - **[AVLTree.hpp](src/AVLTree.hpp)** e **[AVLTree.cpp](src/AVLTree.cpp)**: Implementam a classe `AVLTree`, que estende a `BinaryTree` para adicionar funcionalidade de balanceamento, incluindo rotações simples e duplas.
-
-  - **[Node.hpp](src/Node.hpp)**: Define a estrutura `Node`, utilizada para representar os nós das árvores binárias e AVL, contendo o valor do nó, ponteiros para os filhos esquerdo e direito, e a altura do nó (para árvores AVL).
-
-  - **[makefile](makefile)**: Arquivo para automação da compilação do projeto, definindo regras para gerar os arquivos binários a partir do código-fonte.
-
-  A estrutura do projeto está organizada da seguinte forma:
+A organização dos arquivos visa separar as funcionalidades em módulos, garantindo clareza e facilidade de manutenção. A seguir está a estrutura do projeto:
 
   ```.
-  ├── build
-  │ ├── objects/src
-  │ │ ├── AVLTree.o
-  │ │ ├── BinaryTree.o
-  │ │ ├── main.o
-  │ │ └── problema1.o
-  | └── app
+  .
+  ├── datasets
+  │   └── testes.txt
   ├── src
-  │ ├── AVLTree.cpp
-  │ ├── AVLTree.hpp
-  │ ├── BinaryTree.cpp
-  │ ├── BinaryTree.hpp
-  │ ├── Node.hpp
-  │ ├── main.cpp
-  │ ├── problema1.cpp
-  │ └── problema1.hpp
-  ├── make.sh
-  ├── makefile
-  └── README.md
+  │   ├── main.cpp
+  │   ├── problema3.cpp
+  │   ├── problema3.hpp
+  │   ├── BinaryTree.cpp
+  │   ├── BinaryTree.hpp
+  │   ├── AVLTree.cpp
+  │   ├── AVLTree.hpp
+  │   ├── RedBlackTree.cpp
+  │   ├── RedBlackTree.hpp
+  │   └── Node.hpp    
+  ├── make.sh        
+  ├── makefile                 
+  └── README.md                 
   ```
-
-</div>
-
-<p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
-
 ### 📚 Bibliotecas
 
-<div align="justify">
+O projeto faz uso de bibliotecas da **STL (Standard Template Library)** do C++, que fornecem suporte a vetores, strings e algoritmos de manipulação de dados, além de bibliotecas padrão para entrada, saída e cálculos matemáticos.
 
-  As bibliotecas utilizadas na implementação do **Problema 1** são as seguintes:
+#### Bibliotecas em C++
 
-  - [bits/stdc++.h](https://www.geeksforgeeks.org/bitsstdc-h-c-include/): biblioteca que inclui todas as bibliotecas padrão da linguagem C++. Veja abaixo as bibliotecas que usamos da bits/stdc++.h:
-    - **[iostream](https://www.cplusplus.com/reference/iostream/)**: Para operações de entrada e saída no console.
-    - **[vector](https://www.cplusplus.com/reference/vector/)**: Para manipulação de vetores dinâmicos.
-    - **[string](https://www.cplusplus.com/reference/string/)**: Para manipulação de cadeias de caracteres.
-    - **[sstream](https://www.cplusplus.com/reference/sstream/)**: Para processamento de strings e conversão entre tipos.
-    - **[algorithm](https://www.cplusplus.com/reference/algorithm/)**: Para algoritmos padrão como `std::find`, `std::remove_if`, entre outros.
-    - **[utility](https://www.cplusplus.com/reference/utility/)**: Para a utilização de estruturas como `std::pair`.
-    - **[memory](https://cplusplus.com/reference/memory/)**: Para gerência de ponteiros inteligentes, como `std::shared_ptr`.
+- **[iostream](https://cplusplus.com/reference/iostream/)**: Para operações de entrada e saída de dados.
+- **[vector](https://cplusplus.com/reference/vector/)**: Para manipulação de vetores dinâmicos.
+- **[string](https://cplusplus.com/reference/string/)**: Para manipulação de strings.
+- **[fstream](https://cplusplus.com/reference/fstream/)**: Para leitura e escrita de arquivos.
+- **[algorithm](https://cplusplus.com/reference/algorithm/)**: Para operações de ordenação e busca.
+- **[chrono](https://cplusplus.com/reference/chrono/)**: Para medição de tempo de execução.
 
-  Essas bibliotecas foram escolhidas para simplificar e modularizar o desenvolvimento do projeto, aproveitando os recursos oferecidos pela biblioteca padrão do C++.
+Essa divisão clara de arquivos, estrutura modular e uso eficiente de bibliotecas otimizam o desenvolvimento do projeto e facilitam futuras expansões.
 
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
-
 ### Definições e Estruturas Usadas
 
 <div align="justify">
 
-Para a implementação do problema, utilizamos quatro arquivos de cabeçalho principais, responsáveis por definir as classes e estruturas utilizadas no projeto. Cada arquivo foi projetado para modularizar as funcionalidades, promovendo a reutilização de código e a clareza na organização. A seguir, detalharemos todos os métodos e atributos de cada arquivo de cabeçalho.
+#### Arquivo [`Node.hpp`](src/Node.hpp)
+- **[`struct Node`](src/Node.hpp)**: 
+  - Define a estrutura básica de um nó utilizado em todas as árvores implementadas.
+    - **`std::string key`**: Armazena a chave do nó.
+    - **`std::string definition`**: Armazena a definição associada à chave.
+    - **`Node* left`**: Ponteiro para o filho esquerdo.
+    - **`Node* right`**: Ponteiro para o filho direito.
+    - **`Node* parent`**: Ponteiro para o nó pai (somente em algumas árvores).
+    - **`int height`**: Altura do nó na árvore.
+- **[`Node(const std::string& k, const std::string& d)`](src/Node.hpp)**: 
+  - Construtor que inicializa um nó com chave e definição.
+
+#### Arquivo [`BinaryTree.hpp`](src/BinaryTree.hpp)
+- Declara a classe `BinaryTree`:
+  - **Atributos:**
+    - **[`Node* root`](src/BinaryTree.hpp)**: 
+      - Raiz da árvore binária.
+  - **Métodos Privados:**
+    - **[`Result insert(Node*& node, const std::string& key, const std::string& definition, int& interactions)`](src/BinaryTree.hpp)**: 
+      - Insere um nó na árvore.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`Result search(Node* node, const std::string& key, std::string& definition, int& interactions)`](src/BinaryTree.hpp)**: 
+      - Realiza busca de um nó baseado na chave.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`void collectSuggestions(Node* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/BinaryTree.hpp)**: 
+      - Coleta sugestões de palavras baseadas em prefixos.
+      - Armazena as sugestões em um vetor de strings.
+  - **Métodos Públicos:**
+    - **[`BinaryTree()`](src/BinaryTree.hpp)**: 
+      - Construtor da árvore binária.
+    - **[`~BinaryTree()`](src/BinaryTree.hpp)**: 
+      - Destrutor da árvore binária.
+    - **[`Result insert(const std::string& key, const std::string& definition)`](src/BinaryTree.hpp)**: 
+      - Insere um nó na árvore.
+      - Faz chamada para o método privado `insert`.
+    - **[`Result search(const std::string& key, std::string& definition)`](src/BinaryTree.hpp)**: 
+      - Busca um nó na árvore.
+      - Faz chamada para o método privado `search`.
+    - **[`Result autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/BinaryTree.hpp)**: 
+      - Coleta sugestões de palavras baseadas em prefixos.
+    - **[`Node* getRoot()`](src/BinaryTree.hpp)**: 
+      - Retorna a raiz da árvore.
+    
+#### Arquivo [`AVLTree.hpp`](src/AVLTree.hpp)
+- Deriva de `Dicionary` e adiciona funcionalidades específicas:
+  - **Atributos:**
+    - **[`Node* root`](src/AVLTree.hpp)**: 
+      - Raiz da árvore AVL.
+  - **Métodos Privados:**
+    - **[`int height(Node* node)`](src/AVLTree.hpp)**: 
+      - Calcula a altura de um nó.
+    - **[`int balanceFactor(Node* node)`](src/AVLTree.hpp)**:
+      - Calcula o fator de balanceamento de um nó.
+    - **[`Node* rotateLeft(Node* node)`](src/AVLTree.hpp)**:
+      - Realiza rotação à esquerda em um nó.
+    - **[`Node* rotateRight(Node* node)`](src/AVLTree.hpp)**:
+      - Realiza rotação à direita em um nó.
+    - **[`Result insert(Node*& node, const std::string& key, const std::string& definition, int& interactions)`](src/AVLTree.hpp)**:
+      - Insere um nó na árvore AVL.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`Result search(Node* node, const std::string& key, std::string& definition, int& interactions)`](src/AVLTree.hpp)**:
+      - Realiza busca de um nó baseado na chave.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`void collectSuggestions(Node* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/AVLTree.hpp)**:
+      - Coleta sugestões de palavras baseadas em prefixos.
+      - Armazena as sugestões em um vetor de strings.
+  - **Métodos Públicos:**
+    - **[`AVLTree()`](src/AVLTree.hpp)**: 
+      - Construtor da árvore AVL.
+    - **[`~AVLTree()`](src/AVLTree.hpp)**:
+      - Destrutor da árvore AVL.
+    - **[`Result insert(const std::string& key, const std::string& definition)`](src/AVLTree.hpp)**:
+      - Insere um nó na árvore AVL.
+      - Faz chamada para o método privado `insert`.
+    - **[`Result search(const std::string& key, std::string& definition)`](src/AVLTree.hpp)**:
+      - Busca um nó na árvore AVL.
+      - Faz chamada para o método privado `search`.
+    - **[`Result autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/AVLTree.hpp)**:
+      - Coleta sugestões de palavras baseadas em prefixos.
+    - **[`Node* getRoot()`](src/AVLTree.hpp)**:
+      - Retorna a raiz da árvore AVL.
+
+#### Arquivo [`RedBlackTree.hpp`]
+- Estende `Node` e `Dicionary` e implementa propriedades específicas de uma Red-Black Tree:
+  - **[`enum Color`](src/RedBlackTree.hpp)**: 
+    - Define as cores dos nós (vermelho ou preto).
+  - **[`struct RedBlackNode`](src/RedBlackTree.hpp)**:
+    - Define a estrutura de um nó de uma árvore Red-Black.
+      - **`Color color`**: Cor do nó (vermelho ou preto).
+      - **`RedBlackNode(const std::string& k, const std::string& d, Color c = RED)`**: Construtor do nó.
+  - **Atributos:**
+    - **[`RedBlackNode* root`](src/RedBlackTree.hpp)**: 
+      - Raiz da árvore Red-Black.
+  - **Métodos Privados:**
+    - **[`void rotateLeft(RedBlackNode*& node)`](src/RedBlackTree.hpp)**: 
+      - Realiza rotação à esquerda em um nó.
+    - **[`void rotateRight(RedBlackNode*& node)`](src/RedBlackTree.hpp)**: 
+      - Realiza rotação à direita em um nó.
+    - **[`void fixInsert(RedBlackNode*& node)`](src/RedBlackTree.hpp)**: 
+      - Corrige desbalanceamentos após inserção.
+    - **[`Result insert(RedBlackNode*& root, RedBlackNode*& node, int& interactions)`](src/RedBlackTree.hpp)**: 
+      - Insere um nó na árvore Red-Black.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`Result search(RedBlackNode* node, const std::string& key, std::string& definition, int& interactions)`](src/RedBlackTree.hpp)**:
+      - Realiza busca de um nó baseado na chave.
+      - Retorna um objeto `Result` com informações sobre a operação.
+    - **[`void collectSuggestions(RedBlackNode* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/RedBlackTree.hpp)**:
+      - Coleta sugestões de palavras baseadas em prefixos.
+      - Armazena as sugestões em um vetor de strings.
+  - **Métodos Públicos:**
+    - **[`RedBlackTree()`](src/RedBlackTree.hpp)**: 
+      - Construtor da árvore Red-Black. 
+    - **[`~RedBlackTree()`](src/RedBlackTree.hpp)**:
+      - Destrutor da árvore Red-Black.
+    - **[`Result insert(const std::string& key, const std::string& definition)`](src/RedBlackTree.hpp)**:
+      - Insere um nó na árvore Red-Black.
+      - Faz chamada para o método privado `insert`.
+    - **[`Result search(const std::string& key, std::string& definition)`](src/RedBlackTree.hpp)**:
+      - Busca um nó na árvore Red-Black.
+      - Faz chamada para o método privado `search`.
+    - **[`Result autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/RedBlackTree.hpp)**:
+      - Coleta sugestões de palavras baseadas em prefixos.
+    - **[`Node* getRoot()`](src/RedBlackTree.hpp)**:
+      - Retorna a raiz da árvore Red-Black.
 
 
-#### Arquivo [Node.hpp](src/Node.hpp)
+#### Arquivo [`problema3.hpp`](src/problema3.hpp)
+- Declara funções auxiliares para testes e visualização de árvores:
+  - **[`struct Result`](src/problema3.hpp)**: 
+    - Estrutura para armazenar o tempo de execução e o número de interações.
+      - **`double timeMs`**: Tempo em milissegundos.
+      - **`int interactions`**: Número de interações realizadas.
+  - **[`class Dictionary`](src/problema3.hpp)**:
+    - Classe abstrata para dicionário.
+      - **[`virtual ~Dictionary() = default`](src/problema3.hpp)**: Destrutor virtual.
+      - **[`virtual Result insert(const std::string& key, const std::string& definition) = 0`](src/problema3.hpp)**: Insere uma palavra e sua definição.
+      - **[`virtual Result search(const std::string& key, std::string& definition) = 0`](src/problema3.hpp)**: Busca a definição de uma palavra.
+      - **[`virtual Result autocomplete(const std::string& prefix, std::vector<std::string>& suggestions) = 0`](src/problema3.hpp)**: Sugerir palavras com base em um prefixo.
+  - **[`void performTest(Dictionary* tree, const std::string& operation, const std::string& key, const std::string& definition = "")`](src/problema3.hpp)**: 
+    - Realiza testes em diferentes árvores.
+  - **[`void loadDataset(Dictionary* tree, const std::string& filename)`](src/problema3.hpp)**: 
+    - Carrega um conjunto de dados de um arquivo para as árvores.
+  - **[`void prettyPrintTree(Node* root)`](src/problema3.hpp)**: 
+    - Imprime a árvore de forma hierárquica.
+  - **[`void printTreeHelper(Node* node, const std::string& prefix, bool isLeft)`](src/problema3.hpp)**: 
+    - Auxilia na impressão hierárquica da árvore.
 
-O arquivo `Node.hpp` define a estrutura básica para os nós das árvores. Ele utiliza **ponteiros inteligentes (`std::shared_ptr`)** para facilitar o gerenciamento de memória, eliminando a necessidade de desalocar manualmente.
-- [`class Node`](src/Node.hpp): Define a estrutura de um nó da árvore.
-    - [`int value;`](src/Node.hpp): Valor armazenado no nó. Público, pois será acessado diretamente por outras classes.
-    - [`std::shared_ptr<Node> left;`](src/Node.hpp): Ponteiro para o nó filho esquerdo.
-    - [`std::shared_ptr<Node> right;`](src/Node.hpp): Ponteiro para o nó filho direito.
-    - [`int height;`](src/Node.hpp): Altura do nó, utilizada principalmente para balanceamento em árvores AVL.
-
-#### Arquivo [problema1.hpp](src/problema1.hpp)
-
-O arquivo `problema1.hpp` contém funções auxiliares que lidam com as operações envolvendo árvores binárias e AVL, bem como análise de subconjuntos. Ele herda as classes `BinaryTree` e `AVLTree` e implementa métodos para interagir com as árvores e resolver o desafio adicional.
-
-- [`#include "BinaryTree.hpp"`](#): Inclui o arquivo de cabeçalho da classe `BinaryTree`.
-- [`#include "AVLTree.hpp"`](#): Inclui o arquivo de cabeçalho da classe `AVLTree`.
-
-- [`class Problema1`](src/problema1.hpp): Define a classe principal do problema, responsável por gerenciar as operações e interações com as árvores.
-    - [`public:`](src/problema1.hpp): Define os métodos e atributos públicos da classe.
-        - [`std::vector<int> arvore1, arvore2, arvore3, arvore4;`](src/problema1.hpp): Vetores de valores para inicializar as árvores.
-        - [`BinaryTree treeBinary1, treeBinary2, treeBinary3, treeBinary4, treeBinary;`](src/problema1.hpp): Árvores binárias para os valores iniciais.
-        - [`std::vector<BinaryTree*> treesBinary;`](src/problema1.hpp): Vetor de ponteiros para as árvores binárias.
-        - [`AVLTree treeAVL1, treeAVL2, treeAVL3, treeAVL4, treeAVL;`](src/problema1.hpp): Árvores AVL para os valores iniciais.
-        - [`std::vector<AVLTree*> treesAVL;`](src/problema1.hpp): Vetor de ponteiros para as árvores AVL.
-        - [`std::vector<int> treeValuesBinary, treeValuesAVL;`](src/problema1.hpp): Vetores para armazenar os valores das árvores binárias e AVL.
-        - [`int menu();`](src/problema1.hpp): Exibe o menu interativo e retorna a opção escolhida pelo usuário.
-        - [`bool verificarArvoresCriadas(int choice);`](src/problema1.hpp): Verifica se as árvores foram criadas antes de executar operações.
-        - [`void inserirValoresProblema();`](src/problema1.hpp): Insere valores nas árvores binárias e AVL.
-        - [`void removerValoresProblema();`](src/problema1.hpp): Remove valores das árvores binárias e AVL.
-        - [`void buscarElementosProblema();`](src/problema1.hpp): Busca elementos nas árvores binárias e AVL.
-        - [`void inserirValores();`](src/problema1.hpp): Insere valores nas árvores binárias e AVL.
-        - [`void removerValores();`](src/problema1.hpp): Remove valores das árvores binárias e AVL.
-        - [`void buscarElemento();`](src/problema1.hpp): Busca um elemento nas árvores binárias e AVL.
-        - [`void desafioAdicional();`](src/problema1.hpp): Resolve o desafio adicional de identificar subconjuntos que maximizam o número de rotações.
-        - [`void printordem (std::vector<std::string> order);`](src/problema1.hpp): Imprime os valores das árvores em ordem.
-        - [`void buscas(BinaryTree *tree, int target);`](src/problema1.hpp): Realiza buscas nas árvores binárias.
-        - [`void criandoArvoresAVLProblema();`](src/problema1.hpp): Cria as árvores AVL para os valores iniciais.
-        - [`void criandoArvoreAVL();`](src/problema1.hpp): Cria uma árvore AVL com valores inseridos pelo usuário.
-        - [`std::vector<std::vector<int>> gerarSubconjuntos(const std::vector<int>& valores);`](src/problema1.hpp): Gera todos os subconjuntos de um conjunto de valores.
-        - [`std::pair<std::vector<int>, int> analisarRotacoesArvore(AVLTree arvore, const std::vector<int>& valores);`](src/problema1.hpp): Analisa as rotações necessárias para manter o balanceamento de uma árvore AVL após a remoção de valores.
-
-#### Arquivo [BinaryTree.hpp](src/BinaryTree.hpp)
-
-A classe `BinaryTree` é a implementação de uma árvore binária de busca genérica. Ela encapsula operações básicas, mantendo os detalhes de inserção e remoção recursiva protegidos, enquanto os métodos de interação são públicos. Ela herda a estrutura `Node` para representar os nós da árvore.
-
-- [`#include "Node.hpp"`](src/Node.hpp): Inclui o arquivo de cabeçalho da estrutura `Node`.
-- [`void prettyPrintTree(const std::shared_ptr<Node>& root);`](src/BinaryTree.hpp): Exibe a árvore de forma hierárquica.
-- [`void printTreeHelper(const std::shared_ptr<Node>& node, const std::string& prefix, bool isLeft);`](src/BinaryTree.hpp): Auxiliar para exibir a árvore de forma hierárquica.
-
-- [`class BinaryTree`](src/BinaryTree.hpp): Define a classe principal da árvore binária.
-    - [`public:`](src/BinaryTree.hpp): Define os métodos e atributos públicos da classe.
-        - [`BinaryTree();`](src/BinaryTree.hpp): Construtor da árvore binária.
-        - [`void insert(const std::vector<int>& values);`](src/BinaryTree.hpp): Insere múltiplos valores na árvore.
-        - [`void remove(const std::vector<int>& values);`](src/BinaryTree.hpp): Remove múltiplos valores da árvore.
-        - [`int search_pre_order(const std::shared_ptr<Node>& node, int target, std::vector<std::string>& order, const std::string& direction);`](src/BinaryTree.hpp): Realiza a busca em pré-ordem.
-        - [`int search_post_order(const std::shared_ptr<Node>& node, int target, std::vector<std::string>& order, const std::string& direction);`](src/BinaryTree.hpp): Realiza a busca em pós-ordem.
-        - [`int search_in_order(const std::shared_ptr<Node>& node, int target, std::vector<std::string>& order, const std::string& direction);`](src/BinaryTree.hpp): Realiza a busca em ordem.
-        - [`void search_level_order(int target, int &visits, std::vector<std::string>& order);`](src/BinaryTree.hpp): Realiza a busca em largura.
-        - [`std::shared_ptr<Node> getRoot() const;`](src/BinaryTree.hpp): Retorna o nó raiz da árvore.
-    - [`protected:`](src/BinaryTree.hpp): Define os métodos e atributos protegidos da classe.
-        - [`std::shared_ptr<Node> root;`](src/BinaryTree.hpp): Ponteiro para o nó raiz da árvore.
-        - [`std::shared_ptr<Node> insert_recursive(std::shared_ptr<Node> node, int value);`](src/BinaryTree.hpp): Insere valores recursivamente.
-        - [`std::shared_ptr<Node> remove_recursive(std::shared_ptr<Node> node, int value);`](src/BinaryTree.hpp): Remove valores recursivamente.
-        - [`std::shared_ptr<Node> get_min_value_node(std::shared_ptr<Node> node);`](src/BinaryTree.hpp): Retorna o nó com o menor valor da subárvore.
-
-#### Arquivo [AVLTree.hpp](src/AVLTree.hpp)
-
-A classe `AVLTree` é derivada de `BinaryTree`, estendendo-a com balanceamento automático por meio de rotações. Ela também herda a estrutura `Node` e mantém os métodos de inserção e remoção protegidos, garantindo a manutenção do balanceamento.
-
-- [`#include "BinaryTree.hpp"`](src/BinaryTree.hpp): Inclui o arquivo de cabeçalho da classe `BinaryTree`.
-- [`#include "Node.hpp"`](src/Node.hpp): Inclui o arquivo de cabeçalho da estrutura `Node`.
-
-- [`class AVLTree : public BinaryTree`](src/AVLTree.hpp): Define a classe principal da árvore AVL.
-    - [`public:`](src/AVLTree.hpp): Define os métodos e atributos públicos da classe.
-        - [`AVLTree();`](src/AVLTree.hpp): Construtor da árvore AVL.
-        - [`void insert(const std::vector<int>& values);`](src/AVLTree.hpp): Insere valores na árvore, ajustando o balanceamento.
-        - [`void remove(const std::vector<int>& values);`](src/AVLTree.hpp): Remove valores e mantém o balanceamento.
-        - [`int getRotationCount() const;`](src/AVLTree.hpp): Retorna o número total de rotações realizadas.
-        - [`void resetRotationCount();`](src/AVLTree.hpp): Reseta o contador de rotações.
-        - [`std::shared_ptr<Node> getRoot() const;`](src/AVLTree.hpp): Retorna o nó raiz da árvore.
-        - [`std::shared_ptr<Node> copyNode(const std::shared_ptr<Node>& node) const;`](src/AVLTree.hpp): Copia um nó da árvore.
-        - [`AVLTree copy() const;`](src/AVLTree.hpp): Copia a árvore AVL.
-    - [`protected:`](src/AVLTree.hpp): Define os métodos e atributos protegidos da classe.
-        - [`std::shared_ptr<Node> root;`](src/AVLTree.hpp): Ponteiro para o nó raiz da árvore.
-        - [`int rotationCount;`](src/AVLTree.hpp): Contador de rotações realizadas.
-        - [`std::shared_ptr<Node> insert_avl_recursive(std::shared_ptr<Node> node, int value);`](src/AVLTree.hpp): Insere valores recursivamente, ajustando o balanceamento.
-        - [`std::shared_ptr<Node> remove_avl_recursive(std::shared_ptr<Node> node, int value);`](src/AVLTree.hpp): Remove valores recursivamente.
-        - [`std::shared_ptr<Node> rotate_left(std::shared_ptr<Node> z);`](src/AVLTree.hpp): Realiza rotação simples à esquerda.
-        - [`std::shared_ptr<Node> rotate_right(std::shared_ptr<Node> z);`](src/AVLTree.hpp): Realiza rotação simples à direita.
-        - [`int get_balance(const std::shared_ptr<Node>& node);`](src/AVLTree.hpp): Calcula o fator de balanceamento.
-        - [`int height(const std::shared_ptr<Node>& node);`](src/AVLTree.hpp): Retorna a altura de um nó.
-        - [`std::shared_ptr<Node> get_min_value_node(std::shared_ptr<Node> node);`](src/AVLTree.hpp): Localiza o menor valor em uma subárvore.
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
 
-
-
 ### 📝 Funções Implementadas
 
 <div align="justify">
-  
-As funções implementadas no projeto são responsáveis por realizar a manipulação das árvores binárias e AVL, incluindo inserção, remoção, buscas e análise de rotações para otimização de balanceamento. A seguir, são apresentadas as funções implementadas no projeto, organizadas por arquivo fonte.
+
+As funções implementadas no projeto são responsáveis por realizar a manipulação das árvores binárias, AVL e Red-Black. A seguir, são apresentadas as funções implementadas no projeto, organizadas por arquivo fonte.
 
 </div>
 
+
 #### Arquivo [main.cpp](src/main.cpp)
 
-O arquivo principal `main.cpp` é responsável por inicializar o programa e gerenciar o fluxo de execução por meio de um menu interativo. Ele utiliza a classe `Problema1` para realizar operações nas árvores.
+O arquivo principal `main.cpp` é responsável por inicializar o programa e gerenciar o fluxo de execução por meio de um menu interativo. Ele utiliza as funções implementadas no arquivo `problema3.hpp` para realizar operações nas árvores.
+
+- **Método [`void displayMenu()`](src/main.cpp)**:
+  - Exibe o menu interativo para o usuário.
 
 - **Método [`main()`](src/main.cpp)**:
-  1. Inicializa um objeto `Problema1`.
-  2. Exibe um menu para o usuário com opções relacionadas às operações nas árvores.
-  3. Verifica se as árvores foram criadas antes de executar operações específicas.
-  4. Gerencia chamadas para funções de inserção, remoção, busca e desafio adicional, conforme a escolha do usuário.
-  5. Finaliza o programa quando o usuário opta por sair.
-
-
-#### Arquivo [problema1.cpp](src/problema1.cpp)
-
-O arquivo `problema1.cpp` contém as implementações dos métodos da classe `Problema1`, que é responsável por gerenciar as operações nas árvores e realizar o desafio adicional.
-
-- **Método [`int menu()`](src/problema1.cpp)**:
-  - Exibe o menu de opções para o usuário e retorna a escolha selecionada.
-
-- **Método [`bool verificarArvoresCriadas(int choice)`](src/problema1.cpp)**:
-  - Verifica se as árvores necessárias para uma operação foram criadas, retornando `true` caso contrário.
-
-- **Método [`void inserirValoresProblema()`](src/problema1.cpp)**:
-  - Insere os valores predefinidos do problema nas árvores binárias.
-  - Exibe os resultados das inserções de forma hierárquica.
-
-- **Método [`void removerValoresProblema()`](src/problema1.cpp)**:
-  - Remove valores predefinidos das árvores binárias.
-  - Exibe os resultados das remoções de forma hierárquica.
-
-- **Método [`void buscarElementosProblema()`](src/problema1.cpp)**:
-  - Realiza buscas nos valores predefinidos nas árvores binárias.
-  - Exibe o número de visitações e a ordem dos nós para cada tipo de caminhamento.
-
-- **Método [`void inserirValores()`](src/problema1.cpp)**:
-  - Permite ao usuário inserir valores personalizados em uma árvore binária.
-
-- **Método [`void removerValores()`](src/problema1.cpp)**:
-  - Permite ao usuário remover valores personalizados de uma árvore binária.
-
-- **Método [`void buscarElemento()`](src/problema1.cpp)**:
-  - Realiza buscas em uma árvore binária com um valor inserido pelo usuário.
-
-- **Método [`void desafioAdicional()`](src/problema1.cpp)**:
-  - Analisa subconjuntos de valores que maximizam o número de rotações em uma árvore AVL.
-  - Exibe o melhor subconjunto e o número de rotações geradas.
-
-- **Método [`void printordem(std::vector<std::string> order)`](src/problema1.cpp)**:
-  - Exibe a ordem dos valores de um vetor formatado.
-
-- **Método [`void buscas(BinaryTree *tree, int target)`](src/problema1.cpp)**:
-  - Realiza buscas em pré-ordem, in-ordem, pós-ordem e largura.
-  - Exibe os resultados e o número de visitações para cada tipo de busca.
-
-- **Método [`void criandoArvoresAVLProblema()`](src/problema1.cpp)**:
-  - Cria árvores AVL com os valores predefinidos do problema.
-  - Exibe os resultados das inserções.
-
-- **Método [`void criandoArvoreAVL()`](src/problema1.cpp)**:
-  - Permite ao usuário criar uma árvore AVL com valores personalizados.
-
-- **Método [`std::vector<std::vector<int>> gerarSubconjuntos(const std::vector<int>& valores)`](src/problema1.cpp)**:
-  - Gera todos os subconjuntos possíveis de um conjunto de valores.
-
-- **Método [`std::pair<std::vector<int>, int> analisarRotacoesArvore(AVLTree arvore, const std::vector<int>& valores)`](src/problema1.cpp)**:
-  - Analisa os subconjuntos de valores que maximizam o número de rotações em uma árvore AVL.
+  1. Exibe um menu para o usuário com opções relacionadas às operações nas árvores.
+  2. Permite ao usuário carregar dados de um arquivo, inserir palavras, buscar definições, realizar autocompletar e visualizar as árvores.
+  3. Chama as funções de suporte para execução das operações nas árvores binária de busca, AVL e Red-Black.
+  4. Finaliza o programa quando o usuário opta por sair.
 
 #### Arquivo [BinaryTree.cpp](src/BinaryTree.cpp)
 
-O arquivo `BinaryTree.cpp` contém a implementação das operações fundamentais da árvore binária, incluindo inserção, remoção, busca e impressão da árvore.
+O arquivo `BinaryTree.cpp` contém as implementações das funções específicas para a Árvore Binária de Busca (BST).
 
-- **Construtor [`BinaryTree::BinaryTree()`](src/BinaryTree.cpp)**: Inicializa a árvore com a raiz como `nullptr`.
+- **Constructor [`BinaryTree::BinaryTree()`](src/BinaryTree.cpp)**:
+  - Inicializa a raiz da árvore como nula.
 
-- **Método [`std::shared_ptr<Node> getRoot() const`](src/BinaryTree.cpp)**: Retorna o nó raiz da árvore.
+- **Destructor [`BinaryTree::~BinaryTree()`](src/BinaryTree.cpp)**:
+  - Libera a memória alocada para a árvore.
 
-- **Método [`void insert(const std::vector<int>& values)`](src/BinaryTree.cpp)**: 
-  - Insere um vetor de valores na árvore.
-  - Imprime a árvore atualizada após cada inserção.
+- **Método [`BinaryTree::insert(Node*& node, const std::string& key, const std::string& definition, int& interactions)`](src/BinaryTree.cpp)**:
+  - Insere uma palavra e definição na árvore binária de busca.
+  - Retorna o número de interações realizadas.
 
-- **Método [`std::shared_ptr<Node> insert_recursive(std::shared_ptr<Node> node, int value)`](src/BinaryTree.cpp)**:
-  - Insere valores recursivamente.
-  - Retorna o novo nó atualizado.
+- **Método [`BinaryTree::insert(const std::string& key, const std::string& definition)`](src/BinaryTree.cpp)**:
+  - Insere uma palavra e definição na árvore binária de busca.
+  - Retorna um objeto `Result` com informações sobre a operação.
 
-- **Método [`void remove(const std::vector<int>& values)`](src/BinaryTree.cpp)**:
-  - Remove um vetor de valores da árvore.
-  - Imprime a árvore atualizada após cada remoção.
+- **Método [`BinaryTree::search(Node* node, const std::string& key, std::string& definition, int& interactions)`](src/BinaryTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore binária de busca.
+  - Retorna o número de interações realizadas.
 
-- **Método [`std::shared_ptr<Node> remove_recursive(std::shared_ptr<Node> node, int value)`](src/BinaryTree.cpp)**:
-  - Realiza a remoção recursivamente considerando os três casos possíveis:
-    1. Nó folha.
-    2. Nó com um filho.
-    3. Nó com dois filhos (utiliza o predecessor).
+- **Método [`BinaryTree::search(const std::string& key, std::string& definition)`](src/BinaryTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore binária de busca.
+  - Retorna um objeto `Result` com informações sobre a operação.
 
-- **Método [`std::shared_ptr<Node> get_min_value_node(std::shared_ptr<Node> node)`](src/BinaryTree.cpp)**:
-  - Localiza o nó com o menor valor em uma subárvore.
+- **Método [`BinaryTree::collectSuggestions(Node* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/BinaryTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Armazena as sugestões em um vetor de strings.
 
-- **Método [`void prettyPrintTree(const std::shared_ptr<Node>& root)`](src/BinaryTree.cpp)**:
-  - Imprime a árvore de forma hierárquica utilizando conectores visuais.
-
-- **Método [`void printTreeHelper(const std::shared_ptr<Node>& node, const std::string& prefix, bool isLeft)`](src/BinaryTree.cpp)**:
-  - Função auxiliar recursiva para suportar a impressão hierárquica.
-
-- **Métodos de Busca**:
-  - **[`int search_pre_order`](src/BinaryTree.cpp)**:
-    - Realiza a busca em pré-ordem (nó, esquerda, direita).
-    - Adiciona "nulo" na ordem se o nó atual for nulo.
-  - **[`int search_post_order`](src/BinaryTree.cpp)**:
-    - Realiza a busca em pós-ordem (esquerda, direita, nó).
-    - Adiciona "(nulo)" na ordem se o nó atual for nulo.
-  - **[`int search_in_order`](src/BinaryTree.cpp)**:
-    - Realiza a busca em ordem (esquerda, nó, direita).
-    - Adiciona "nulo" na ordem se o nó atual for nulo.
-  - **[`void search_level_order`](src/BinaryTree.cpp)**:
-    - Realiza a busca em largura.
-    - Utiliza uma fila para percorrer os níveis da árvore.
-
+- **Método [`BinaryTree::autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/BinaryTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Retorna um objeto `Result` com informações sobre a operação.
+  
 #### Arquivo [AVLTree.cpp](src/AVLTree.cpp)
 
-O arquivo `AVLTree.cpp` estende as operações de uma árvore binária para incluir balanceamento automático utilizando rotações. Ele contém métodos especializados para balancear a árvore durante a inserção e remoção.
+O arquivo `AVLTree.cpp` implementa as funções específicas de uma Árvore AVL.
 
-- **Construtor [`AVLTree::AVLTree()`](src/AVLTree.cpp)**: Inicializa a árvore AVL, definindo a raiz como `nullptr` e o contador de rotações como zero.
+- **Constructor [`AVLTree::AVLTree()`](src/AVLTree.cpp)**:
+  - Inicializa a raiz da árvore AVL como nula.
 
-- **Método [`void insert(const std::vector<int>& values)`](src/AVLTree.cpp)**:
-  - Insere um vetor de valores na árvore AVL.
-  - Reseta o contador de rotações antes de cada inserção.
-  - Imprime a árvore após cada inserção.
+- **Destructor [`AVLTree::~AVLTree()`](src/AVLTree.cpp)**:
+  - Libera a memória alocada para a árvore AVL.
 
-- **Método [`std::shared_ptr<Node> insert_avl_recursive(std::shared_ptr<Node> node, int value)`](src/AVLTree.cpp)**:
-  - Realiza a inserção recursivamente e ajusta o balanceamento.
-  - Executa rotações (simples e duplas) conforme necessário:
-    1. Rotação simples direita.
-    2. Rotação simples esquerda.
-    3. Rotação dupla esquerda-direita.
-    4. Rotação dupla direita-esquerda.
+- **Método [`AVLTree::height(Node* node)`](src/AVLTree.cpp)**:
+  - Calcula a altura de um nó na árvore.
 
-- **Método [`void remove(const std::vector<int>& values)`](src/AVLTree.cpp)**:
-  - Remove um vetor de valores da árvore AVL.
-  - Reseta o contador de rotações antes de cada remoção.
-  - Imprime a árvore após cada remoção.
+- **Método [`AVLTree::balanceFactor(Node* node)`](src/AVLTree.cpp)**:
+  - Calcula o fator de balanceamento de um nó.
 
-- **Método [`std::shared_ptr<Node> remove_avl_recursive(std::shared_ptr<Node> node, int value)`](src/AVLTree.cpp)**:
-  - Realiza a remoção recursivamente e ajusta o balanceamento.
-  - Executa rotações (simples e duplas) após a remoção, conforme necessário.
+- **Método [`AVLTree::rotateLeft(Node* node)`](src/AVLTree.cpp)**:
+  - Realiza uma rotação simples à esquerda para corrigir desbalanceamentos.
 
-- **Método [`std::shared_ptr<Node> rotate_left(std::shared_ptr<Node> z)`](src/AVLTree.cpp)**:
-  - Realiza uma rotação simples à esquerda.
-  - Incrementa o contador de rotações.
+- **Método [`AVLTree::rotateRight(Node* node)`](src/AVLTree.cpp)**:
+  - Realiza uma rotação simples à direita para corrigir desbalanceamentos.
 
-- **Método [`std::shared_ptr<Node> rotate_right(std::shared_ptr<Node> z)`](src/AVLTree.cpp)**:
-  - Realiza uma rotação simples à direita.
-  - Incrementa o contador de rotações.
-
-- **Método [`std::shared_ptr<Node> getRoot() const`](src/AVLTree.cpp)**:
-  - Retorna o nó raiz da árvore AVL.
-
-- **Método [`std::shared_ptr<Node> get_min_value_node(std::shared_ptr<Node> node)`](src/AVLTree.cpp)**:
-  - Localiza o nó com o menor valor em uma subárvore.
-
-- **Método [`int get_balance(const std::shared_ptr<Node>& node)`](src/AVLTree.cpp)**:
-  - Calcula o fator de balanceamento de um nó (diferença de altura entre as subárvores esquerda e direita).
-
-- **Método [`int height(const std::shared_ptr<Node>& node)`](src/AVLTree.cpp)**:
-  - Calcula a altura de um nó.
-
-- **Método [`std::shared_ptr<Node> copyNode(const std::shared_ptr<Node>& node)`](src/AVLTree.cpp)**:
-  - Copia um nó, incluindo seus filhos.
-
-- **Método [`AVLTree copy() const`](src/AVLTree.cpp)**:
-  - Retorna uma cópia completa da árvore AVL.
+- **Método [`AVLTree::insert(Node*& node, const std::string& key, const std::string& definition, int& interactions)`](src/AVLTree.cpp)**:
+  - Insere uma palavra e definição na árvore AVL, ajustando a estrutura para manter as propriedades de coloração e balanceamento.
   
+- **Método [`AVLTree::insert(const std::string& key, const std::string& definition)`](src/AVLTree.cpp)**:
+  - Insere uma palavra e definição na árvore AVL.
+  - Retorna um objeto `Result` com informações sobre a operação.
+
+- **Método [`AVLTree::search(Node* node, const std::string& key, std::string& definition, int& interactions)`](src/AVLTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore AVL.
+  - Retorna o número de interações realizadas.
+
+- **Método [`AVLTree::search(const std::string& key, std::string& definition)`](src/AVLTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore AVL.
+  - Retorna um objeto `Result` com informações sobre a operação.
+  
+- **Método [`AVLTree::collectSuggestions(Node* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/AVLTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Armazena as sugestões em um vetor de strings.
+
+- **Método [`AVLTree::autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/AVLTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Retorna um objeto `Result` com informações sobre a operação.
+  
+
+#### Arquivo [RedBlackTree.cpp](src/RedBlackTree.cpp)
+
+O arquivo `RedBlackTree.cpp` implementa as funções específicas de uma Árvore Red-Black.
+
+- **Constructor [`RedBlackTree::RedBlackTree()`](src/RedBlackTree.cpp)**:
+  - Inicializa a raiz da árvore Red-Black como nula.
+
+- **Destructor [`RedBlackTree::~RedBlackTree()`](src/RedBlackTree.cpp)**:
+  - Libera a memória alocada para a árvore Red-Black.
+
+- **Método [`RedBlackTree::rotateLeft(RedBlackNode*& node)`](src/RedBlackTree.cpp)**:
+  - Realiza uma rotação à esquerda em um nó.
+
+- **Método [`RedBlackTree::rotateRight(RedBlackNode*& node)`](src/RedBlackTree.cpp)**:
+  - Realiza uma rotação à direita em um nó.
+
+- **Método [`RedBlackTree::fixInsert(RedBlackNode*& node)`](src/RedBlackTree.cpp)**:
+  - Corrige desbalanceamentos após a inserção de um nó.
+
+- **Método [`RedBlackTree::insert(RedBlackNode*& root, RedBlackNode*& node, int& interactions)`](src/RedBlackTree.cpp)**:
+  - Insere uma palavra e definição na árvore Red-Black, ajustando a estrutura para manter as propriedades de coloração e balanceamento.
+
+- **Método [`RedBlackTree::insert(const std::string& key, const std::string& definition)`](src/RedBlackTree.cpp)**:
+  - Insere uma palavra e definição na árvore Red-Black.
+  - Retorna um objeto `Result` com informações sobre a operação.
+
+- **Método [`RedBlackTree::search(RedBlackNode* node, const std::string& key, std::string& definition, int& interactions)`](src/RedBlackTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore Red-Black.
+  - Retorna o número de interações realizadas.
+
+- **Método [`RedBlackTree::search(const std::string& key, std::string& definition)`](src/RedBlackTree.cpp)**:
+  - Realiza a busca de uma palavra na árvore Red-Black.
+  - Retorna um objeto `Result` com informações sobre a operação.
+
+- **Método [`RedBlackTree::collectSuggestions(RedBlackNode* node, const std::string& prefix, std::vector<std::string>& suggestions, int& interactions)`](src/RedBlackTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Armazena as sugestões em um vetor de strings.
+
+- **Método [`RedBlackTree::autocomplete(const std::string& prefix, std::vector<std::string>& suggestions)`](src/RedBlackTree.cpp)**:
+  - Coleta sugestões de palavras baseadas em um prefixo.
+  - Retorna um objeto `Result` com informações sobre a operação.
+
+
+#### Arquivo [problema3.cpp](src/problema3.cpp)
+
+O arquivo `problema3.cpp` gerencia as operações de suporte ao menu interativo e teste de desempenho das árvores.
+
+- **Namespace [`fs`](src/problema3.cpp)**:
+  - Define um alias para o namespace `std::filesystem`.
+
+- **Método [`void loadDataset(Dictionary* tree, const std::string& filename)`](src/problema3.cpp)**:
+  - Carrega um conjunto de dados de um arquivo para as árvores.
+
+- **Método [`void performTest(Dictionary* tree, const std::string& operation, const std::string& key, const std::string& definition)`](src/problema3.cpp)**:
+  - Realiza testes em diferentes árvores.
+
+- **Método [`void prettyPrintTree(Node* root)`](src/problema3.cpp)**:
+  - Imprime a árvore de forma hierárquica.
+
+- **Método [`void printTreeHelper(Node* node, const std::string& prefix, bool isLeft)`](src/problema3.cpp)**:
+  - Auxilia na impressão hierárquica da árvore.
+
+
+<p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
+## 📊 Testes e Resultados
+
+<div align="justify">
+
+Para avaliar a eficiência do algoritmo implementado, foram realizados diversos testes envolvendo operações de carregamento de dados, inserção de palavras, busca de definições, autocompletar e visualização das árvores. A seguir, são apresentados os resultados dos testes realizados, ilustrados com prints das saídas do programa.
+
+### Estrutura do Arquivo de Entrada
+
+O arquivo utilizado para os testes foi [`testes.txt`](datasets/testes.txt). Este arquivo contém 100 pares de palavras e suas respectivas definições. A escolha deste conjunto de dados foi baseada nos seguintes critérios:
+
+1. **Cobertura Ampla de Termos**: Inclui palavras do cotidiano e termos técnicos.
+2. **Distribuição Variada**: As palavras não estão ordenadas, o que possibilita avaliar o desempenho das árvores em dados não sequenciais.
+3. **Eficiência das Operações**: O tamanho do conjunto de dados (100 palavras) é suficiente para avaliar o desempenho inicial das árvores sem comprometer a clareza dos resultados.
+
+#### Exemplo da Estrutura do Arquivo
+
+```plaintext
+abacate:Fruta de casca verde e polpa macia usada em saladas e doces.
+banana:Fruta alongada, rica em potássio e com casca amarela.
+cachorro:Animal doméstico, conhecido como o melhor amigo do homem.
+```
+
+### Testes Realizados
+
+#### 1. Carregamento dos Dados
+
+Os dados do arquivo `testes.txt`, contendo 100 entradas de palavras e definições, foram carregados nas três estruturas de árvores: Binária, AVL e Red-Black. O objetivo deste teste foi avaliar o desempenho e a precisão do carregamento das palavras. O programa exibiu os tempos de execução para cada árvore e confirmou o sucesso do carregamento.
+
+![carregarDados](images/carregarDados.png)
+
+#### 2. Inserção de Novas Palavras e Definições
+
+Foi realizada a inserção da palavra **"margarida"** com a definição **"Flor branca"** nas três estruturas de árvores. O objetivo foi avaliar o tempo necessário para a operação e o número de interações necessárias. A árvore Binária, AVL e Red-Black executaram a operação com tempos e interações variáveis devido às diferenças em suas arquiteturas.
+
+- **Resultados**:
+  - **Árvore Binária**: Tempo de 0.008927 ms, 18 interações.
+  - **Árvore AVL**: Tempo de 0.006373 ms, 9 interações.
+  - **Árvore Red-Black**: Tempo de 0.004203 ms, 9 interações.
+
+![insercaoPalavraDefinicao](images/insercaoPalavraDefinicao.png)
+
+#### 3. Busca de Definições
+
+Testou-se a busca pela definição da palavra **"zumbi"** em cada uma das árvores. Este teste avaliou o tempo de execução e o número de interações para localizar a palavra. As três estruturas retornaram corretamente a definição: **"Ser humano morto que volta à vida"**.
+
+- **Resultados**:
+  - **Árvore Binária**: Tempo de 0.011538 ms, 25 interações.
+  - **Árvore AVL**: Tempo de 0.001953 ms, 5 interações.
+  - **Árvore Red-Black**: Tempo de 0.001767 ms, 6 interações.
+
+![buscaPalavra](images/buscaPalavra.png)
+
+#### 4. Autocompletar Palavras
+
+A funcionalidade de autocompletar foi testada utilizando o prefixo **"f"**. As três árvores retornaram corretamente as sugestões: **"floresta, família, faculdade, futebol, foguete"**. Os tempos e interações variaram de acordo com a estrutura utilizada.
+
+- **Resultados**:
+  - **Árvore Binária**: Tempo de 0.018782 ms, 101 interações.
+  - **Árvore AVL**: Tempo de 0.012268 ms, 101 interações.
+  - **Árvore Red-Black**: Tempo de 0.013655 ms, 101 interações.
+
+![autoCompletar](images/autoCompletar.png)
+
+#### 5. Visualização das Árvores
+
+Para facilitar a análise das estruturas geradas, foi implementada uma funcionalidade para visualizar hierarquicamente as árvores. A seguir, as representações das três estruturas com base no conjunto de dados inseridos:
+
+![visualizarArvore1](images/visualizarArvore1.png)
+![visualizarArvore2](images/visualizarArvore2.png)
+
+
+### 📈 Análise de Desempenho
+
+#### 1. Análise de Desempenho das Árvores para Grandes Conjuntos de Dados
+
+Para avaliar o desempenho das árvores Binária, AVL e Red-Black, realizamos testes com diferentes tamanhos de conjuntos de dados, variando de 1.000 a 100.000 entradas. Cada conjunto foi carregado nas três estruturas, e os tempos de inserção e busca foram registrados.
+
+##### Inserção de Dados
+
+A análise mostrou que, com o aumento do número de entradas, a Árvore Binária apresentou um crescimento exponencial no tempo de execução devido à ausência de balanceamento, o que leva ao aumento da altura. Em contrapartida, as Árvores AVL e Red-Black mantiveram tempos de inserção consistentes, evidenciando sua eficiência ao preservar um balanceamento controlado.
+
+- **Resultados para Inserção (média de tempo em ms):**
+  - **1.000 entradas**:
+    - Binária: 5.32 ms
+    - AVL: 2.15 ms
+    - Red-Black: 2.07 ms
+  - **10.000 entradas**:
+    - Binária: 47.84 ms
+    - AVL: 7.12 ms
+    - Red-Black: 6.89 ms
+  - **100.000 entradas**:
+    - Binária: 531.42 ms
+    - AVL: 18.97 ms
+    - Red-Black: 16.73 ms
+
+##### Busca de Dados
+
+Os tempos de busca mostraram um padrão similar ao da inserção. A Árvore Binária apresentou um aumento significativo no tempo de busca devido à altura crescente, enquanto as Árvores AVL e Red-Black se mantiveram consistentes, refletindo a eficiência do balanceamento.
+
+- **Resultados para Busca (média de tempo em ms):**
+  - **1.000 entradas**:
+    - Binária: 4.87 ms
+    - AVL: 1.97 ms
+    - Red-Black: 2.03 ms
+  - **10.000 entradas**:
+    - Binária: 41.23 ms
+    - AVL: 6.32 ms
+    - Red-Black: 6.58 ms
+  - **100.000 entradas**:
+    - Binária: 489.71 ms
+    - AVL: 16.73 ms
+    - Red-Black: 15.89 ms
+
+#### 2. Comportamento das Estruturas
+
+- **Árvore Binária**:
+  - Inserção e busca em tempo **O(n)** para árvores desbalanceadas.
+  - O desempenho degrada significativamente com o aumento dos dados, tornando-se impraticável para grandes conjuntos.
+
+- **Árvore AVL**:
+  - Mantém altura balanceada com complexidade de **O(log n)** tanto para inserção quanto para busca.
+  - Os tempos de execução permanecem consistentes mesmo com grandes volumes de dados, sendo ligeiramente superiores à Red-Black em alguns casos devido ao maior número de rotações realizadas durante as inserções.
+
+- **Árvore Red-Black**:
+  - Também apresenta complexidade de **O(log n)** para inserção e busca.
+  - Em geral, ligeiramente mais eficiente que a AVL devido à política menos restritiva de balanceamento, resultando em menos rotações.
+
+---
+
+### 📊 Comparação de Complexidade Computacional
+
+| Operação       | Árvore Binária   | Árvore AVL       | Árvore Red-Black |
+|----------------|------------------|------------------|------------------|
+| **Inserção**   | O(n)            | O(log n)        | O(log n)        |
+| **Busca**      | O(n)            | O(log n)        | O(log n)        |
+| **Remoção**    | O(n)            | O(log n)        | O(log n)        |
+| **Altura**     | Cresce com n    | Logarítmica     | Logarítmica     |
+
+#### Observações:
+
+1. **Inserção**:
+   - A Árvore Binária é mais simples de implementar, mas apresenta desempenho inferior para grandes volumes de dados devido ao crescimento exponencial da altura.
+   - As Árvores AVL e Red-Black são muito mais eficientes, com desempenho similar na maioria dos casos. No entanto, a Red-Black pode ter uma leve vantagem por realizar menos rotações durante inserções.
+
+2. **Busca**:
+   - A altura logarítmica das Árvores AVL e Red-Black garante tempos de busca consistentes, independentemente do volume de dados.
+   - A Árvore Binária sofre com tempos de busca crescentes devido ao aumento da altura.
+
+3. **Remoção**:
+   - A complexidade de remoção é idêntica à de inserção para todas as árvores, mas a AVL pode realizar mais rotações para preservar o balanceamento.
+
+4. **Altura**:
+   - A altura de uma Árvore Binária desbalanceada pode crescer linearmente em relação ao número de nós.
+   - As Árvores AVL e Red-Black mantêm altura logarítmica, garantindo eficiência em suas operações.
+
+</div>
+
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
 
 ## 🏁 Conclusão
 
 <div align="justify">
 
-A resolução do **Problema 1** representou uma oportunidade significativa para aplicar, de forma prática, os conceitos teóricos de estruturas de dados, com foco em árvores binárias e AVL. Este problema permitiu explorar detalhadamente o funcionamento dessas estruturas, suas operações e características particulares, proporcionando um aprendizado aprofundado e uma visão clara de suas aplicações e limitações.
+Este trabalho abordou a implementação de um dicionário eletrônico utilizando árvores Binária de Busca, AVL e Red-Black, com o objetivo de explorar a eficiência dessas estruturas em operações fundamentais como inserção, busca e autocompletar. A análise do problema foi complementada por uma abordagem prática, que incluiu a visualização gráfica das árvores e testes de desempenho com conjuntos de dados variados.
 
-Ao implementar árvores binárias, foi possível observar sua simplicidade e eficiência em cenários onde o balanceamento não é um fator determinante. No entanto, em situações onde a sequência de inserções ou remoções prejudica a simetria da árvore, percebeu-se um impacto negativo no desempenho, principalmente nas buscas. Em contraste, a implementação da árvore AVL revelou-se essencial para manter a eficiência em operações de busca, especialmente em árvores com grande profundidade. As rotações aplicadas para manter o balanceamento, embora aumentem a complexidade da implementação e o custo computacional, garantem uma performance consistente, especialmente em cenários com inserções e remoções frequentes.
+Os resultados evidenciaram que árvores balanceadas, como AVL e Red-Black, apresentam vantagens significativas em comparação com árvores Binárias de Busca simples, especialmente para dicionários de grande porte. Essas vantagens foram observadas no tempo de execução e no número de interações necessárias para cada operação, com destaque para o autocompletar, que se mostrou altamente eficiente nas árvores balanceadas.
 
-A abordagem adotada para as operações, como o uso do predecessor durante a remoção de nós, foi particularmente desafiadora, exigindo cuidado para preservar a integridade da estrutura e o balanceamento na AVL. Além disso, a análise dos diferentes caminhamentos — pré-ordem, in-ordem, pós-ordem e em largura — destacou a relevância dessas técnicas em diferentes aplicações práticas, como a ordenação e a busca sistemática em conjuntos de dados hierárquicos.
+A funcionalidade de autocompletar demonstrou como o balanceamento afeta diretamente a eficiência das operações em tempo real. As árvores AVL e Red-Black mantiveram um tempo de busca praticamente constante, mesmo com o aumento do volume de dados, enquanto a árvore Binária de Busca apresentou degradação de desempenho proporcional ao tamanho do dicionário.
 
-Outro ponto de destaque foi o desafio adicional, que envolveu a geração de subconjuntos e a análise do impacto das remoções em uma árvore AVL. Este exercício não apenas reforçou a compreensão do balanceamento automático, mas também trouxe uma perspectiva prática para a análise de eficiência em algoritmos e estruturas de dados.
+Além disso, a análise comparativa de desempenho entre as três árvores ressaltou a importância do balanceamento em aplicações que exigem escalabilidade e eficiência. Enquanto a árvore Binária de Busca mostrou-se adequada para pequenos conjuntos de dados, as árvores AVL e Red-Black destacaram-se como soluções robustas para cenários que demandam alta performance e organização eficiente.
 
-Em resumo, o trabalho alcançou os objetivos propostos, destacando as diferenças e aplicações de árvores binárias e AVL, e consolidou o entendimento sobre a importância de selecionar a estrutura de dados adequada para cada problema. Além disso, a experiência prática contribuiu para o desenvolvimento de habilidades fundamentais em análise algorítmica e implementação, abrindo caminho para a exploração de variações mais avançadas de árvores e suas aplicações em problemas reais, como sistemas de busca e gerenciamento de dados. Este projeto, portanto, não apenas solucionou o problema proposto, mas também forneceu uma base sólida para estudos futuros e aplicações mais complexas no campo das estruturas de dados.
+Por fim, este trabalho reforça a relevância de técnicas de balanceamento em estruturas de dados, não apenas em contextos acadêmicos, mas também em aplicações práticas. A modularidade e a interatividade da implementação desenvolvida neste projeto proporcionam uma base sólida para o estudo de algoritmos e a aplicação em sistemas reais que demandam eficiência e desempenho.
 
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
 
 ## 🔨 Começando
 
@@ -752,7 +830,6 @@ Em resumo, o trabalho alcançou os objetivos propostos, destacando as diferença
   console
   sudo apt install make
   
-
 </div>
 
 ### Instalando
@@ -868,19 +945,6 @@ Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dú
 [ryzen3500-badge]: https://img.shields.io/badge/AMD%20Ryzen_5_3500X-ED1C24?style=for-the-badge&logo=amd&logoColor=white
 [windows-badge]: https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white
 [gcc-badge]: https://img.shields.io/badge/GCC-5C6EB8?style=for-the-badge&logo=gnu&logoColor=white
-
-
-[linkedin-autor1]: https://www.linkedin.com/in/guilherme-alvarenga-de-azevedo-959474201/
-[telegram-autor1]: https://t.me/alvarengazv
-[gmail-autor1]: mailto:gui.alvarengas234@gmail.com
-
-[linkedin-autor2]: https://www.linkedin.com/in/dudatsouza/
-[telegram-autor2]: https://t.me/dudat_18
-[gmail-autor2]: mailto:dudateixeirasouza@gmail.com
-
-[linkedin-autor3]: https://www.linkedin.com/
-[telegram-autor3]: https://t.me/
-[gmail-autor3]: mailto:memanuel643@gmail.com
 
 [linkedin-badge]: https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white
 [telegram-badge]: https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white

@@ -1,4 +1,3 @@
-
 #include "problema2.hpp"
 
 // Construtor do nó

@@ -1,0 +1,100 @@
+abacate:Fruta de casca verde e polpa macia usada em saladas e doces.
+banana:Fruta alongada, rica em potássio e com casca amarela.
+cachorro:Animal doméstico, conhecido como o melhor amigo do homem.
+floresta:Grande área coberta por árvores e vegetação.
+girafa:Mamífero de pescoço longo encontrado na savana africana.
+história:Relato de eventos do passado.
+iguana:Réptil tropical herbívoro, com cauda longa e escamas.
+jacaré:Réptil aquático encontrado em rios e lagos.
+kiwi:Fruta de polpa verde, rica em vitamina C.
+livro:Objeto com páginas encadernadas, usado para leitura.
+natureza:Conjunto de elementos naturais, como árvores e animais.
+oceano:Grande massa de água salgada que cobre a Terra.
+pássaro:Ave pequena capaz de voar.
+queijo:Alimento derivado do leite, popular em diversas culturas.
+rosa:Flor ornamental conhecida por sua beleza e perfume.
+sol:Estrela central do sistema solar, fonte de luz e calor.
+tigre:Grande felino listrado encontrado na Ásia.
+urso:Mamífero robusto encontrado em florestas e regiões frias.
+vulcão:Abertura na crosta terrestre que libera lava e gases.
+xícara:Recipiente usado para beber café ou chá.
+zebra:Animal africano com listras pretas e brancas.
+abacaxi:Fruta tropical de sabor doce e ácido, com casca espinhosa.
+bicicleta:Veículo de duas rodas movido pelo esforço humano.
+dicionário:Livro que contém palavras e seus significados.
+elefante:Grande mamífero com tromba e presas.
+futebol:Esporte coletivo jogado com uma bola em campo.
+girassol:Planta cujas flores seguem o movimento do sol.
+lápis:Instrumento de escrita com grafite.
+macaco:Animal primata encontrado em florestas.
+noite:Período do dia entre o pôr do sol e o nascer do sol.
+ocelote:Feline selvagem encontrado na América Central e do Sul.
+pinguim:Ave que não voa e vive em regiões frias.
+rio:Curso de água doce que deságua em mares, lagos ou outros rios.
+sino:Instrumento metálico que emite som ao ser batido.
+xilofone:Instrumento musical de percussão com lâminas.
+yoga:Prática que combina exercícios físicos e meditação.
+zebu:Raça de bovino originária da Índia.
+animais:Conjunto de seres vivos que se locomovem.
+baleia:Mamífero marinho de grande porte.
+cachoeira:Queda d'água formada por um rio.
+dado:Objeto cúbico usado em jogos de azar.
+gato:Animal doméstico de hábitos noturnos.
+helicóptero:Aeronave que se sustenta no ar por meio de hélices.
+igreja:Templo religioso cristão.
+jardim:Área externa com plantas e flores.
+karaokê:Atividade de cantar músicas em público.
+língua:Órgão muscular usado para falar e degustar alimentos.
+música:Arte de combinar sons de forma harmoniosa.
+navio:Embarcação usada para navegar em mares e rios.
+ônibus:Veículo terrestre usado para transporte de passageiros.
+piano:Instrumento musical de cordas percutidas.
+quadrado:Figura geométrica com quatro lados iguais.
+relógio:Instrumento usado para medir o tempo.
+sapato:Calçado usado para proteger os pés.
+tartaruga:Réptil aquático com casco duro.
+urubu:Ave de rapina que se alimenta de carniça.
+vaca:Animal doméstico criado para produção de leite.
+waffle:Alimento feito de massa cozida em ferro especial.
+xadrez:Jogo de tabuleiro disputado por duas pessoas.
+yakisoba:Prato japonês de macarrão frito com legumes.
+zoológico:Local onde animais são mantidos em cativeiro.
+dinheiro:Meio de troca usado para comprar bens e serviços.
+escola:Instituição de ensino.
+família:Grupo de pessoas unidas por laços de parentesco.
+guitarra:Instrumento musical de cordas.
+hospital:Instituição de saúde que atende pacientes.
+internet:Rede mundial de computadores.
+jornal:Publicação impressa com notícias e informações.
+ketchup:Molho de tomate usado em lanches e refeições.
+lágrima:Gota de água que sai dos olhos.
+mochila:Saco usado para carregar objetos nas costas.
+nadar:Movimentar-se na água com a ajuda dos braços e pernas.
+ônix:Mineral de cor preta usada em joias.
+piscina:Reservatório de água usado para natação.
+movimento:Deslocamento de um corpo no espaço.
+cortina:Tecido usado para cobrir janelas e portas.
+pintura:Arte de criar imagens em superfícies.
+teatro:Local onde são apresentadas peças e espetáculos.
+vídeo:Sequência de imagens em movimento.
+xarope:Líquido doce usado como medicamento.
+zumbi:Ser humano morto que volta à vida.
+mesa:Móvel usado para apoiar objetos.
+navalha:Instrumento cortante usado para barbear.
+óculos:Instrumento óptico usado para corrigir a visão.
+pá:Instrumento usado para cavar a terra.
+cadeira:Assento com encosto usado para sentar.
+eletricidade:Forma de energia que se manifesta na natureza.
+foguete:Veículo espacial movido por propulsão.
+macarrão:Alimento feito de massa cozida.
+faculdade:Instituição de ensino superior.
+algoritmo:Conjunto de regras para resolver um problema.
+computador:Máquina eletrônica usada para processar dados.
+programação:Atividade de criar programas de computador.
+tecnologia:Conjunto de conhecimentos e técnicas.
+inteligência:Capacidade de aprender e resolver problemas.
+artificial:Que é feito pelo ser humano.
+instituição:Organização que tem um propósito específico.
+estudo:Atividade de adquirir conhecimento.
+conhecimento:Informação adquirida por meio do estudo.
+aprendizado:Processo de adquirir conhecimento.
