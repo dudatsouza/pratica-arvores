@@ -36,50 +36,101 @@ CEFET-MG Campus V <br>
     <li>
       <a href="#-modelagem-de-aplicação">🔬 Modelagem de Aplicação</a>
       <ul>
-        <li><a href="#leitura-dos-dados">Leitura dos Dados</a></li>
+        <li><a href="#menu-interativo">Menu Interativo</a></li>
         <li>
-          <a href="#inserção-de-valores">Inserção de Valores</a>
+          <a href="#estruturas-de-dados">Estruturas de Dados</a>
           <ul>
-            <li><a href="#inserção-em-árvores-binárias-de-busca">Inserção em Árvores Binárias de Busca</a></li>
-            <li><a href="#inserção-em-árvores-avl">Inserção em Árvores AVL</a></li>
+            <li><a href="#árvore-binária-de-busca">Árvore Binária de Busca</a></li>
+            <li><a href="#árvore-avl">Árvore AVL</a></li>
+            <li><a href="#árvore-red-black">Árvore Red-Black</a></li>
           </ul>
         </li>
         <li>
-          <a href="#remoção-de-valores">Remoção de Valores</a>
+          <a href="#funcionalidades-implementadas">Funcionalidades Implementadas</a>
           <ul>
-            <li><a href="#remoção-em-árvores-binárias-de-busca">Remoção em Árvores Binárias de Busca</a></li>
-            <li><a href="#remoção-em-árvores-avl">Remoção em Árvores AVL</a></li>
+            <li><a href="#inserção">Inserção</a></li>
+            <li><a href="#busca">Busca</a></li>
+            <li><a href="#autocompletar">Autocompletar</a></li>
+            <li><a href="#visualização">Visualização</a></li>
           </ul>
         </li>
-        <li><a href="#caminhamentos">Caminhamentos</a></li>
-        <li><a href="#desafio-adicional-análise-de-rotações">Desafio Adicional: Análise de Rotações</a></li>
+        <li>
+          <a href="#decisões-de-implementação">Decisões de Implementação</a>
+          <ul>
+            <li><a href="#implementação-do-nodehpp">Implementação do `Node.hpp`</a></li>
+            <li><a href="#implementação-de-uma-classe-para-cada-árvore">Implementação de uma Classe para Cada Árvore</a></li>
+            <li><a href="#implementação-do-redblacknode">Implementação do `RedBlackNode`</a></li>
+            <li><a href="#implementação-do-dictionary">Implementação do `Dictionary`</a></li>
+            <li><a href="#implementação-de-result">Implementação de `Result`</a></li>
+            <li><a href="#função-performtest">Função `performTest`</a></li>
+            <li><a href="#necessidade-da-opção-de-printar-as-árvores-para-depuração">Necessidade da Opção de Printar as Árvores para Depuração</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li>
       <a href="#%EF%B8%8F-metodologia">🗳️ Metodologia</a>
       <ul>
         <li><a href="#-arquivos">Arquivos</a></li>
+        <li><a href="#-estrutura-do-projeto">Estrutura do Projeto</a></li>
         <li><a href="#-bibliotecas">Bibliotecas</a></li>
         <li>
           <a href="#definições-e-estruturas-usadas">Definições e Estruturas Usadas</a>
           <ul>
-            <li><a href="#arquivo-nodehpp">Arquivo Node.hpp</a></li>
-            <li><a href="#arquivo-problema1hpp">Arquivo problema1.hpp</a></li>
-            <li><a href="#arquivo-binarytreehpp">Arquivo BinaryTree.hpp</a></li>
-            <li><a href="#arquivo-avltreehpp">Arquivo AVLTree.hpp</a></li>
+            <li><a href="#arquivo-nodehpp">Arquivo `Node.hpp`</a></li>
+            <li><a href="#arquivo-binarytreehpp">Arquivo `BinaryTree.hpp`</a></li>
+            <li><a href="#arquivo-avltreehpp">Arquivo `AVLTree.hpp`</a></li>
+            <li><a href="#arquivo-redblacktreehpp">Arquivo `RedBlackTree.hpp`</a></li>
+            <li><a href="#arquivo-problema3hpp">Arquivo `problema3.hpp`</a></li>
           </ul>
         </li>
         <li>
           <a href="#-funções-implementadas">Funções Implementadas</a>
           <ul>
             <li><a href="#arquivo-maincpp">Arquivo main.cpp</a></li>
-            <li><a href="#arquivo-problema1cpp">Arquivo problema1.cpp</a></li>
             <li><a href="#arquivo-binarytreecpp">Arquivo BinaryTree.cpp</a></li>
             <li><a href="#arquivo-avltreecpp">Arquivo AVLTree.cpp</a></li>
+            <li><a href="#arquivo-redblacktreecpp">Arquivo RedBlackTree.cpp</a></li>
+            <li><a href="#arquivo-problema3cpp">Arquivo problema3.cpp</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li>
+      <a href="#-testes-e-resultados">📊 Testes e Resultados</a>
+      <ul>
+        <li>
+          <a href="#estrutura-do-arquivo-de-entrada">Estrutura do Arquivo de Entrada</a>
+          <ul>
+            <li><a href="#exemplo-de-entrada">Exemplo de Entrada</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#testes-realizados">Testes Realizados</a>
+          <ul>
+            <li><a href="#1-carregamento-de-dados">1. Carregamento de Dados</a></li>
+            <li><a href="#2-inserção-de-novas-palavras-e-definições">2. Inserção de Novas Palavras e Definições</a></li>
+            <li><a href="#3-busca-de-definições">3. Busca de Definições</a></li>
+            <li><a href="#4-autocompletar-palavras">4. Autocompletar Palavras</a></li>
+            <li><a href="#5-visualização-das-árvores">5. Visualização das Árvores</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#-análise-de-desempenho">Análise de Desempenho</a>
+          <ul>
+            <li>
+              <a href="#1-analise-de-desempenho-das-arvores-para-grandes-conjuntos-de-dados">1. Análise de Desempenho das Árvores para Grandes Conjuntos de Dados</a>
+              <ul>
+                <li><a href="#insercao-de-dados">Inserção de Dados</a></li>
+                <li><a href="#busca-de-dados">Busca de Dados</a></li>
+              <ul>
+            </li>
+            <li><a href="#2-compotamento-das-estruturas">2. Comportamento das Estruturas</a></li>
+          </ul>
+        </li>
+        <li><a href="#-comparacao-de-complexidade-computacional">Comparação de Complexidade Computacional</a></li>
+      </ul>
+    </li> 
     <li><a href="#-conclusão">🏁 Conclusão</a></li>
     <li>
       <a href="#-começando">🔨 Começando</a>
@@ -296,6 +347,7 @@ Essa divisão clara de arquivos, estrutura modular e uso eficiente de biblioteca
 </div>
 
 <p align="right">(<a href="#readme-topo">voltar ao topo</a>)</p>
+
 ### Definições e Estruturas Usadas
 
 <div align="justify">
@@ -382,7 +434,7 @@ Essa divisão clara de arquivos, estrutura modular e uso eficiente de biblioteca
     - **[`Node* getRoot()`](src/AVLTree.hpp)**:
       - Retorna a raiz da árvore AVL.
 
-#### Arquivo [`RedBlackTree.hpp`]
+#### Arquivo [`RedBlackTree.hpp`](src/RedBlackTree.hpp)
 - Estende `Node` e `Dicionary` e implementa propriedades específicas de uma Red-Black Tree:
   - **[`enum Color`](src/RedBlackTree.hpp)**: 
     - Define as cores dos nós (vermelho ou preto).
@@ -688,73 +740,71 @@ Para facilitar a análise das estruturas geradas, foi implementada uma funcional
 ![visualizarArvore1](images/visualizarArvore1.png)
 ![visualizarArvore2](images/visualizarArvore2.png)
 
-
 ### 📈 Análise de Desempenho
 
-#### 1. Análise de Desempenho das Árvores para Grandes Conjuntos de Dados
+#### Análise de Desempenho das Árvores
 
-Para avaliar o desempenho das árvores Binária, AVL e Red-Black, realizamos testes com diferentes tamanhos de conjuntos de dados, variando de 1.000 a 100.000 entradas. Cada conjunto foi carregado nas três estruturas, e os tempos de inserção e busca foram registrados.
+Durante a execução do programa, foram observados os tempos de resposta e o número de interações realizadas para operações de **inserção**, **busca** e **autocompletar palavras** nas três estruturas de dados: Binária, AVL e Red-Black.
 
-##### Inserção de Dados
+##### Resultados Observados:
 
-A análise mostrou que, com o aumento do número de entradas, a Árvore Binária apresentou um crescimento exponencial no tempo de execução devido à ausência de balanceamento, o que leva ao aumento da altura. Em contrapartida, as Árvores AVL e Red-Black mantiveram tempos de inserção consistentes, evidenciando sua eficiência ao preservar um balanceamento controlado.
+1. **Inserção de Dados**:
+   - Inserção de uma nova palavra (`margarida`) com a definição `"Flor branca"`:
+     - Árvore Binária:
+       - **Tempo**: `0.008927 ms`
+       - **Interações**: `18`
+     - Árvore AVL:
+       - **Tempo**: `0.006373 ms`
+       - **Interações**: `9`
+     - Árvore Red-Black:
+       - **Tempo**: `0.004203 ms`
+       - **Interações**: `9`
 
-- **Resultados para Inserção (média de tempo em ms):**
-  - **1.000 entradas**:
-    - Binária: 5.32 ms
-    - AVL: 2.15 ms
-    - Red-Black: 2.07 ms
-  - **10.000 entradas**:
-    - Binária: 47.84 ms
-    - AVL: 7.12 ms
-    - Red-Black: 6.89 ms
-  - **100.000 entradas**:
-    - Binária: 531.42 ms
-    - AVL: 18.97 ms
-    - Red-Black: 16.73 ms
+   - **Análise**:
+     - A Árvore Binária apresenta o maior número de interações devido ao seu desbalanceamento.
+     - AVL e Red-Black mantêm interações reduzidas e tempos semelhantes graças ao balanceamento automático.
 
-##### Busca de Dados
+2. **Busca de Dados**:
+   - Busca pela palavra `"zumbi"`:
+     - Árvore Binária:
+       - **Tempo**: `0.011538 ms`
+       - **Interações**: `25`
+     - Árvore AVL:
+       - **Tempo**: `0.001953 ms`
+       - **Interações**: `5`
+     - Árvore Red-Black:
+       - **Tempo**: `0.001767 ms`
+       - **Interações**: `6`
 
-Os tempos de busca mostraram um padrão similar ao da inserção. A Árvore Binária apresentou um aumento significativo no tempo de busca devido à altura crescente, enquanto as Árvores AVL e Red-Black se mantiveram consistentes, refletindo a eficiência do balanceamento.
+   - **Análise**:
+     - O número de interações na Árvore Binária é maior devido à sua altura desbalanceada.
+     - AVL e Red-Black novamente mantêm tempos consistentes com menos interações.
 
-- **Resultados para Busca (média de tempo em ms):**
-  - **1.000 entradas**:
-    - Binária: 4.87 ms
-    - AVL: 1.97 ms
-    - Red-Black: 2.03 ms
-  - **10.000 entradas**:
-    - Binária: 41.23 ms
-    - AVL: 6.32 ms
-    - Red-Black: 6.58 ms
-  - **100.000 entradas**:
-    - Binária: 489.71 ms
-    - AVL: 16.73 ms
-    - Red-Black: 15.89 ms
+3. **Autocompletar Palavras**:
+   - Autocompletar palavras começando com o prefixo `"f"`:
+     - Árvore Binária:
+       - **Tempo**: `0.018782 ms`
+       - **Interações**: `101`
+     - Árvore AVL:
+       - **Tempo**: `0.012268 ms`
+       - **Interações**: `101`
+     - Árvore Red-Black:
+       - **Tempo**: `0.013655 ms`
+       - **Interações**: `101`
 
-#### 2. Comportamento das Estruturas
+   - **Análise**:
+     - O número de interações é o mesmo para as três árvores, pois autocompletar percorre todos os nós que começam com o prefixo fornecido.
+     - A diferença nos tempos reflete as características de balanceamento e acesso em cada estrutura.
 
-- **Árvore Binária**:
-  - Inserção e busca em tempo **O(n)** para árvores desbalanceadas.
-  - O desempenho degrada significativamente com o aumento dos dados, tornando-se impraticável para grandes conjuntos.
-
-- **Árvore AVL**:
-  - Mantém altura balanceada com complexidade de **O(log n)** tanto para inserção quanto para busca.
-  - Os tempos de execução permanecem consistentes mesmo com grandes volumes de dados, sendo ligeiramente superiores à Red-Black em alguns casos devido ao maior número de rotações realizadas durante as inserções.
-
-- **Árvore Red-Black**:
-  - Também apresenta complexidade de **O(log n)** para inserção e busca.
-  - Em geral, ligeiramente mais eficiente que a AVL devido à política menos restritiva de balanceamento, resultando em menos rotações.
-
----
 
 ### 📊 Comparação de Complexidade Computacional
 
 | Operação       | Árvore Binária   | Árvore AVL       | Árvore Red-Black |
 |----------------|------------------|------------------|------------------|
-| **Inserção**   | O(n)            | O(log n)        | O(log n)        |
-| **Busca**      | O(n)            | O(log n)        | O(log n)        |
-| **Remoção**    | O(n)            | O(log n)        | O(log n)        |
-| **Altura**     | Cresce com n    | Logarítmica     | Logarítmica     |
+| **Inserção**   | O(n)             | O(log n)         | O(log n)         |
+| **Busca**         | O(n)          | O(log n)         | O(log n)         |
+| **Autocompletar** | O(k + m)      | O(k + m)         | O(k + m)         |
+| **Altura**     | Cresce com n     | Logarítmica      | Logarítmica      |
 
 #### Observações:
 
@@ -766,8 +816,9 @@ Os tempos de busca mostraram um padrão similar ao da inserção. A Árvore Bin�
    - A altura logarítmica das Árvores AVL e Red-Black garante tempos de busca consistentes, independentemente do volume de dados.
    - A Árvore Binária sofre com tempos de busca crescentes devido ao aumento da altura.
 
-3. **Remoção**:
-   - A complexidade de remoção é idêntica à de inserção para todas as árvores, mas a AVL pode realizar mais rotações para preservar o balanceamento.
+3. **Autocompletar Palavras**:
+   - A operação percorre os nós que correspondem ao prefixo fornecido, resultando em complexidade proporcional ao tamanho do prefixo (`k`) e ao número de palavras correspondentes (`m`).
+   - O desempenho é semelhante para as três estruturas, com as diferenças sendo principalmente no tempo de acesso aos nós devido à altura.
 
 4. **Altura**:
    - A altura de uma Árvore Binária desbalanceada pode crescer linearmente em relação ao número de nós.
