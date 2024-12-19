@@ -112,7 +112,7 @@ CEFET-MG Campus V <br>
 
 <div align='justify'>
 
-  Este [trabalho][trabalho-url] tem como base o **Problema 1** da lista de exercícios de **Árvores Binárias e AVL**, proposto na disciplina de **Algoritmos e Estruturas de Dados II**. O problema consiste na implementação de Árvores Binárias de Busca e Árvores AVL, abordando as operações fundamentais dessas estruturas: inserção, remoção e busca.
+  Este [trabalho][trabalho-url] tem como base o **Problema 1** da lista de exercícios de **Árvores Binárias e AVL**, proposto na disciplina de **Algoritmos e Estruturas de Dados II**. O problema consiste na implementação de Árvores Binárias de Busca e Árvores AVL, abordando as operações fundamentais dessas estruturas: inserção, remoção e busca. Uma parte de foi feita a mão e está disponível no [PDF do Problema 1][problema1-url] e em [Prática #01](./Prática_#01.pdf).
 
   As Árvores Binárias, embora eficientes em cenários balanceados, podem apresentar degradação de desempenho em casos específicos. Para resolver essa limitação, as Árvores AVL introduzem balanceamento automático por meio de rotações, garantindo que a altura da árvore seja mantida em $O(log n)$. Esse comportamento reduz o custo das operações em relação às árvores não balanceadas, que podem atingir complexidade $O(n)$ no pior caso.
 
@@ -861,6 +861,7 @@ Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dú
 [cpp-badge]: https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white
 [cpp-url]: https://en.cppreference.com/w/cpp
 [trabalho-url]: https://drive.google.com/file/d/15-BlglLNcPNOn9RRa__aTMfwafC-X43_/view?usp=sharing
+[problema1-url]: https://drive.google.com/file/d/1PpND7qG0l7oHTcdcbSk5X_Iw2lZd-bHJ/view?usp=drivesdk
 [github-prof]: https://github.com/mpiress
 [main-ref]: src/main.cpp
 [branchAMM-url]: https://github.com/alvarengazv/trabalhosAEDS1/tree/AlgoritmosMinMax
