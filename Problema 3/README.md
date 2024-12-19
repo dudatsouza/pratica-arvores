@@ -102,13 +102,13 @@ CEFET-MG Campus V <br>
         <li>
           <a href="#estrutura-do-arquivo-de-entrada">Estrutura do Arquivo de Entrada</a>
           <ul>
-            <li><a href="#exemplo-de-entrada">Exemplo de Entrada</a></li>
+            <li><a href="#exemplo-da-estrutura-do-arquivo">Exemplo da Estrutura do Arquivo</a></li>
           </ul>
         </li>
         <li>
           <a href="#testes-realizados">Testes Realizados</a>
           <ul>
-            <li><a href="#1-carregamento-de-dados">1. Carregamento de Dados</a></li>
+            <li><a href="#1-carregamento-dos-dados">1. Carregamento de Dados</a></li>
             <li><a href="#2-inserção-de-novas-palavras-e-definições">2. Inserção de Novas Palavras e Definições</a></li>
             <li><a href="#3-busca-de-definições">3. Busca de Definições</a></li>
             <li><a href="#4-autocompletar-palavras">4. Autocompletar Palavras</a></li>
@@ -119,16 +119,14 @@ CEFET-MG Campus V <br>
           <a href="#-análise-de-desempenho">Análise de Desempenho</a>
           <ul>
             <li>
-              <a href="#1-analise-de-desempenho-das-arvores-para-grandes-conjuntos-de-dados">1. Análise de Desempenho das Árvores para Grandes Conjuntos de Dados</a>
+              <a href="#analise-de-desempenho-das-arvores">nálise de Desempenho das Árvores</a>
               <ul>
-                <li><a href="#insercao-de-dados">Inserção de Dados</a></li>
-                <li><a href="#busca-de-dados">Busca de Dados</a></li>
-              <ul>
+                <li><a href="#resultados-observados">Resultados Observados</a></li>
+              </ul>
             </li>
-            <li><a href="#2-compotamento-das-estruturas">2. Comportamento das Estruturas</a></li>
           </ul>
         </li>
-        <li><a href="#-comparacao-de-complexidade-computacional">Comparação de Complexidade Computacional</a></li>
+        <li><a href="#-comparação-de-complexidade-computacional">Comparação de Complexidade Computacional</a></li>
       </ul>
     </li> 
     <li><a href="#-conclusão">🏁 Conclusão</a></li>
