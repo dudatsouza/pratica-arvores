@@ -800,17 +800,20 @@ Por fim, este trabalho reforça a relevância do estudo de algoritmos de balance
 
   Considerando um ambiente shell, garanta que os seguintes comandos já foram executados:
   - Atualize os pacotes antes da instalação dos compiladores:
-  console
+  ```console
   sudo apt update
-  
+  ```
+
   - Instale a coleção de compiladores __GNU/g++_ e o _make__:
-  console
+  ```console
   sudo apt install build-essential
-  
+  ```
+
   - Se necessário, instale o __make__ individualmente:
-  console
+  ```console
   sudo apt install make
-  
+  ```
+
 </div>
 
 ### Instalando
@@ -819,24 +822,25 @@ Por fim, este trabalho reforça a relevância do estudo de algoritmos de balance
   Com o ambiente preparado, os seguintes passos são para a instalação, compilação e execução do programa localmente:
 
   1. Clone o repositório no diretório desejado:
-  console
+  ```console
   git clone https://github.com/dudatsouza/pratica-arvores.git
   cd pratica-arvores
+  ```
 
   2. Compile o programa com o __make__, o que gera a pasta build, que contém arquivos de objeto e um arquivo executável:
-  console
+  ```console
   make
-  
+  ```
+
   3. Execute o programa da pasta build após a compilação:
-  console
+  ```console
   make run
-  
+  ```
 
   4. Se necessário, apague a última compilação da pasta build:
-  console
+  ```console
   make clean
-  
-
+  ```
   O programa estará pronto para ser testado. Veja a tabela abaixo com alguns comandos do makefile:
 
 </div>
